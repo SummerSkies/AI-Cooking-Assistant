@@ -64,10 +64,6 @@ enum SenderRole: String, Codable { //Which role the message has
     case assistant //Response
 }
 
-enum Constants {
-    static let openAIAPIKey = "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"
-}
-
 enum ImageSize: String {
     case s256 = "256x256"
     case s512 = "512x512"

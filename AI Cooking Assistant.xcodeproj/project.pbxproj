@@ -19,6 +19,7 @@
 		867569E32AA8E16400ABDD76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 867569E22AA8E16400ABDD76 /* Assets.xcassets */; };
 		867569E62AA8E16400ABDD76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 867569E42AA8E16400ABDD76 /* LaunchScreen.storyboard */; };
 		867569EE2AA8E1D500ABDD76 /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867569ED2AA8E1D500ABDD76 /* StepsViewController.swift */; };
+		86AA61B42AAB5DCC0075E614 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AA61B32AAB5DCC0075E614 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		867569E52AA8E16400ABDD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		867569E72AA8E16400ABDD76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		867569ED2AA8E1D500ABDD76 /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
+		86AA61B32AAB5DCC0075E614 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				867569D92AA8E16200ABDD76 /* AppDelegate.swift */,
 				867569DB2AA8E16200ABDD76 /* SceneDelegate.swift */,
 				86235B0A2AAA1B7E00810A89 /* OpenAIService.swift */,
+				86AA61B32AAB5DCC0075E614 /* Constants.swift */,
 				86235B0C2AAA1B9F00810A89 /* NetworkingObjects.swift */,
 				7E61FC1D2AAA892700242805 /* ResponseObject.swift */,
 				7E61FC1F2AAA8F1100242805 /* NotificationManager.swift */,
@@ -169,6 +172,7 @@
 				867569EE2AA8E1D500ABDD76 /* StepsViewController.swift in Sources */,
 				7E61FC202AAA8F1100242805 /* NotificationManager.swift in Sources */,
 				867569DC2AA8E16200ABDD76 /* SceneDelegate.swift in Sources */,
+				86AA61B42AAB5DCC0075E614 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
