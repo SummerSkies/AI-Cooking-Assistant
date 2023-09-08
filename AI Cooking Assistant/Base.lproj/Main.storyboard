@@ -39,7 +39,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="cookButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wdg-a8-GiV"/>
-                                            <segue destination="xa0-3N-OhH" kind="show" id="8Xe-JQ-nf1"/>
+                                            <segue destination="xa0-3N-OhH" kind="show" destinationCreationSelector="toStepsView:" id="8Xe-JQ-nf1"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -185,21 +185,40 @@
                                     </scrollView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="UH3-Rx-P96">
+                                <rect key="frame" x="411" y="181.66666666666666" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OWE-og-UqI"/>
+                                    <constraint firstAttribute="width" constant="30" id="Yup-fM-cdi"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold tight! We're generating your recipe...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogV-qa-buZ">
+                                <rect key="frame" x="265" y="131.33333333333334" width="322.33333333333326" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.39345516120000001" green="0.39434186669999999" blue="0.40787287249999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zf4-D2-eSP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Zf4-D2-eSP" firstAttribute="bottom" secondItem="CkN-Ar-23N" secondAttribute="bottom" constant="20" id="Huw-et-H7m"/>
+                            <constraint firstItem="UH3-Rx-P96" firstAttribute="centerX" secondItem="Q6L-Ri-GbQ" secondAttribute="centerX" id="Kf6-Sj-r0t"/>
                             <constraint firstItem="CkN-Ar-23N" firstAttribute="top" secondItem="Q6L-Ri-GbQ" secondAttribute="top" constant="20" id="MJJ-lK-oTf"/>
+                            <constraint firstItem="UH3-Rx-P96" firstAttribute="top" secondItem="ogV-qa-buZ" secondAttribute="bottom" constant="30" id="TMT-Ho-UUg"/>
                             <constraint firstItem="CkN-Ar-23N" firstAttribute="leading" secondItem="Zf4-D2-eSP" secondAttribute="leading" constant="20" id="Yh6-rE-gtb"/>
                             <constraint firstItem="4aL-gq-8ZE" firstAttribute="top" secondItem="Zf4-D2-eSP" secondAttribute="top" constant="50" id="ZKC-rz-VyA"/>
                             <constraint firstItem="4aL-gq-8ZE" firstAttribute="centerX" secondItem="Q6L-Ri-GbQ" secondAttribute="centerX" id="d4u-90-mqk"/>
+                            <constraint firstItem="ogV-qa-buZ" firstAttribute="centerX" secondItem="Q6L-Ri-GbQ" secondAttribute="centerX" id="gMf-5O-Flj"/>
                             <constraint firstItem="Zf4-D2-eSP" firstAttribute="bottom" secondItem="4aL-gq-8ZE" secondAttribute="bottom" constant="50" id="hCD-gT-RNs"/>
+                            <constraint firstItem="UH3-Rx-P96" firstAttribute="centerY" secondItem="Q6L-Ri-GbQ" secondAttribute="centerY" id="oi9-2P-MtI"/>
                             <constraint firstItem="Zf4-D2-eSP" firstAttribute="trailing" secondItem="CkN-Ar-23N" secondAttribute="trailing" constant="20" id="zQu-je-c3i"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e3C-rg-yaL"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="UH3-Rx-P96" id="MMg-I3-qsY"/>
+                        <outlet property="activityLabel" destination="ogV-qa-buZ" id="RA2-2k-b1X"/>
                         <outlet property="ingredientListStack" destination="CkN-Ar-23N" id="jrS-8O-NWg"/>
                         <outlet property="ingredientsLabel" destination="ajS-m9-S78" id="iC2-kZ-HPc"/>
                         <outlet property="instructionsLabel" destination="dci-4x-lU4" id="vxi-7t-0Jk"/>
@@ -228,22 +247,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkb-el-FPX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="54.198473282442748" y="-34.507042253521128"/>
-        </scene>
-        <!--Home View Controller-->
-        <scene sceneID="XWP-Sl-kJk">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NMg-Lb-dUY" sceneMemberID="firstResponder"/>
-                <viewController id="tB3-Im-srP" customClass="HomeViewController" customModule="AI_Cooking_Assistant" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ezT-Dt-0d5">
-                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="auh-2p-Aea"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Erx-yD-iNC"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="792.95774647887333" y="-745.80152671755718"/>
         </scene>
     </scenes>
     <resources>

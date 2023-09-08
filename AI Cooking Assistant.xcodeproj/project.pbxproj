@@ -72,19 +72,27 @@
 			children = (
 				867569D92AA8E16200ABDD76 /* AppDelegate.swift */,
 				867569DB2AA8E16200ABDD76 /* SceneDelegate.swift */,
-				86235B0A2AAA1B7E00810A89 /* OpenAIService.swift */,
-				86235B0C2AAA1B9F00810A89 /* NetworkingObjects.swift */,
-				7E61FC1D2AAA892700242805 /* ResponseObject.swift */,
-				7E61FC1F2AAA8F1100242805 /* NotificationManager.swift */,
+				86AA61B72AAB73110075E614 /* AI Wrangler Files */,
 				867569ED2AA8E1D500ABDD76 /* StepsViewController.swift */,
 				867569DD2AA8E16200ABDD76 /* HomeViewController.swift */,
-				86AA61B52AAB70F50075E614 /* Constants.swift */,
 				867569DF2AA8E16200ABDD76 /* Main.storyboard */,
 				867569E22AA8E16400ABDD76 /* Assets.xcassets */,
 				867569E42AA8E16400ABDD76 /* LaunchScreen.storyboard */,
 				867569E72AA8E16400ABDD76 /* Info.plist */,
 			);
 			path = "AI Cooking Assistant";
+			sourceTree = "<group>";
+		};
+		86AA61B72AAB73110075E614 /* AI Wrangler Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E61FC1F2AAA8F1100242805 /* NotificationManager.swift */,
+				86AA61B52AAB70F50075E614 /* Constants.swift */,
+				86235B0A2AAA1B7E00810A89 /* OpenAIService.swift */,
+				86235B0C2AAA1B9F00810A89 /* NetworkingObjects.swift */,
+				7E61FC1D2AAA892700242805 /* ResponseObject.swift */,
+			);
+			path = "AI Wrangler Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
