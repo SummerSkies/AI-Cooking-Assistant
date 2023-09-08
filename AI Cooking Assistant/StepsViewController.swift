@@ -9,21 +9,43 @@ import UIKit
 
 class StepsViewController: UIViewController {
 
+    @IBOutlet weak var stepNumberLabel: UILabel!
+    @IBOutlet weak var instructionsLabel: UILabel!
+    var indexBeingDisplayed: Int = 0
+    let shared = ResponseObject.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateUI), name: NotificationManager.didReceiveNetworkResponse, object: nil)
+        instructionsLabel.lineBreakMode = .byWordWrapping // or .byCharWrapping
+        instructionsLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NotificationManager.didReceiveNetworkResponse, object: nil)
     }
-    */
-
+    
+    @objc func updateUI() {
+        if indexBeingDisplayed == 0 {
+            stepNumberLabel.text = "Your generated recipe:"
+        } else {
+            stepNumberLabel.text = "Step #\(indexBeingDisplayed)"
+        }
+        instructionsLabel.text = shared.response[indexBeingDisplayed]
+    }
+    
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+        if indexBeingDisplayed != shared.response.count - 1 {
+            indexBeingDisplayed += 1
+            updateUI()
+        }
+    }
+    
+    @IBAction func previousButtonTapped(_ sender: UIButton) {
+        if indexBeingDisplayed != 0 {
+            indexBeingDisplayed -= 1
+            updateUI()
+        }
+    }
 }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E61FC1E2AAA892700242805 /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61FC1D2AAA892700242805 /* ResponseObject.swift */; };
+		7E61FC202AAA8F1100242805 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61FC1F2AAA8F1100242805 /* NotificationManager.swift */; };
+		86235B092AAA110B00810A89 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 86235B082AAA110B00810A89 /* Alamofire */; };
+		86235B0B2AAA1B7E00810A89 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86235B0A2AAA1B7E00810A89 /* OpenAIService.swift */; };
+		86235B0D2AAA1B9F00810A89 /* NetworkingObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86235B0C2AAA1B9F00810A89 /* NetworkingObjects.swift */; };
 		867569DA2AA8E16200ABDD76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867569D92AA8E16200ABDD76 /* AppDelegate.swift */; };
 		867569DC2AA8E16200ABDD76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867569DB2AA8E16200ABDD76 /* SceneDelegate.swift */; };
 		867569DE2AA8E16200ABDD76 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867569DD2AA8E16200ABDD76 /* HomeViewController.swift */; };
@@ -17,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E61FC1D2AAA892700242805 /* ResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
+		7E61FC1F2AAA8F1100242805 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		86235B0A2AAA1B7E00810A89 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		86235B0C2AAA1B9F00810A89 /* NetworkingObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingObjects.swift; sourceTree = "<group>"; };
 		867569D62AA8E16200ABDD76 /* AI Cooking Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AI Cooking Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		867569D92AA8E16200ABDD76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		867569DB2AA8E16200ABDD76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86235B092AAA110B00810A89 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +70,10 @@
 			children = (
 				867569D92AA8E16200ABDD76 /* AppDelegate.swift */,
 				867569DB2AA8E16200ABDD76 /* SceneDelegate.swift */,
+				86235B0A2AAA1B7E00810A89 /* OpenAIService.swift */,
+				86235B0C2AAA1B9F00810A89 /* NetworkingObjects.swift */,
+				7E61FC1D2AAA892700242805 /* ResponseObject.swift */,
+				7E61FC1F2AAA8F1100242805 /* NotificationManager.swift */,
 				867569ED2AA8E1D500ABDD76 /* StepsViewController.swift */,
 				867569DD2AA8E16200ABDD76 /* HomeViewController.swift */,
 				867569DF2AA8E16200ABDD76 /* Main.storyboard */,
@@ -86,6 +100,9 @@
 			dependencies = (
 			);
 			name = "AI Cooking Assistant";
+			packageProductDependencies = (
+				86235B082AAA110B00810A89 /* Alamofire */,
+			);
 			productName = "AI Cooking Assistant";
 			productReference = 867569D62AA8E16200ABDD76 /* AI Cooking Assistant.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +131,9 @@
 				Base,
 			);
 			mainGroup = 867569CD2AA8E16200ABDD76;
+			packageReferences = (
+				86235B072AAA110B00810A89 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 867569D72AA8E16200ABDD76 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,9 +161,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E61FC1E2AAA892700242805 /* ResponseObject.swift in Sources */,
 				867569DE2AA8E16200ABDD76 /* HomeViewController.swift in Sources */,
 				867569DA2AA8E16200ABDD76 /* AppDelegate.swift in Sources */,
+				86235B0D2AAA1B9F00810A89 /* NetworkingObjects.swift in Sources */,
+				86235B0B2AAA1B7E00810A89 /* OpenAIService.swift in Sources */,
 				867569EE2AA8E1D500ABDD76 /* StepsViewController.swift in Sources */,
+				7E61FC202AAA8F1100242805 /* NotificationManager.swift in Sources */,
 				867569DC2AA8E16200ABDD76 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +315,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AI Cooking Assistant/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -302,7 +327,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example1.AI-Cooking-Assistant";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.m0resleep.AI-Cooking-Assistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -317,6 +342,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AI Cooking Assistant/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -328,7 +354,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example1.AI-Cooking-Assistant";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.m0resleep.AI-Cooking-Assistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -358,6 +384,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		86235B072AAA110B00810A89 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		86235B082AAA110B00810A89 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86235B072AAA110B00810A89 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 867569CE2AA8E16200ABDD76 /* Project object */;
 }
