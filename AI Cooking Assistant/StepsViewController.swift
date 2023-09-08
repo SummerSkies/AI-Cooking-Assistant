@@ -9,6 +9,9 @@ import UIKit
 
 class StepsViewController: UIViewController {
 
+    @IBOutlet weak var ingredientListStack: UIStackView!
+    @IBOutlet weak var ingredientsLabel: UILabel!
+    @IBOutlet weak var stepNumberStack: UIStackView!
     @IBOutlet weak var stepNumberLabel: UILabel!
     @IBOutlet weak var instructionsLabel: UILabel!
     var indexBeingDisplayed: Int = 0

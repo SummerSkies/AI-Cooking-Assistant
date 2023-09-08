@@ -40,23 +40,21 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                 Message(id: UUID().uuidString, role: .system, content: "You are a seasoned chef, with years of experience in the culinary world, renowned for your skill in both traditional and innovative cooking techniques. You are guiding users through an interactive cooking experience."),
                 Message(id: UUID().uuidString, role: .user, content: "Generate a recipe title and list of ingredients based on this request: \(promptTextField.text!)")
             ])
-            
+
             let ingredientResponse = response?.choices[0].message.content
             if let firstResponse = ingredientResponse {
                 shared.response.append(firstResponse)
-                print("Ingredient response: \(ingredientResponse!)")
             }
             NotificationCenter.default.post(name: NotificationManager.didReceiveNetworkResponse, object: nil)
-            
+
             let response2 = await OpenAIService.shared.sendMessage(messages: [
                 Message(id: UUID().uuidString, role: .system, content: "You are a seasoned chef, with years of experience in the culinary world, renowned for your skill in both traditional and innovative cooking techniques. You are guiding users through an interactive cooking experience."),
                 Message(id: UUID().uuidString, role: .user, content: "Generate only steps for how to prepare this recipe in the format 1. 2. 3. etc. based on this list of ingredients: \(ingredientResponse!)")
             ])
-            
+
             let stepsResponse = response2?.choices[0].message.content
             if let secondResponse = stepsResponse {
                 ResponseObject.convertStepsToList(input: secondResponse, modify: &shared.response)
-                print("steps response: \(secondResponse)")
             }
             NotificationCenter.default.post(name: NotificationManager.didReceiveNetworkResponse, object: nil)
         }
