@@ -53,7 +53,7 @@ class StepsViewController: UIViewController {
             activityIndicator.stopAnimating()
             activityLabel.isHidden = true
             
-            voiceControlStack.isHidden = false
+            voiceControlStack.isHidden = true
             ingredientListStack.isHidden = false
             stepNumberStack.isHidden = true
             ingredientsTitleLabel.text = "Ingredients"
@@ -61,6 +61,7 @@ class StepsViewController: UIViewController {
             
             //nextOrStartButtonTapped([]) //For testing ease; uncomment to press Start button immediately after load. nextOrStartButtonTapped's sender must be changed to Any.
         } else {
+            voiceControlStack.isHidden = false
             ingredientListStack.isHidden = true
             stepNumberStack.isHidden = false
             stepNumberLabel.text = "Step #\(indexBeingDisplayed)"
