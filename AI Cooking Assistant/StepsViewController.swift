@@ -22,12 +22,17 @@ class StepsViewController: UIViewController {
     var indexBeingDisplayed: Int = 0
     let shared = ResponseObject.shared
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateUI), name: NotificationManager.didReceiveNetworkResponse, object: nil)
         instructionsLabel.lineBreakMode = .byWordWrapping // or .byCharWrapping
         instructionsLabel.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.isHidden = true
+        activityLabel.isHidden = true
+        ingredientListStack.isHidden = true
+        ingredientsLabel.isHidden = true
     }
     
     deinit {
