@@ -23,7 +23,9 @@
 		867569E32AA8E16400ABDD76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 867569E22AA8E16400ABDD76 /* Assets.xcassets */; };
 		867569E62AA8E16400ABDD76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 867569E42AA8E16400ABDD76 /* LaunchScreen.storyboard */; };
 		867569EE2AA8E1D500ABDD76 /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867569ED2AA8E1D500ABDD76 /* StepsViewController.swift */; };
-		D2E147442AAB7AD800A80B6D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E147432AAB7AD800A80B6D /* Constants.swift */; };
+		D22043FD2AB0AEEE00023DB9 /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22043FC2AB0AEEE00023DB9 /* Contants.swift */; };
+		D22044002AB0B01600023DB9 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22043FF2AB0B01600023DB9 /* SpeechSynthesizer.swift */; };
+		D22044022AB0BC2200023DB9 /* Voice Recognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22044012AB0BC2200023DB9 /* Voice Recognition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +46,9 @@
 		867569E52AA8E16400ABDD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		867569E72AA8E16400ABDD76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		867569ED2AA8E1D500ABDD76 /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
-		D2E147432AAB7AD800A80B6D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D22043FC2AB0AEEE00023DB9 /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
+		D22043FF2AB0B01600023DB9 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
+		D22044012AB0BC2200023DB9 /* Voice Recognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Voice Recognition.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 				86AA61B72AAB73110075E614 /* AI Wrangler Files */,
 				867569ED2AA8E1D500ABDD76 /* StepsViewController.swift */,
 				867569DD2AA8E16200ABDD76 /* HomeViewController.swift */,
+				D22043FE2AB0B00500023DB9 /* Voice and Such */,
 				867569DF2AA8E16200ABDD76 /* Main.storyboard */,
 				867569E22AA8E16400ABDD76 /* Assets.xcassets */,
 				867569E42AA8E16400ABDD76 /* LaunchScreen.storyboard */,
@@ -99,12 +104,21 @@
 				7EAC01222AAF682C00C50908 /* PersistenceController.swift */,
 				7EAC01202AAF66E400C50908 /* RecipeStorageManager.swift */,
 				7E61FC1F2AAA8F1100242805 /* NotificationManager.swift */,
-				D2E147432AAB7AD800A80B6D /* Constants.swift */,
 				86235B0A2AAA1B7E00810A89 /* OpenAIService.swift */,
 				86235B0C2AAA1B9F00810A89 /* NetworkingObjects.swift */,
 				7E61FC1D2AAA892700242805 /* ResponseObject.swift */,
+				D22043FC2AB0AEEE00023DB9 /* Contants.swift */,
 			);
 			path = "AI Wrangler Files";
+			sourceTree = "<group>";
+		};
+		D22043FE2AB0B00500023DB9 /* Voice and Such */ = {
+			isa = PBXGroup;
+			children = (
+				D22043FF2AB0B01600023DB9 /* SpeechSynthesizer.swift */,
+				D22044012AB0BC2200023DB9 /* Voice Recognition.swift */,
+			);
+			path = "Voice and Such";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +201,7 @@
 				7E61FC1E2AAA892700242805 /* ResponseObject.swift in Sources */,
 				7EAC01212AAF66E400C50908 /* RecipeStorageManager.swift in Sources */,
 				7EAC01262AAF688400C50908 /* CoreDataStore.xcdatamodeld in Sources */,
+				D22043FD2AB0AEEE00023DB9 /* Contants.swift in Sources */,
 				867569DE2AA8E16200ABDD76 /* HomeViewController.swift in Sources */,
 				867569DA2AA8E16200ABDD76 /* AppDelegate.swift in Sources */,
 				7EAC01232AAF682C00C50908 /* PersistenceController.swift in Sources */,
@@ -195,8 +210,9 @@
 				867569EE2AA8E1D500ABDD76 /* StepsViewController.swift in Sources */,
 				7E61FC202AAA8F1100242805 /* NotificationManager.swift in Sources */,
 				7EAC01282AAF695A00C50908 /* CoreDataModels.swift in Sources */,
+				D22044022AB0BC2200023DB9 /* Voice Recognition.swift in Sources */,
+				D22044002AB0B01600023DB9 /* SpeechSynthesizer.swift in Sources */,
 				867569DC2AA8E16200ABDD76 /* SceneDelegate.swift in Sources */,
-				D2E147442AAB7AD800A80B6D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +362,7 @@
 				DEVELOPMENT_TEAM = P37BL29UZP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AI Cooking Assistant/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "“You can view a text transcription of your meeting in the app.”";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -373,6 +390,7 @@
 				DEVELOPMENT_TEAM = P37BL29UZP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AI Cooking Assistant/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "“You can view a text transcription of your meeting in the app.”";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
