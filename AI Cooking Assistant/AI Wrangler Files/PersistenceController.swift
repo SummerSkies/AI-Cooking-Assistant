@@ -12,7 +12,7 @@ class PersistenceController {
     static let shared = PersistenceController()
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "AIGames") //change this to the core data repository name
+        let container = NSPersistentContainer(name: "CoreDataStore") //change this to the core data repository name
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")

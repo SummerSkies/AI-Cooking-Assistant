@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		7E61FC1E2AAA892700242805 /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61FC1D2AAA892700242805 /* ResponseObject.swift */; };
 		7E61FC202AAA8F1100242805 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61FC1F2AAA8F1100242805 /* NotificationManager.swift */; };
+		7EAC01212AAF66E400C50908 /* RecipeStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC01202AAF66E400C50908 /* RecipeStorageManager.swift */; };
+		7EAC01232AAF682C00C50908 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC01222AAF682C00C50908 /* PersistenceController.swift */; };
+		7EAC01262AAF688400C50908 /* CoreDataStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC01242AAF688400C50908 /* CoreDataStore.xcdatamodeld */; };
+		7EAC01282AAF695A00C50908 /* CoreDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC01272AAF695A00C50908 /* CoreDataModels.swift */; };
 		86235B092AAA110B00810A89 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 86235B082AAA110B00810A89 /* Alamofire */; };
 		86235B0B2AAA1B7E00810A89 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86235B0A2AAA1B7E00810A89 /* OpenAIService.swift */; };
 		86235B0D2AAA1B9F00810A89 /* NetworkingObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86235B0C2AAA1B9F00810A89 /* NetworkingObjects.swift */; };
@@ -25,6 +29,10 @@
 /* Begin PBXFileReference section */
 		7E61FC1D2AAA892700242805 /* ResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
 		7E61FC1F2AAA8F1100242805 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		7EAC01202AAF66E400C50908 /* RecipeStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStorageManager.swift; sourceTree = "<group>"; };
+		7EAC01222AAF682C00C50908 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		7EAC01252AAF688400C50908 /* CoreDataStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStore.xcdatamodel; sourceTree = "<group>"; };
+		7EAC01272AAF695A00C50908 /* CoreDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModels.swift; sourceTree = "<group>"; };
 		86235B0A2AAA1B7E00810A89 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
 		86235B0C2AAA1B9F00810A89 /* NetworkingObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingObjects.swift; sourceTree = "<group>"; };
 		867569D62AA8E16200ABDD76 /* AI Cooking Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AI Cooking Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +87,7 @@
 				867569E22AA8E16400ABDD76 /* Assets.xcassets */,
 				867569E42AA8E16400ABDD76 /* LaunchScreen.storyboard */,
 				867569E72AA8E16400ABDD76 /* Info.plist */,
+				7EAC01242AAF688400C50908 /* CoreDataStore.xcdatamodeld */,
 			);
 			path = "AI Cooking Assistant";
 			sourceTree = "<group>";
@@ -86,6 +95,9 @@
 		86AA61B72AAB73110075E614 /* AI Wrangler Files */ = {
 			isa = PBXGroup;
 			children = (
+				7EAC01272AAF695A00C50908 /* CoreDataModels.swift */,
+				7EAC01222AAF682C00C50908 /* PersistenceController.swift */,
+				7EAC01202AAF66E400C50908 /* RecipeStorageManager.swift */,
 				7E61FC1F2AAA8F1100242805 /* NotificationManager.swift */,
 				D2E147432AAB7AD800A80B6D /* Constants.swift */,
 				86235B0A2AAA1B7E00810A89 /* OpenAIService.swift */,
@@ -173,12 +185,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E61FC1E2AAA892700242805 /* ResponseObject.swift in Sources */,
+				7EAC01212AAF66E400C50908 /* RecipeStorageManager.swift in Sources */,
+				7EAC01262AAF688400C50908 /* CoreDataStore.xcdatamodeld in Sources */,
 				867569DE2AA8E16200ABDD76 /* HomeViewController.swift in Sources */,
 				867569DA2AA8E16200ABDD76 /* AppDelegate.swift in Sources */,
+				7EAC01232AAF682C00C50908 /* PersistenceController.swift in Sources */,
 				86235B0D2AAA1B9F00810A89 /* NetworkingObjects.swift in Sources */,
 				86235B0B2AAA1B7E00810A89 /* OpenAIService.swift in Sources */,
 				867569EE2AA8E1D500ABDD76 /* StepsViewController.swift in Sources */,
 				7E61FC202AAA8F1100242805 /* NotificationManager.swift in Sources */,
+				7EAC01282AAF695A00C50908 /* CoreDataModels.swift in Sources */,
 				867569DC2AA8E16200ABDD76 /* SceneDelegate.swift in Sources */,
 				D2E147442AAB7AD800A80B6D /* Constants.swift in Sources */,
 			);
@@ -415,6 +431,19 @@
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		7EAC01242AAF688400C50908 /* CoreDataStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7EAC01252AAF688400C50908 /* CoreDataStore.xcdatamodel */,
+			);
+			currentVersion = 7EAC01252AAF688400C50908 /* CoreDataStore.xcdatamodel */;
+			path = CoreDataStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 867569CE2AA8E16200ABDD76 /* Project object */;
 }
