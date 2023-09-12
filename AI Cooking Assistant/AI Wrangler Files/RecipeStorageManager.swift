@@ -1,5 +1,5 @@
 //
-//  ContentStorage.swift
+//  RecipeStorageManager.swift
 //  AI Cooking Assistant
 //
 //  Created by David Granger on 9/11/23.
@@ -43,6 +43,9 @@ class RecipeStorageManager {
         
         do {
             let results = try context.fetch(fetchRequest)
+            
+            // Assuming titles are unique, only one match should be found.
+            // If titles are not unique, this will return the first matching recipe.
             if let firstMatch = results.first {
                 guard let uuid = firstMatch.id,
                       let ingredients = firstMatch.ingredientsList,
@@ -110,6 +113,7 @@ class RecipeStorageManager {
         } catch {
             print("Failed to remove recipe: \(error)")
         }
+        NotificationCenter.default.post(name: NotificationManager.didRemoveCoreDataRecipe, object: nil)
     }
     
     func removeRecipe(matching uuid: UUID) {
@@ -118,9 +122,6 @@ class RecipeStorageManager {
         
         do {
             let results = try context.fetch(fetchRequest)
-            
-            // Assuming titles are unique, only one match should be found.
-            // If titles are not unique, this will remove the first matching recipe.
             if let recipeToRemove = results.first {
                 context.delete(recipeToRemove)
                 persistenceController.saveContext()
@@ -130,6 +131,7 @@ class RecipeStorageManager {
         } catch {
             print("Failed to remove recipe: \(error)")
         }
+        NotificationCenter.default.post(name: NotificationManager.didRemoveCoreDataRecipe, object: nil)
     }
     
     //MARK: Recipe creation
