@@ -8,6 +8,106 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Form View Controller-->
+        <scene sceneID="Rer-1V-gLO">
+            <objects>
+                <viewController id="CBP-iN-qAd" customClass="FormViewController" customModule="AI_Cooking_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IHq-uk-fwF">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6g-fs-p9E">
+                                <rect key="frame" x="59" y="32" width="734" height="340"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pP2-4w-hBX">
+                                        <rect key="frame" x="0.0" y="0.0" width="734" height="232"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customize Your Recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBz-K6-TPo">
+                                                <rect key="frame" x="194.33333333333334" y="0.0" width="345.33333333333326" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JVg-Ps-UJs">
+                                                <rect key="frame" x="0.0" y="62" width="734" height="80"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to cook?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uA-TK-YXO">
+                                                        <rect key="frame" x="20" y="0.0" width="694" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a recipe prompt..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wb6-q1-lYJ">
+                                                        <rect key="frame" x="50" y="40" width="634" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="promptEditingDidEnd:" destination="CBP-iN-qAd" eventType="editingDidEnd" id="Hwh-eF-Bo5"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Wb6-q1-lYJ" secondAttribute="trailing" constant="50" id="Bun-60-WG2"/>
+                                                    <constraint firstItem="Wb6-q1-lYJ" firstAttribute="leading" secondItem="JVg-Ps-UJs" secondAttribute="leading" constant="50" id="EOE-77-AB4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1uA-TK-YXO" secondAttribute="trailing" constant="20" id="KEv-oZ-87N"/>
+                                                    <constraint firstItem="1uA-TK-YXO" firstAttribute="leading" secondItem="JVg-Ps-UJs" secondAttribute="leading" constant="20" id="xvb-Oy-Kb8"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szu-hp-tzv">
+                                                <rect key="frame" x="282" y="162" width="170" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="TBa-SQ-hF5"/>
+                                                    <constraint firstAttribute="height" constant="70" id="aXE-d6-pyh"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Cook!">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="cookButtonTapped:" destination="CBP-iN-qAd" eventType="touchUpInside" id="XyQ-kh-JCc"/>
+                                                    <segue destination="xa0-3N-OhH" kind="show" destinationCreationSelector="toStepsView:" id="L0m-UI-SXs"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="JVg-Ps-UJs" firstAttribute="leading" secondItem="pP2-4w-hBX" secondAttribute="leading" id="HYg-Ot-Li8"/>
+                                            <constraint firstAttribute="trailing" secondItem="JVg-Ps-UJs" secondAttribute="trailing" id="mqJ-Re-p5T"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pP2-4w-hBX" firstAttribute="top" secondItem="YPU-vK-Eb5" secondAttribute="top" id="3xY-58-bRD"/>
+                                    <constraint firstAttribute="bottom" secondItem="pP2-4w-hBX" secondAttribute="bottom" id="Elb-Wq-mb8"/>
+                                    <constraint firstItem="pP2-4w-hBX" firstAttribute="width" secondItem="YPU-vK-Eb5" secondAttribute="width" id="YWX-Vc-NZO"/>
+                                    <constraint firstItem="pP2-4w-hBX" firstAttribute="top" secondItem="I6g-fs-p9E" secondAttribute="top" id="eMG-1K-sRU"/>
+                                    <constraint firstItem="pP2-4w-hBX" firstAttribute="top" secondItem="YPU-vK-Eb5" secondAttribute="top" id="fKU-QP-maz"/>
+                                    <constraint firstItem="YPU-vK-Eb5" firstAttribute="bottom" secondItem="pP2-4w-hBX" secondAttribute="bottom" id="t0r-NO-0PX"/>
+                                    <constraint firstItem="5fd-I4-czY" firstAttribute="trailing" secondItem="pP2-4w-hBX" secondAttribute="trailing" id="vdU-be-rIz"/>
+                                    <constraint firstItem="pP2-4w-hBX" firstAttribute="leading" secondItem="5fd-I4-czY" secondAttribute="leading" id="y8Z-cS-Oaf"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="YPU-vK-Eb5"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="5fd-I4-czY"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ySe-W8-ChZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ySe-W8-ChZ" firstAttribute="trailing" secondItem="I6g-fs-p9E" secondAttribute="trailing" id="MGk-ew-Rzj"/>
+                            <constraint firstItem="I6g-fs-p9E" firstAttribute="leading" secondItem="ySe-W8-ChZ" secondAttribute="leading" id="U9E-xL-SCN"/>
+                            <constraint firstItem="I6g-fs-p9E" firstAttribute="top" secondItem="ySe-W8-ChZ" secondAttribute="top" id="d3R-D3-NG1"/>
+                            <constraint firstItem="ySe-W8-ChZ" firstAttribute="bottom" secondItem="I6g-fs-p9E" secondAttribute="bottom" id="xgy-9B-nOe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Tfz-fv-K2H"/>
+                    <connections>
+                        <outlet property="cookButton" destination="Szu-hp-tzv" id="sD9-Vy-4BJ"/>
+                        <outlet property="promptTextField" destination="Wb6-q1-lYJ" id="GwX-eS-p9B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bIf-8E-0hZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="777" y="802"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -17,29 +117,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="8ch-Zc-FMO">
-                                <rect key="frame" x="266.66666666666669" y="124" width="319.00000000000006" height="145"/>
+                                <rect key="frame" x="341" y="46.666666666666657" width="170" height="300"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What do you want to cook?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SzR-hv-CCT">
-                                        <rect key="frame" x="0.0" y="0.0" width="319" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="promptEditingDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="qQd-CR-6nx"/>
-                                        </connections>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xt-hI-xhv">
-                                        <rect key="frame" x="84.333333333333314" y="85" width="150" height="60"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mt9-Mt-xsD">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="70"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="GJX-TM-5Rq"/>
-                                            <constraint firstAttribute="height" constant="60" id="kEx-Sc-i7L"/>
+                                            <constraint firstAttribute="width" secondItem="Mt9-Mt-xsD" secondAttribute="height" multiplier="17:7" id="EZD-I7-sUg"/>
+                                            <constraint firstAttribute="height" constant="70" id="yo7-j2-glI"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Cook!">
+                                        <buttonConfiguration key="configuration" style="filled" title="Cookbook">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="cookButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wdg-a8-GiV"/>
-                                            <segue destination="xa0-3N-OhH" kind="show" destinationCreationSelector="toStepsView:" id="8Xe-JQ-nf1"/>
+                                            <action selector="cookButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pZW-45-3fV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Px-WF-at4">
+                                        <rect key="frame" x="0.0" y="115" width="170" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="0dq-Nz-88l"/>
+                                            <constraint firstAttribute="width" secondItem="2Px-WF-at4" secondAttribute="height" multiplier="17:7" id="vIf-FN-Wvn"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="New Recipe">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="CBP-iN-qAd" kind="show" id="P6x-Cr-EdT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PR5-ul-Lh0">
+                                        <rect key="frame" x="0.0" y="230" width="170" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="PR5-ul-Lh0" secondAttribute="height" multiplier="17:7" id="6Dy-I6-kTo"/>
+                                            <constraint firstAttribute="height" constant="70" id="6gx-kD-Dd7"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Settings">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="cookButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tDH-T1-b0x"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -48,15 +167,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8ch-Zc-FMO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9cb-Vq-9Zj"/>
-                            <constraint firstItem="8ch-Zc-FMO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rWk-wR-c6q"/>
+                            <constraint firstItem="8ch-Zc-FMO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ANd-6h-dta"/>
+                            <constraint firstItem="8ch-Zc-FMO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wTw-vU-9cH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UsL-73-cf3"/>
-                    <connections>
-                        <outlet property="cookButton" destination="0Xt-hI-xhv" id="UZQ-Mc-Lay"/>
-                        <outlet property="promptTextField" destination="SzR-hv-CCT" id="6PX-U1-4mM"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
