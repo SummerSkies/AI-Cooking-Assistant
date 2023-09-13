@@ -23,9 +23,14 @@
 		867569E32AA8E16400ABDD76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 867569E22AA8E16400ABDD76 /* Assets.xcassets */; };
 		867569E62AA8E16400ABDD76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 867569E42AA8E16400ABDD76 /* LaunchScreen.storyboard */; };
 		867569EE2AA8E1D500ABDD76 /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867569ED2AA8E1D500ABDD76 /* StepsViewController.swift */; };
+<<<<<<< HEAD
 		D22043FD2AB0AEEE00023DB9 /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22043FC2AB0AEEE00023DB9 /* Contants.swift */; };
 		D22044002AB0B01600023DB9 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22043FF2AB0B01600023DB9 /* SpeechSynthesizer.swift */; };
 		D22044022AB0BC2200023DB9 /* Voice Recognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22044012AB0BC2200023DB9 /* Voice Recognition.swift */; };
+=======
+		86D179E02AB0BB7E00EC4136 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D179DF2AB0BB7E00EC4136 /* FormViewController.swift */; };
+		D2E147442AAB7AD800A80B6D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E147432AAB7AD800A80B6D /* Constants.swift */; };
+>>>>>>> main
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,9 +51,14 @@
 		867569E52AA8E16400ABDD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		867569E72AA8E16400ABDD76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		867569ED2AA8E1D500ABDD76 /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		D22043FC2AB0AEEE00023DB9 /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
 		D22043FF2AB0B01600023DB9 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
 		D22044012AB0BC2200023DB9 /* Voice Recognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Voice Recognition.swift"; sourceTree = "<group>"; };
+=======
+		86D179DF2AB0BB7E00EC4136 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		D2E147432AAB7AD800A80B6D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+>>>>>>> main
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +95,7 @@
 				867569D92AA8E16200ABDD76 /* AppDelegate.swift */,
 				867569DB2AA8E16200ABDD76 /* SceneDelegate.swift */,
 				86AA61B72AAB73110075E614 /* AI Wrangler Files */,
+				86D179DF2AB0BB7E00EC4136 /* FormViewController.swift */,
 				867569ED2AA8E1D500ABDD76 /* StepsViewController.swift */,
 				867569DD2AA8E16200ABDD76 /* HomeViewController.swift */,
 				D22043FE2AB0B00500023DB9 /* Voice and Such */,
@@ -200,6 +211,7 @@
 			files = (
 				7E61FC1E2AAA892700242805 /* ResponseObject.swift in Sources */,
 				7EAC01212AAF66E400C50908 /* RecipeStorageManager.swift in Sources */,
+				86D179E02AB0BB7E00EC4136 /* FormViewController.swift in Sources */,
 				7EAC01262AAF688400C50908 /* CoreDataStore.xcdatamodeld in Sources */,
 				D22043FD2AB0AEEE00023DB9 /* Contants.swift in Sources */,
 				867569DE2AA8E16200ABDD76 /* HomeViewController.swift in Sources */,
@@ -366,6 +378,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -394,6 +407,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
