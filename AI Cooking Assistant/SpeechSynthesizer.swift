@@ -7,9 +7,19 @@
 
 import Foundation
 import AVKit
+import AVFoundation
 
 class SpeechSynthesizer {
     let speechSynthesizer = AVSpeechSynthesizer()
+    
+    init() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker])
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("An error occurred setting up audio session: \(error)")
+        }
+    }
     
     func beginSpeech(_ text: String) {
         let utterance = AVSpeechUtterance(string: text)
@@ -23,3 +33,4 @@ class SpeechSynthesizer {
         speechSynthesizer.stopSpeaking(at: .immediate)
     }
 }
+
