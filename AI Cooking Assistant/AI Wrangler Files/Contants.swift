@@ -6,6 +6,3 @@
 //
 
 import Foundation
-enum Constants {
- static let openAIAPIKey = "My-API-Key"
-}
