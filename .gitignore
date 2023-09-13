@@ -89,3 +89,5 @@ fastlane/test_output
 
 iOSInjectionProject/
 Constants.swift
+
+.DS_Store
