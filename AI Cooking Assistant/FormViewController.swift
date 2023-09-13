@@ -73,11 +73,4 @@ class FormViewController: UIViewController, UITextFieldDelegate {
             NotificationCenter.default.post(name: NotificationManager.didReceiveNetworkResponse, object: nil)
         }
     }
-    
-    @IBSegueAction func toStepsView(_ coder: NSCoder) -> StepsViewController? {
-        let stepsView = StepsViewController(coder: coder)
-        
-        return stepsView
-    }
-
 }

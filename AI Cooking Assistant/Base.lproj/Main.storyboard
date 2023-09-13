@@ -65,7 +65,7 @@
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="cookButtonTapped:" destination="CBP-iN-qAd" eventType="touchUpInside" id="XyQ-kh-JCc"/>
-                                                    <segue destination="xa0-3N-OhH" kind="show" destinationCreationSelector="toStepsView:" id="L0m-UI-SXs"/>
+                                                    <segue destination="xa0-3N-OhH" kind="show" id="L0m-UI-SXs"/>
                                                 </connections>
                                             </button>
                                         </subviews>
