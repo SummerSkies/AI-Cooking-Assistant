@@ -26,6 +26,16 @@ class StepsViewController: UIViewController {
     
     var indexBeingDisplayed: Int = 0
     let shared = ResponseObject.shared
+    let speechSynthesizer = SpeechSynthesizer()
+    let voiceRecognizer = VoiceRecognizer()
+    
+    
+    var speechActivated: Bool {
+        textToSpeechSwitch.isOn
+    }
+    var voiceActivated: Bool {
+        voiceControlSwitch.isOn
+    }
     
     
     override func viewDidLoad() {
@@ -42,6 +52,9 @@ class StepsViewController: UIViewController {
         activityIndicator.hidesWhenStopped = true
         
         voiceControlStack.isHidden = true
+        
+        voiceRecognizer.stepsController = self
+        voiceRecognizer.startListening()
     }
     
     deinit {
@@ -72,16 +85,43 @@ class StepsViewController: UIViewController {
     }
     
     @IBAction func nextOrStartButtonTapped(_ sender: UIButton) {
+        performNext()
+    }
+    
+    func performNext() {
         if indexBeingDisplayed != shared.response.count - 1 {
             indexBeingDisplayed += 1
             updateUI()
+            processSpeech()
         }
     }
     
     @IBAction func previousButtonTapped(_ sender: UIButton) {
+        performPrevious()
+    }
+    
+    func performPrevious() {
         if indexBeingDisplayed != 0 {
             indexBeingDisplayed -= 1
             updateUI()
+            processSpeech()
         }
     }
+    
+    func processSpeech() {
+        endSpeech()
+        beginSpeech()
+    }
+    
+    func beginSpeech() {
+        guard speechActivated && indexBeingDisplayed > 0 else {return}
+        speechSynthesizer.beginSpeech(shared.response[indexBeingDisplayed])
+    }
+    func endSpeech() {
+        speechSynthesizer.stopSpeech()
+    }
+    @IBAction func textToSpeechSwitchChanged(_ sender: Any) {
+        speechActivated ? beginSpeech():endSpeech()
+    }
+    
 }
