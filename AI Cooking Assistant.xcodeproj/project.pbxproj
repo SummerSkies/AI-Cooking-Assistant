@@ -24,6 +24,7 @@
 		867569E62AA8E16400ABDD76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 867569E42AA8E16400ABDD76 /* LaunchScreen.storyboard */; };
 		867569EE2AA8E1D500ABDD76 /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867569ED2AA8E1D500ABDD76 /* StepsViewController.swift */; };
 		86D179E02AB0BB7E00EC4136 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D179DF2AB0BB7E00EC4136 /* FormViewController.swift */; };
+		86E9F4BC2AB34A9D00544320 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E9F4BB2AB34A9D00544320 /* SettingsViewController.swift */; };
 		D2D9CFEF2AB2039900B9C93C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D9CFEE2AB2039900B9C93C /* Constants.swift */; };
 		D2D9CFF32AB2059500B9C93C /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D9CFF22AB2059500B9C93C /* SpeechSynthesizer.swift */; };
 		D2D9CFF52AB2059C00B9C93C /* Voice Recognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D9CFF42AB2059C00B9C93C /* Voice Recognition.swift */; };
@@ -48,6 +49,7 @@
 		867569E72AA8E16400ABDD76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		867569ED2AA8E1D500ABDD76 /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
 		86D179DF2AB0BB7E00EC4136 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		86E9F4BB2AB34A9D00544320 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D2D9CFEE2AB2039900B9C93C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D2D9CFF22AB2059500B9C93C /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
 		D2D9CFF42AB2059C00B9C93C /* Voice Recognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Voice Recognition.swift"; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				867569DB2AA8E16200ABDD76 /* SceneDelegate.swift */,
 				86AA61B72AAB73110075E614 /* AI Wrangler Files */,
 				86D179DF2AB0BB7E00EC4136 /* FormViewController.swift */,
+				86E9F4BB2AB34A9D00544320 /* SettingsViewController.swift */,
 				867569ED2AA8E1D500ABDD76 /* StepsViewController.swift */,
 				867569DD2AA8E16200ABDD76 /* HomeViewController.swift */,
 				D2D9CFF22AB2059500B9C93C /* SpeechSynthesizer.swift */,
@@ -205,6 +208,7 @@
 				D2D9CFF52AB2059C00B9C93C /* Voice Recognition.swift in Sources */,
 				867569EE2AA8E1D500ABDD76 /* StepsViewController.swift in Sources */,
 				7E61FC202AAA8F1100242805 /* NotificationManager.swift in Sources */,
+				86E9F4BC2AB34A9D00544320 /* SettingsViewController.swift in Sources */,
 				D2D9CFEF2AB2039900B9C93C /* Constants.swift in Sources */,
 				7EAC01282AAF695A00C50908 /* CoreDataModels.swift in Sources */,
 				867569DC2AA8E16200ABDD76 /* SceneDelegate.swift in Sources */,
