@@ -28,13 +28,13 @@ class StepsViewController: UIViewController {
     let shared = ResponseObject.shared
     let speechSynthesizer = SpeechSynthesizer()
     let voiceRecognizer = VoiceRecognizer()
-    
+    let userDefaults = UserDefaults.standard
     
     var speechActivated: Bool {
-        textToSpeechSwitch.isOn
+        userDefaults.bool(forKey: "IsSpeechEnabled")
     }
     var voiceActivated: Bool {
-        voiceControlSwitch.isOn
+        userDefaults.bool(forKey: "IsVoiceControlEnabled")
     }
     
     
@@ -121,7 +121,12 @@ class StepsViewController: UIViewController {
         speechSynthesizer.stopSpeech()
     }
     @IBAction func textToSpeechSwitchChanged(_ sender: Any) {
-        speechActivated ? beginSpeech():endSpeech()
+        //speechActivated ? beginSpeech():endSpeech()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        endSpeech()
+        voiceRecognizer.stopListening()
     }
     
 }

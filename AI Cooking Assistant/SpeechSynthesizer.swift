@@ -23,7 +23,7 @@ class SpeechSynthesizer {
     
     func beginSpeech(_ text: String) {
         let utterance = AVSpeechUtterance(string: text)
-        utterance.rate = 0.56
+        utterance.rate = UserDefaults.standard.float(forKey: "SpeechSpeed")
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
         
         speechSynthesizer.speak(utterance)

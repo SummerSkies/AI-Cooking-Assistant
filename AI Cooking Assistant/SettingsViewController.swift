@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Foundation
 
 class SettingsViewController: UIViewController {
+    
+    let userDefaults = UserDefaults.standard
 
     @IBOutlet weak var voiceControlSwitch: UISwitch!
     @IBOutlet weak var textToSpeechSwitch: UISwitch!
@@ -15,9 +18,45 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let isVoiceControlEnabled = userDefaults.object(forKey: "IsVoiceControlEnabled") as? Bool {
+            if isVoiceControlEnabled {
+                voiceControlSwitch.isOn = true
+            }
+            else {
+                voiceControlSwitch.isOn = false
+            }
+        }
+        if let isSpeechEnabled = userDefaults.object(forKey: "IsSpeechEnabled") as? Bool {
+            if isSpeechEnabled {
+                textToSpeechSwitch.isOn = true
+            }
+            else {
+                textToSpeechSwitch.isOn = false
+            }
+        }
+        if let speechSpeed = userDefaults.object(forKey: "SpeechSpeed") as? Float {
+            voiceSpeedSlider.value = speechSpeed
+        }
+    }
+    
+    @IBAction func voiceControlSwitchChanged(_ sender: Any) {
+        userDefaults.set(voiceControlSwitch.isOn, forKey: "IsVoiceControlEnabled")
+    }
+    
+    
+    @IBAction func textToSpeechSwitchChanged(sender: UISwitch) {
+        userDefaults.set(textToSpeechSwitch.isOn, forKey: "IsSpeechEnabled")
+    }
+    
+    @IBAction func speechSpeedSliderChanged(_ sender: Any) {
+        userDefaults.set(voiceSpeedSlider.value, forKey: "SpeechSpeed")
+    }
+    
     
     /*
     // MARK: - Navigation
