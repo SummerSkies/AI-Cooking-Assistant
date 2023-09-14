@@ -23,8 +23,11 @@ class SpeechSynthesizer {
     
     func beginSpeech(_ text: String) {
         let utterance = AVSpeechUtterance(string: text)
-        utterance.rate = 0.56
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        utterance.rate = 0.4
+        utterance.voice = AVSpeechSynthesisVoice.speechVoices().filter({
+            $0.language.contains("en")
+        }).randomElement()!
+        
         
         speechSynthesizer.speak(utterance)
     }

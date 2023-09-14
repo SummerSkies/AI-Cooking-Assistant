@@ -352,6 +352,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t6h-Jq-ADP">
                                                 <rect key="frame" x="127" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="textToSpeechSwitchChanged:" destination="xa0-3N-OhH" eventType="valueChanged" id="ong-L2-PrX"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
