@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7E61FC1E2AAA892700242805 /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61FC1D2AAA892700242805 /* ResponseObject.swift */; };
 		7E61FC202AAA8F1100242805 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E61FC1F2AAA8F1100242805 /* NotificationManager.swift */; };
+		7EA2AF482AB349CB00DB7A6A /* CookbookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA2AF472AB349CB00DB7A6A /* CookbookTableViewController.swift */; };
+		7EA2AF4A2AB34C1500DB7A6A /* UserRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA2AF492AB34C1500DB7A6A /* UserRecipes.swift */; };
 		7EAC01212AAF66E400C50908 /* RecipeStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC01202AAF66E400C50908 /* RecipeStorageManager.swift */; };
 		7EAC01232AAF682C00C50908 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC01222AAF682C00C50908 /* PersistenceController.swift */; };
 		7EAC01262AAF688400C50908 /* CoreDataStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC01242AAF688400C50908 /* CoreDataStore.xcdatamodeld */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		7E61FC1D2AAA892700242805 /* ResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
 		7E61FC1F2AAA8F1100242805 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		7EA2AF472AB349CB00DB7A6A /* CookbookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookbookTableViewController.swift; sourceTree = "<group>"; };
+		7EA2AF492AB34C1500DB7A6A /* UserRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRecipes.swift; sourceTree = "<group>"; };
 		7EAC01202AAF66E400C50908 /* RecipeStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStorageManager.swift; sourceTree = "<group>"; };
 		7EAC01222AAF682C00C50908 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		7EAC01252AAF688400C50908 /* CoreDataStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStore.xcdatamodel; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 				D2D9CFF22AB2059500B9C93C /* SpeechSynthesizer.swift */,
 				D2D9CFF42AB2059C00B9C93C /* Voice Recognition.swift */,
 				867569DF2AA8E16200ABDD76 /* Main.storyboard */,
+				7EA2AF472AB349CB00DB7A6A /* CookbookTableViewController.swift */,
 				867569E22AA8E16400ABDD76 /* Assets.xcassets */,
 				867569E42AA8E16400ABDD76 /* LaunchScreen.storyboard */,
 				867569E72AA8E16400ABDD76 /* Info.plist */,
@@ -115,6 +120,7 @@
 				86235B0A2AAA1B7E00810A89 /* OpenAIService.swift */,
 				86235B0C2AAA1B9F00810A89 /* NetworkingObjects.swift */,
 				7E61FC1D2AAA892700242805 /* ResponseObject.swift */,
+				7EA2AF492AB34C1500DB7A6A /* UserRecipes.swift */,
 			);
 			path = "AI Wrangler Files";
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 				7EAC01212AAF66E400C50908 /* RecipeStorageManager.swift in Sources */,
 				86D179E02AB0BB7E00EC4136 /* FormViewController.swift in Sources */,
 				7EAC01262AAF688400C50908 /* CoreDataStore.xcdatamodeld in Sources */,
+				7EA2AF482AB349CB00DB7A6A /* CookbookTableViewController.swift in Sources */,
 				867569DE2AA8E16200ABDD76 /* HomeViewController.swift in Sources */,
 				867569DA2AA8E16200ABDD76 /* AppDelegate.swift in Sources */,
 				7EAC01232AAF682C00C50908 /* PersistenceController.swift in Sources */,
@@ -212,6 +219,7 @@
 				D2D9CFEF2AB2039900B9C93C /* Constants.swift in Sources */,
 				7EAC01282AAF695A00C50908 /* CoreDataModels.swift in Sources */,
 				867569DC2AA8E16200ABDD76 /* SceneDelegate.swift in Sources */,
+				7EA2AF4A2AB34C1500DB7A6A /* UserRecipes.swift in Sources */,
 				D2D9CFF32AB2059500B9C93C /* SpeechSynthesizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
