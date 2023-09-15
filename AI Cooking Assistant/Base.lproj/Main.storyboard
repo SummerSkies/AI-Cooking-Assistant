@@ -206,7 +206,7 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="cookButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tDH-T1-b0x"/>
+                                            <segue destination="Vyf-y7-MKb" kind="show" id="VAq-r4-986"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -373,36 +373,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="O7n-8z-y89">
-                                <rect key="frame" x="617" y="32" width="176" height="70"/>
+                                <rect key="frame" x="706" y="32" width="87" height="34.333333333333343"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0aQ-Hy-1cA">
-                                        <rect key="frame" x="0.0" y="0.0" width="176" height="31"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice Control" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irs-99-Nvk">
-                                                <rect key="frame" x="0.0" y="0.0" width="119" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rmv-R0-KqE">
-                                                <rect key="frame" x="127" y="0.0" width="51" height="31"/>
-                                            </switch>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UIW-ov-yBt">
-                                        <rect key="frame" x="0.0" y="39" width="176" height="31"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read Steps Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnD-7n-30g">
-                                                <rect key="frame" x="0.0" y="0.0" width="119" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t6h-Jq-ADP">
-                                                <rect key="frame" x="127" y="0.0" width="51" height="31"/>
-                                            </switch>
-                                        </subviews>
-                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kp8-ZN-4UN">
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Settings"/>
+                                        <connections>
+                                            <segue destination="Vyf-y7-MKb" kind="show" id="eZE-gQ-Z1l"/>
+                                        </connections>
+                                    </button>
+
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -436,9 +417,7 @@
                         <outlet property="instructionsLabel" destination="dci-4x-lU4" id="vxi-7t-0Jk"/>
                         <outlet property="stepNumberLabel" destination="Rf0-7c-VuT" id="rTe-0V-nlF"/>
                         <outlet property="stepNumberStack" destination="4aL-gq-8ZE" id="erc-7G-Ofd"/>
-                        <outlet property="textToSpeechSwitch" destination="t6h-Jq-ADP" id="iVc-Qm-qHc"/>
                         <outlet property="voiceControlStack" destination="O7n-8z-y89" id="BVg-ZA-7WJ"/>
-                        <outlet property="voiceControlSwitch" destination="rmv-R0-KqE" id="fdH-te-QAB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UkF-5s-L3c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -463,9 +442,102 @@
             </objects>
             <point key="canvasLocation" x="54.198473282442748" y="-34.507042253521128"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="p0d-SM-OBl">
+            <objects>
+                <viewController id="Vyf-y7-MKb" customClass="SettingsViewController" customModule="AI_Cooking_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ess-5C-NQn">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EdD-2T-3wa">
+                                <rect key="frame" x="274.33333333333337" y="117.66666666666669" width="303.33333333333337" height="158"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiH-21-F2A">
+                                        <rect key="frame" x="0.0" y="0.0" width="303.33333333333331" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QWM-jK-WxX">
+                                        <rect key="frame" x="0.0" y="49.999999999999986" width="303.33333333333331" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice Control" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gyk-Rv-fhF">
+                                                <rect key="frame" x="0.0" y="0.0" width="246.33333333333334" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nP-7e-N4m">
+                                                <rect key="frame" x="254.33333333333331" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="voiceControlSwitchChanged:" destination="Vyf-y7-MKb" eventType="valueChanged" id="hUT-ql-c1r"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="miV-CA-mYJ">
+                                        <rect key="frame" x="0.0" y="88.999999999999986" width="303.33333333333331" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read Steps Out Loud" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEM-gb-j9V">
+                                                <rect key="frame" x="0.0" y="0.0" width="246.33333333333334" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4IJ-Aj-vYh">
+                                                <rect key="frame" x="254.33333333333331" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="textToSpeechSwitchChangedWithSender:" destination="Vyf-y7-MKb" eventType="valueChanged" id="AVa-02-5ge"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RMK-F3-czn">
+                                        <rect key="frame" x="0.0" y="128" width="303.33333333333331" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3n-w5-pge">
+                                                <rect key="frame" x="0.0" y="4.6666666666666856" width="95.333333333333329" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8Hw-pg-oEN">
+                                                <rect key="frame" x="101.33333333333337" y="0.0" width="204" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="PUr-fg-HzC"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="speechSpeedSliderChanged:" destination="Vyf-y7-MKb" eventType="valueChanged" id="DIF-FZ-3uG"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kBJ-rK-Sz9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EdD-2T-3wa" firstAttribute="centerX" secondItem="Ess-5C-NQn" secondAttribute="centerX" id="4fM-8p-g4F"/>
+                            <constraint firstItem="EdD-2T-3wa" firstAttribute="centerY" secondItem="Ess-5C-NQn" secondAttribute="centerY" id="az6-k9-rIb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="IuH-52-WBy"/>
+                    <connections>
+                        <outlet property="textToSpeechSwitch" destination="4IJ-Aj-vYh" id="e72-ds-d1D"/>
+                        <outlet property="voiceControlSwitch" destination="6nP-7e-N4m" id="RKt-9E-rbY"/>
+                        <outlet property="voiceSpeedSlider" destination="8Hw-pg-oEN" id="XcB-Rn-0dl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cCZ-I0-nN7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="-891"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="L0m-UI-SXs"/>
+
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
