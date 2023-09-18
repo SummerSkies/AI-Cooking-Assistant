@@ -54,7 +54,14 @@ class StepsViewController: UIViewController {
         voiceControlStack.isHidden = true
         
         voiceRecognizer.stepsController = self
-        voiceRecognizer.startListening()
+        //voiceRecognizer.startListening()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        processSpeech()
+        if userDefaults.bool(forKey: "IsVoiceControlEnabled") {
+            voiceRecognizer.startListening()
+        }
     }
     
     deinit {
@@ -119,9 +126,6 @@ class StepsViewController: UIViewController {
     }
     func endSpeech() {
         speechSynthesizer.stopSpeech()
-    }
-    @IBAction func textToSpeechSwitchChanged(_ sender: Any) {
-        //speechActivated ? beginSpeech():endSpeech()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
