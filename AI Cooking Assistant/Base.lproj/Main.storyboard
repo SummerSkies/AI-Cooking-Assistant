@@ -84,7 +84,7 @@
                     <navigationItem key="navigationItem" id="Tfz-fv-K2H">
                         <barButtonItem key="rightBarButtonItem" title="Customize" id="nl0-Sg-khj">
                             <connections>
-                                <segue destination="ZHx-qB-7i2" kind="show" id="IXw-y6-bli"/>
+                                <segue destination="ZHx-qB-7i2" kind="show" identifier="toCustomize" id="IXw-y6-bli"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

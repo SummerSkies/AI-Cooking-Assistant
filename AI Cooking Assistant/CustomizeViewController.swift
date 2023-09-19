@@ -12,8 +12,16 @@ class CustomizeViewController: UIViewController {
     @IBOutlet weak var numberOfPeopleTextField: UITextField!
     @IBOutlet weak var badIngredientsTextField: UITextField!
     
+    var formView: FormViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        numberOfPeopleTextField.keyboardType = .numberPad
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        formView?.numberOfPeople = numberOfPeopleTextField.text!
+        formView?.badIngredients = badIngredientsTextField.text!
     }
 
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
