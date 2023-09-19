@@ -15,6 +15,7 @@
 		7EAC01232AAF682C00C50908 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC01222AAF682C00C50908 /* PersistenceController.swift */; };
 		7EAC01262AAF688400C50908 /* CoreDataStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC01242AAF688400C50908 /* CoreDataStore.xcdatamodeld */; };
 		7EAC01282AAF695A00C50908 /* CoreDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAC01272AAF695A00C50908 /* CoreDataModels.swift */; };
+		86176FD22AB8A4CD00C775DC /* CustomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86176FD12AB8A4CD00C775DC /* CustomizeViewController.swift */; };
 		86235B092AAA110B00810A89 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 86235B082AAA110B00810A89 /* Alamofire */; };
 		86235B0B2AAA1B7E00810A89 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86235B0A2AAA1B7E00810A89 /* OpenAIService.swift */; };
 		86235B0D2AAA1B9F00810A89 /* NetworkingObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86235B0C2AAA1B9F00810A89 /* NetworkingObjects.swift */; };
@@ -41,6 +42,7 @@
 		7EAC01222AAF682C00C50908 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		7EAC01252AAF688400C50908 /* CoreDataStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStore.xcdatamodel; sourceTree = "<group>"; };
 		7EAC01272AAF695A00C50908 /* CoreDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModels.swift; sourceTree = "<group>"; };
+		86176FD12AB8A4CD00C775DC /* CustomizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeViewController.swift; sourceTree = "<group>"; };
 		86235B0A2AAA1B7E00810A89 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
 		86235B0C2AAA1B9F00810A89 /* NetworkingObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingObjects.swift; sourceTree = "<group>"; };
 		867569D62AA8E16200ABDD76 /* AI Cooking Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AI Cooking Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 				867569D92AA8E16200ABDD76 /* AppDelegate.swift */,
 				867569DB2AA8E16200ABDD76 /* SceneDelegate.swift */,
 				86AA61B72AAB73110075E614 /* AI Wrangler Files */,
+				86176FD12AB8A4CD00C775DC /* CustomizeViewController.swift */,
 				86D179DF2AB0BB7E00EC4136 /* FormViewController.swift */,
 				86E9F4BB2AB34A9D00544320 /* SettingsViewController.swift */,
 				867569ED2AA8E1D500ABDD76 /* StepsViewController.swift */,
@@ -220,6 +223,7 @@
 				7EAC01282AAF695A00C50908 /* CoreDataModels.swift in Sources */,
 				867569DC2AA8E16200ABDD76 /* SceneDelegate.swift in Sources */,
 				7EA2AF4A2AB34C1500DB7A6A /* UserRecipes.swift in Sources */,
+				86176FD22AB8A4CD00C775DC /* CustomizeViewController.swift in Sources */,
 				D2D9CFF32AB2059500B9C93C /* SpeechSynthesizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
