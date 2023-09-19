@@ -16,89 +16,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6g-fs-p9E">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pP2-4w-hBX">
                                 <rect key="frame" x="59" y="32" width="734" height="340"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pP2-4w-hBX">
-                                        <rect key="frame" x="0.0" y="0.0" width="734" height="232"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBz-K6-TPo">
+                                        <rect key="frame" x="224.33333333333334" y="0.0" width="285.33333333333326" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JVg-Ps-UJs">
+                                        <rect key="frame" x="0.0" y="62" width="734" height="188"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customize Your Recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBz-K6-TPo">
-                                                <rect key="frame" x="194.33333333333334" y="0.0" width="345.33333333333326" height="42"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to cook?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uA-TK-YXO">
+                                                <rect key="frame" x="20" y="0.0" width="694" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JVg-Ps-UJs">
-                                                <rect key="frame" x="0.0" y="62" width="734" height="80"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to cook?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uA-TK-YXO">
-                                                        <rect key="frame" x="20" y="0.0" width="694" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a recipe prompt..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wb6-q1-lYJ">
-                                                        <rect key="frame" x="50" y="40" width="634" height="40"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <action selector="promptEditingDidEnd:" destination="CBP-iN-qAd" eventType="editingDidEnd" id="Hwh-eF-Bo5"/>
-                                                        </connections>
-                                                    </textField>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="Wb6-q1-lYJ" secondAttribute="trailing" constant="50" id="Bun-60-WG2"/>
-                                                    <constraint firstItem="Wb6-q1-lYJ" firstAttribute="leading" secondItem="JVg-Ps-UJs" secondAttribute="leading" constant="50" id="EOE-77-AB4"/>
-                                                    <constraint firstAttribute="trailing" secondItem="1uA-TK-YXO" secondAttribute="trailing" constant="20" id="KEv-oZ-87N"/>
-                                                    <constraint firstItem="1uA-TK-YXO" firstAttribute="leading" secondItem="JVg-Ps-UJs" secondAttribute="leading" constant="20" id="xvb-Oy-Kb8"/>
-                                                </constraints>
-                                            </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szu-hp-tzv">
-                                                <rect key="frame" x="282" y="162" width="170" height="70"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="TBa-SQ-hF5"/>
-                                                    <constraint firstAttribute="height" constant="70" id="aXE-d6-pyh"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Cook!">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
-                                                </buttonConfiguration>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a recipe prompt..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wb6-q1-lYJ">
+                                                <rect key="frame" x="50" y="40" width="634" height="148"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="cookButtonTapped:" destination="CBP-iN-qAd" eventType="touchUpInside" id="XyQ-kh-JCc"/>
-                                                    <segue destination="xa0-3N-OhH" kind="show" id="L0m-UI-SXs"/>
+                                                    <action selector="promptEditingDidEnd:" destination="CBP-iN-qAd" eventType="editingDidEnd" id="Hwh-eF-Bo5"/>
                                                 </connections>
-                                            </button>
+                                            </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="JVg-Ps-UJs" firstAttribute="leading" secondItem="pP2-4w-hBX" secondAttribute="leading" id="HYg-Ot-Li8"/>
-                                            <constraint firstAttribute="trailing" secondItem="JVg-Ps-UJs" secondAttribute="trailing" id="mqJ-Re-p5T"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wb6-q1-lYJ" secondAttribute="trailing" constant="50" id="Bun-60-WG2"/>
+                                            <constraint firstItem="Wb6-q1-lYJ" firstAttribute="leading" secondItem="JVg-Ps-UJs" secondAttribute="leading" constant="50" id="EOE-77-AB4"/>
+                                            <constraint firstAttribute="trailing" secondItem="1uA-TK-YXO" secondAttribute="trailing" constant="20" id="KEv-oZ-87N"/>
+                                            <constraint firstItem="1uA-TK-YXO" firstAttribute="leading" secondItem="JVg-Ps-UJs" secondAttribute="leading" constant="20" id="xvb-Oy-Kb8"/>
                                         </constraints>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szu-hp-tzv">
+                                        <rect key="frame" x="282" y="270" width="170" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="TBa-SQ-hF5"/>
+                                            <constraint firstAttribute="height" constant="70" id="aXE-d6-pyh"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Cook!">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="cookButtonTapped:" destination="CBP-iN-qAd" eventType="touchUpInside" id="XyQ-kh-JCc"/>
+                                            <segue destination="xa0-3N-OhH" kind="show" id="L0m-UI-SXs"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="pP2-4w-hBX" firstAttribute="top" secondItem="YPU-vK-Eb5" secondAttribute="top" id="3xY-58-bRD"/>
-                                    <constraint firstAttribute="bottom" secondItem="pP2-4w-hBX" secondAttribute="bottom" id="Elb-Wq-mb8"/>
-                                    <constraint firstItem="pP2-4w-hBX" firstAttribute="width" secondItem="YPU-vK-Eb5" secondAttribute="width" id="YWX-Vc-NZO"/>
-                                    <constraint firstItem="pP2-4w-hBX" firstAttribute="top" secondItem="I6g-fs-p9E" secondAttribute="top" id="eMG-1K-sRU"/>
-                                    <constraint firstItem="pP2-4w-hBX" firstAttribute="top" secondItem="YPU-vK-Eb5" secondAttribute="top" id="fKU-QP-maz"/>
-                                    <constraint firstItem="YPU-vK-Eb5" firstAttribute="bottom" secondItem="pP2-4w-hBX" secondAttribute="bottom" id="t0r-NO-0PX"/>
-                                    <constraint firstItem="5fd-I4-czY" firstAttribute="trailing" secondItem="pP2-4w-hBX" secondAttribute="trailing" id="vdU-be-rIz"/>
-                                    <constraint firstItem="pP2-4w-hBX" firstAttribute="leading" secondItem="5fd-I4-czY" secondAttribute="leading" id="y8Z-cS-Oaf"/>
+                                    <constraint firstItem="JVg-Ps-UJs" firstAttribute="leading" secondItem="pP2-4w-hBX" secondAttribute="leading" id="HYg-Ot-Li8"/>
+                                    <constraint firstAttribute="trailing" secondItem="JVg-Ps-UJs" secondAttribute="trailing" id="mqJ-Re-p5T"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="YPU-vK-Eb5"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="5fd-I4-czY"/>
-                            </scrollView>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ySe-W8-ChZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ySe-W8-ChZ" firstAttribute="trailing" secondItem="I6g-fs-p9E" secondAttribute="trailing" id="MGk-ew-Rzj"/>
-                            <constraint firstItem="I6g-fs-p9E" firstAttribute="leading" secondItem="ySe-W8-ChZ" secondAttribute="leading" id="U9E-xL-SCN"/>
-                            <constraint firstItem="I6g-fs-p9E" firstAttribute="top" secondItem="ySe-W8-ChZ" secondAttribute="top" id="d3R-D3-NG1"/>
-                            <constraint firstItem="ySe-W8-ChZ" firstAttribute="bottom" secondItem="I6g-fs-p9E" secondAttribute="bottom" id="xgy-9B-nOe"/>
+                            <constraint firstItem="ySe-W8-ChZ" firstAttribute="bottom" secondItem="pP2-4w-hBX" secondAttribute="bottom" id="3lk-9i-jof"/>
+                            <constraint firstItem="pP2-4w-hBX" firstAttribute="top" secondItem="ySe-W8-ChZ" secondAttribute="top" id="J6U-Ud-4Rl"/>
+                            <constraint firstItem="ySe-W8-ChZ" firstAttribute="trailing" secondItem="pP2-4w-hBX" secondAttribute="trailing" id="jzB-dv-FZm"/>
+                            <constraint firstItem="pP2-4w-hBX" firstAttribute="leading" secondItem="ySe-W8-ChZ" secondAttribute="leading" id="yuQ-Zi-60a"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Tfz-fv-K2H"/>
+                    <navigationItem key="navigationItem" id="Tfz-fv-K2H">
+                        <barButtonItem key="rightBarButtonItem" title="Customize" id="nl0-Sg-khj">
+                            <connections>
+                                <segue destination="ZHx-qB-7i2" kind="show" id="IXw-y6-bli"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cookButton" destination="Szu-hp-tzv" id="sD9-Vy-4BJ"/>
                         <outlet property="promptTextField" destination="Wb6-q1-lYJ" id="GwX-eS-p9B"/>
@@ -106,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIf-8E-0hZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="777" y="802"/>
+            <point key="canvasLocation" x="777" y="801"/>
         </scene>
         <!--Cookbook Table View Controller-->
         <scene sceneID="hih-o8-ojX">
@@ -383,7 +372,6 @@
                                             <segue destination="Vyf-y7-MKb" kind="show" id="eZE-gQ-Z1l"/>
                                         </connections>
                                     </button>
-
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -534,10 +522,116 @@
             </objects>
             <point key="canvasLocation" x="1492" y="-891"/>
         </scene>
+        <!--Customize View Controller-->
+        <scene sceneID="fjz-HF-EgJ">
+            <objects>
+                <viewController id="ZHx-qB-7i2" customClass="CustomizeViewController" customModule="AI_Cooking_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J2M-4D-SYe">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea0-gv-G7m">
+                                <rect key="frame" x="59" y="32" width="734" height="340"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JKv-DZ-vOG">
+                                        <rect key="frame" x="0.0" y="0.0" width="734" height="242"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customize Your Recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDh-we-OTA">
+                                                <rect key="frame" x="194.33333333333334" y="0.0" width="345.33333333333326" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SmP-nX-zvZ">
+                                                <rect key="frame" x="0.0" y="62" width="734" height="80"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many people are you cooking for?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZE-cs-2ND">
+                                                        <rect key="frame" x="20" y="0.0" width="694" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="We want to make sure there's enough to go around!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ceJ-QQ-flY">
+                                                        <rect key="frame" x="50" y="40" width="634" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="ceJ-QQ-flY" firstAttribute="leading" secondItem="SmP-nX-zvZ" secondAttribute="leading" constant="50" id="L7t-9o-FEz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="wZE-cs-2ND" secondAttribute="trailing" constant="20" id="LqJ-KC-x1Q"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ceJ-QQ-flY" secondAttribute="trailing" constant="50" id="PxS-1W-aN7"/>
+                                                    <constraint firstItem="wZE-cs-2ND" firstAttribute="leading" secondItem="SmP-nX-zvZ" secondAttribute="leading" constant="20" id="i5O-fh-FDe"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jLA-9p-qaf">
+                                                <rect key="frame" x="0.0" y="162" width="734" height="80"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are there any ingredients you don't want to use?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9db-JO-Alb">
+                                                        <rect key="frame" x="20" y="0.0" width="694" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Let me know of any allergies too!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vav-eU-U4n">
+                                                        <rect key="frame" x="50" y="40" width="634" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="9db-JO-Alb" secondAttribute="trailing" constant="20" id="85u-xI-zeq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Vav-eU-U4n" secondAttribute="trailing" constant="50" id="FiD-us-Cgd"/>
+                                                    <constraint firstItem="Vav-eU-U4n" firstAttribute="leading" secondItem="jLA-9p-qaf" secondAttribute="leading" constant="50" id="Ocn-1T-Dnu"/>
+                                                    <constraint firstItem="9db-JO-Alb" firstAttribute="leading" secondItem="jLA-9p-qaf" secondAttribute="leading" constant="20" id="uNY-NG-e54"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="jLA-9p-qaf" secondAttribute="trailing" id="1Uu-iW-DmB"/>
+                                            <constraint firstItem="SmP-nX-zvZ" firstAttribute="leading" secondItem="JKv-DZ-vOG" secondAttribute="leading" id="3is-nh-AY4"/>
+                                            <constraint firstItem="jLA-9p-qaf" firstAttribute="leading" secondItem="JKv-DZ-vOG" secondAttribute="leadingMargin" id="UtZ-yz-rda"/>
+                                            <constraint firstAttribute="trailing" secondItem="SmP-nX-zvZ" secondAttribute="trailing" id="oeL-Ch-gdt"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="JKv-DZ-vOG" firstAttribute="top" secondItem="7Vx-KR-041" secondAttribute="top" id="6hE-7C-XB4"/>
+                                    <constraint firstItem="JKv-DZ-vOG" firstAttribute="leading" secondItem="8ZH-vT-GqJ" secondAttribute="leading" id="Cde-Dz-7NC"/>
+                                    <constraint firstAttribute="bottom" secondItem="JKv-DZ-vOG" secondAttribute="bottom" id="Ea9-0c-Vlb"/>
+                                    <constraint firstItem="7Vx-KR-041" firstAttribute="bottom" secondItem="JKv-DZ-vOG" secondAttribute="bottom" id="OQL-iA-7qI"/>
+                                    <constraint firstItem="JKv-DZ-vOG" firstAttribute="top" secondItem="ea0-gv-G7m" secondAttribute="top" id="dc0-Eo-JX5"/>
+                                    <constraint firstItem="JKv-DZ-vOG" firstAttribute="width" secondItem="7Vx-KR-041" secondAttribute="width" id="gEA-Tg-z88"/>
+                                    <constraint firstItem="JKv-DZ-vOG" firstAttribute="top" secondItem="7Vx-KR-041" secondAttribute="top" id="jGr-pl-aXQ"/>
+                                    <constraint firstItem="8ZH-vT-GqJ" firstAttribute="trailing" secondItem="JKv-DZ-vOG" secondAttribute="trailing" id="tnl-fx-Q7Q"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="7Vx-KR-041"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="8ZH-vT-GqJ"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FGn-xT-eY2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ea0-gv-G7m" firstAttribute="leading" secondItem="FGn-xT-eY2" secondAttribute="leading" id="CjY-po-4wM"/>
+                            <constraint firstItem="ea0-gv-G7m" firstAttribute="top" secondItem="FGn-xT-eY2" secondAttribute="top" id="CtA-bF-cVT"/>
+                            <constraint firstItem="FGn-xT-eY2" firstAttribute="bottom" secondItem="ea0-gv-G7m" secondAttribute="bottom" id="PgC-AZ-fkk"/>
+                            <constraint firstItem="FGn-xT-eY2" firstAttribute="trailing" secondItem="ea0-gv-G7m" secondAttribute="trailing" id="e1T-El-jeG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qlE-fQ-2MI"/>
+                    <connections>
+                        <outlet property="badIngredientsTextField" destination="Vav-eU-U4n" id="O0x-Zz-iYC"/>
+                        <outlet property="numberOfPeopleTextField" destination="ceJ-QQ-flY" id="rTz-qX-rhn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kPM-o3-iBx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="777" y="1582"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="eZE-gQ-Z1l"/>
         <segue reference="L0m-UI-SXs"/>
-
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
