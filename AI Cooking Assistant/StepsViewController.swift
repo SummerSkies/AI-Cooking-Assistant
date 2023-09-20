@@ -120,7 +120,7 @@ class StepsViewController: UIViewController {
     
     func beginSpeech() {
         guard speechActivated && indexBeingDisplayed > 0 else {return}
-        speechSynthesizer.beginSpeech(shared.response[indexBeingDisplayed])
+        speechSynthesizer.beginSpeech("Step \(indexBeingDisplayed). \(shared.response[indexBeingDisplayed])")
     }
     func endSpeech() {
         speechSynthesizer.stopSpeech()

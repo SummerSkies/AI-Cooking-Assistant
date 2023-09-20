@@ -25,6 +25,7 @@ class SpeechSynthesizer {
         let utterance = AVSpeechUtterance(string: text)
         utterance.rate = UserDefaults.standard.float(forKey: "SpeechSpeed")
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        utterance.pitchMultiplier = 2
 
         
         speechSynthesizer.speak(utterance)
