@@ -21,8 +21,6 @@ class StepsViewController: UIViewController {
     @IBOutlet weak var instructionsLabel: UILabel!
     
     @IBOutlet weak var voiceControlStack: UIStackView!
-    @IBOutlet weak var voiceControlSwitch: UISwitch!
-    @IBOutlet weak var textToSpeechSwitch: UISwitch!
     
     var indexBeingDisplayed: Int = 0
     let shared = ResponseObject.shared

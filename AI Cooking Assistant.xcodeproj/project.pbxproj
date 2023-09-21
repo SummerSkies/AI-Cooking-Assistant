@@ -374,11 +374,14 @@
 				DEVELOPMENT_TEAM = P37BL29UZP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AI Cooking Assistant/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We do not store your speech data. It is only used for the hands-free navigation feature.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We do not store your speech data. It is only used for the hands-free navigation feature.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -402,11 +405,14 @@
 				DEVELOPMENT_TEAM = P37BL29UZP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AI Cooking Assistant/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We do not store your speech data. It is only used for the hands-free navigation feature.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We do not store your speech data. It is only used for the hands-free navigation feature.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
