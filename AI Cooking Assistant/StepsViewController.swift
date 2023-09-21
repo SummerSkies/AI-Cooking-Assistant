@@ -22,11 +22,18 @@ class StepsViewController: UIViewController {
     
     @IBOutlet weak var voiceControlStack: UIStackView!
     
+    @IBOutlet weak var animatedImage: UIImageView!
+    
     var indexBeingDisplayed: Int = 0
     let shared = ResponseObject.shared
-    let speechSynthesizer = SpeechSynthesizer()
+    
+    var speechSynthesizer: SpeechSynthesizer?
     let voiceRecognizer = VoiceRecognizer()
+    
     let userDefaults = UserDefaults.standard
+    
+    var animationController: AnimationController?
+    let imageArray: [UIImage] = [UIImage(named: "Red"), UIImage(named: "Blue"), UIImage(named: "Green"), UIImage(named: "Cactus"), UIImage(named: "Purple")].compactMap { $0 }
     
     var speechActivated: Bool {
         userDefaults.bool(forKey: "IsSpeechEnabled")
@@ -53,6 +60,9 @@ class StepsViewController: UIViewController {
         
         voiceRecognizer.stepsController = self
         //voiceRecognizer.startListening()
+        
+        speechSynthesizer = SpeechSynthesizer(stepsController: self)
+        animationController = AnimationController(imageView: animatedImage, images: imageArray)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,6 +96,8 @@ class StepsViewController: UIViewController {
             instructionsLabel.text = shared.response[indexBeingDisplayed]
             
             instructionsLabel.sizeToFit()
+            processSpeech()
+            animationController?.setLastImage()
         }
     }
     
@@ -97,7 +109,6 @@ class StepsViewController: UIViewController {
         if indexBeingDisplayed != shared.response.count - 1 {
             indexBeingDisplayed += 1
             updateUI()
-            processSpeech()
         }
     }
     
@@ -109,7 +120,7 @@ class StepsViewController: UIViewController {
         if indexBeingDisplayed != 0 {
             indexBeingDisplayed -= 1
             updateUI()
-            processSpeech()
+            
         }
     }
     
@@ -120,10 +131,15 @@ class StepsViewController: UIViewController {
     
     func beginSpeech() {
         guard speechActivated && indexBeingDisplayed > 0 else {return}
-        speechSynthesizer.beginSpeech("Step \(indexBeingDisplayed). \(shared.response[indexBeingDisplayed])")
+        speechSynthesizer!.beginSpeech("Step \(indexBeingDisplayed). \(shared.response[indexBeingDisplayed])")
     }
+    
     func endSpeech() {
-        speechSynthesizer.stopSpeech()
+        speechSynthesizer!.stopSpeech()
+    }
+    
+    func doneTalking() {
+        animationController?.setRandomImage()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
