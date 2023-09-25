@@ -12,6 +12,7 @@ import AVFoundation
 class SpeechSynthesizer: NSObject, AVSpeechSynthesizerDelegate {
     let speechSynthesizer = AVSpeechSynthesizer()
     var stepsController: StepsViewController
+    var currentUtterance: AVSpeechUtterance?
     
     init(stepsController: StepsViewController) {
         do {
@@ -30,7 +31,8 @@ class SpeechSynthesizer: NSObject, AVSpeechSynthesizerDelegate {
         utterance.rate = UserDefaults.standard.float(forKey: "SpeechSpeed")
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
         utterance.pitchMultiplier = 1.2
-
+        currentUtterance = utterance
+        
         
         speechSynthesizer.speak(utterance)
     }
@@ -40,7 +42,9 @@ class SpeechSynthesizer: NSObject, AVSpeechSynthesizerDelegate {
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        stepsController.doneTalking()
+        if let current = currentUtterance, utterance == current {
+            stepsController.doneTalking()
+        }
     }
 }
 
