@@ -12,8 +12,8 @@ class HomeViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(AVSpeechSynthesisVoice.speechVoices().filter({
-            $0.language.contains("en")
-        }))
+//        print(AVSpeechSynthesisVoice.speechVoices().filter({
+//            $0.language.contains("en")
+//        }))
     }
 }

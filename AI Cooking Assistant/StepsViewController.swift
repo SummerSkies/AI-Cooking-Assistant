@@ -97,7 +97,7 @@ class StepsViewController: UIViewController {
             
             instructionsLabel.sizeToFit()
             processSpeech()
-            animationController?.setLastImage()
+            
         }
     }
     
@@ -132,6 +132,7 @@ class StepsViewController: UIViewController {
     func beginSpeech() {
         guard speechActivated && indexBeingDisplayed > 0 else {return}
         speechSynthesizer!.beginSpeech("Step \(indexBeingDisplayed). \(shared.response[indexBeingDisplayed])")
+        animationController?.setLastImage()
     }
     
     func endSpeech() {
