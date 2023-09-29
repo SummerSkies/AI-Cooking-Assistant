@@ -29,6 +29,8 @@
 		86D179E02AB0BB7E00EC4136 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D179DF2AB0BB7E00EC4136 /* FormViewController.swift */; };
 		86E9F4BC2AB34A9D00544320 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E9F4BB2AB34A9D00544320 /* SettingsViewController.swift */; };
 		D22CEB6C2ABC88FC0043CA14 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22CEB6B2ABC88FC0043CA14 /* AnimationController.swift */; };
+		D22CEB6E2AC32D890043CA14 /* InternetCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22CEB6D2AC32D890043CA14 /* InternetCheck.swift */; };
+		D22CEB702AC711E70043CA14 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22CEB6F2AC711E70043CA14 /* CustomTextView.swift */; };
 		D2D9CFEF2AB2039900B9C93C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D9CFEE2AB2039900B9C93C /* Constants.swift */; };
 		D2D9CFF32AB2059500B9C93C /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D9CFF22AB2059500B9C93C /* SpeechSynthesizer.swift */; };
 		D2D9CFF52AB2059C00B9C93C /* Voice Recognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D9CFF42AB2059C00B9C93C /* Voice Recognition.swift */; };
@@ -58,6 +60,8 @@
 		86D179DF2AB0BB7E00EC4136 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		86E9F4BB2AB34A9D00544320 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D22CEB6B2ABC88FC0043CA14 /* AnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
+		D22CEB6D2AC32D890043CA14 /* InternetCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetCheck.swift; sourceTree = "<group>"; };
+		D22CEB6F2AC711E70043CA14 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		D2D9CFEE2AB2039900B9C93C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D2D9CFF22AB2059500B9C93C /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
 		D2D9CFF42AB2059C00B9C93C /* Voice Recognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Voice Recognition.swift"; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 				D2D9CFF22AB2059500B9C93C /* SpeechSynthesizer.swift */,
 				D2D9CFF42AB2059C00B9C93C /* Voice Recognition.swift */,
 				867569DF2AA8E16200ABDD76 /* Main.storyboard */,
+				D22CEB6F2AC711E70043CA14 /* CustomTextView.swift */,
+				D22CEB6D2AC32D890043CA14 /* InternetCheck.swift */,
 				7EA2AF472AB349CB00DB7A6A /* CookbookTableViewController.swift */,
 				867569E22AA8E16400ABDD76 /* Assets.xcassets */,
 				867569E42AA8E16400ABDD76 /* LaunchScreen.storyboard */,
@@ -220,6 +226,7 @@
 				86235B0B2AAA1B7E00810A89 /* OpenAIService.swift in Sources */,
 				D2D9CFF52AB2059C00B9C93C /* Voice Recognition.swift in Sources */,
 				867569EE2AA8E1D500ABDD76 /* StepsViewController.swift in Sources */,
+				D22CEB6E2AC32D890043CA14 /* InternetCheck.swift in Sources */,
 				7E61FC202AAA8F1100242805 /* NotificationManager.swift in Sources */,
 				86E9F4BC2AB34A9D00544320 /* SettingsViewController.swift in Sources */,
 				D2D9CFEF2AB2039900B9C93C /* Constants.swift in Sources */,
@@ -227,6 +234,7 @@
 				867569DC2AA8E16200ABDD76 /* SceneDelegate.swift in Sources */,
 				7EA2AF4A2AB34C1500DB7A6A /* UserRecipes.swift in Sources */,
 				D22CEB6C2ABC88FC0043CA14 /* AnimationController.swift in Sources */,
+				D22CEB702AC711E70043CA14 /* CustomTextView.swift in Sources */,
 				86176FD22AB8A4CD00C775DC /* CustomizeViewController.swift in Sources */,
 				D2D9CFF32AB2059500B9C93C /* SpeechSynthesizer.swift in Sources */,
 			);

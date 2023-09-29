@@ -34,20 +34,21 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a recipe prompt..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wb6-q1-lYJ">
-                                                <rect key="frame" x="50" y="40" width="634" height="148"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aRu-85-5MK" customClass="CustomTextView" customModule="AI_Cooking_Assistant" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="40" width="694" height="148"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="promptEditingDidEnd:" destination="CBP-iN-qAd" eventType="editingDidEnd" id="Hwh-eF-Bo5"/>
-                                                </connections>
-                                            </textField>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Wb6-q1-lYJ" secondAttribute="trailing" constant="50" id="Bun-60-WG2"/>
-                                            <constraint firstItem="Wb6-q1-lYJ" firstAttribute="leading" secondItem="JVg-Ps-UJs" secondAttribute="leading" constant="50" id="EOE-77-AB4"/>
+                                            <constraint firstAttribute="bottom" secondItem="aRu-85-5MK" secondAttribute="bottom" id="1ly-pP-wfq"/>
                                             <constraint firstAttribute="trailing" secondItem="1uA-TK-YXO" secondAttribute="trailing" constant="20" id="KEv-oZ-87N"/>
+                                            <constraint firstAttribute="trailing" secondItem="aRu-85-5MK" secondAttribute="trailing" constant="20" symbolic="YES" id="NDF-rG-HKK"/>
+                                            <constraint firstItem="aRu-85-5MK" firstAttribute="leading" secondItem="JVg-Ps-UJs" secondAttribute="leading" constant="20" symbolic="YES" id="vYC-Xt-dmY"/>
                                             <constraint firstItem="1uA-TK-YXO" firstAttribute="leading" secondItem="JVg-Ps-UJs" secondAttribute="leading" constant="20" id="xvb-Oy-Kb8"/>
+                                            <constraint firstItem="aRu-85-5MK" firstAttribute="top" secondItem="1uA-TK-YXO" secondAttribute="bottom" constant="10" id="yBL-UV-bm9"/>
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szu-hp-tzv">
@@ -90,7 +91,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cookButton" destination="Szu-hp-tzv" id="sD9-Vy-4BJ"/>
-                        <outlet property="promptTextField" destination="Wb6-q1-lYJ" id="GwX-eS-p9B"/>
+                        <outlet property="promptTextField" destination="aRu-85-5MK" id="olq-OP-ELx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIf-8E-0hZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -415,6 +416,7 @@
                         <outlet property="ingredientsLabel" destination="ajS-m9-S78" id="iC2-kZ-HPc"/>
                         <outlet property="ingredientsTitleLabel" destination="kZX-ee-Q74" id="WsN-LI-ebj"/>
                         <outlet property="instructionsLabel" destination="dci-4x-lU4" id="vxi-7t-0Jk"/>
+                        <outlet property="nextButton" destination="rsX-qP-Aov" id="uAa-Rt-1ED"/>
                         <outlet property="stepNumberLabel" destination="Rf0-7c-VuT" id="rTe-0V-nlF"/>
                         <outlet property="stepNumberStack" destination="4aL-gq-8ZE" id="erc-7G-Ofd"/>
                         <outlet property="voiceControlStack" destination="O7n-8z-y89" id="BVg-ZA-7WJ"/>
@@ -546,7 +548,7 @@
                                 <rect key="frame" x="59" y="32" width="734" height="340"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JKv-DZ-vOG">
-                                        <rect key="frame" x="0.0" y="0.0" width="734" height="242"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="734" height="262"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customize Your Recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDh-we-OTA">
                                                 <rect key="frame" x="194.33333333333334" y="0.0" width="345.33333333333326" height="42"/>
@@ -555,7 +557,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SmP-nX-zvZ">
-                                                <rect key="frame" x="0.0" y="62" width="734" height="80"/>
+                                                <rect key="frame" x="0.0" y="62" width="734" height="90"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many people are you cooking for?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZE-cs-2ND">
                                                         <rect key="frame" x="20" y="0.0" width="694" height="30"/>
@@ -563,21 +565,26 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="We want to make sure there's enough to go around!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ceJ-QQ-flY">
-                                                        <rect key="frame" x="50" y="40" width="634" height="40"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="76y-LH-p0Q" customClass="CustomTextView" customModule="AI_Cooking_Assistant" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="40" width="714" height="50"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="E6p-hT-DqG"/>
+                                                        </constraints>
+                                                        <color key="textColor" systemColor="labelColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="ceJ-QQ-flY" firstAttribute="leading" secondItem="SmP-nX-zvZ" secondAttribute="leading" constant="50" id="L7t-9o-FEz"/>
                                                     <constraint firstAttribute="trailing" secondItem="wZE-cs-2ND" secondAttribute="trailing" constant="20" id="LqJ-KC-x1Q"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ceJ-QQ-flY" secondAttribute="trailing" constant="50" id="PxS-1W-aN7"/>
+                                                    <constraint firstItem="76y-LH-p0Q" firstAttribute="leading" secondItem="SmP-nX-zvZ" secondAttribute="leading" constant="10" id="YvE-id-ruk"/>
                                                     <constraint firstItem="wZE-cs-2ND" firstAttribute="leading" secondItem="SmP-nX-zvZ" secondAttribute="leading" constant="20" id="i5O-fh-FDe"/>
+                                                    <constraint firstAttribute="trailing" secondItem="76y-LH-p0Q" secondAttribute="trailing" constant="10" id="pTr-ri-RYW"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jLA-9p-qaf">
-                                                <rect key="frame" x="0.0" y="162" width="734" height="80"/>
+                                                <rect key="frame" x="0.0" y="172" width="734" height="90"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are there any ingredients you don't want to use?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9db-JO-Alb">
                                                         <rect key="frame" x="20" y="0.0" width="694" height="30"/>
@@ -585,16 +592,21 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Let me know of any allergies too!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vav-eU-U4n">
-                                                        <rect key="frame" x="50" y="40" width="634" height="40"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DCH-t2-Sbv" customClass="CustomTextView" customModule="AI_Cooking_Assistant" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="40" width="714" height="50"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="hk3-kD-l8D"/>
+                                                        </constraints>
+                                                        <color key="textColor" systemColor="labelColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="9db-JO-Alb" secondAttribute="trailing" constant="20" id="85u-xI-zeq"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Vav-eU-U4n" secondAttribute="trailing" constant="50" id="FiD-us-Cgd"/>
-                                                    <constraint firstItem="Vav-eU-U4n" firstAttribute="leading" secondItem="jLA-9p-qaf" secondAttribute="leading" constant="50" id="Ocn-1T-Dnu"/>
+                                                    <constraint firstAttribute="trailing" secondItem="DCH-t2-Sbv" secondAttribute="trailing" constant="10" id="r4b-Xq-ObB"/>
+                                                    <constraint firstItem="DCH-t2-Sbv" firstAttribute="leading" secondItem="jLA-9p-qaf" secondAttribute="leading" constant="10" id="syg-QA-2Ze"/>
                                                     <constraint firstItem="9db-JO-Alb" firstAttribute="leading" secondItem="jLA-9p-qaf" secondAttribute="leading" constant="20" id="uNY-NG-e54"/>
                                                 </constraints>
                                             </stackView>
@@ -632,8 +644,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="qlE-fQ-2MI"/>
                     <connections>
-                        <outlet property="badIngredientsTextField" destination="Vav-eU-U4n" id="O0x-Zz-iYC"/>
-                        <outlet property="numberOfPeopleTextField" destination="ceJ-QQ-flY" id="rTz-qX-rhn"/>
+                        <outlet property="badIngredientsTextField" destination="DCH-t2-Sbv" id="t2Q-iQ-f3k"/>
+                        <outlet property="numberOfPeopleTextField" destination="76y-LH-p0Q" id="HN4-2Y-ZV2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPM-o3-iBx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -646,6 +658,9 @@
         <segue reference="L0m-UI-SXs"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
