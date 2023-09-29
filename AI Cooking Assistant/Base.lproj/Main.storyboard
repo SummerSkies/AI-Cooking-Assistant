@@ -224,10 +224,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EPb-xi-cg3">
-                                <rect key="frame" x="665" y="244" width="128" height="128"/>
+                                <rect key="frame" x="693" y="272" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="128" id="U6k-ww-iv3"/>
-                                    <constraint firstAttribute="height" constant="128" id="ZLA-dC-ODi"/>
+                                    <constraint firstAttribute="width" constant="100" id="U6k-ww-iv3"/>
+                                    <constraint firstAttribute="height" constant="100" id="ZLA-dC-ODi"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4aL-gq-8ZE">
@@ -364,16 +364,16 @@
                                 </constraints>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold tight! We're generating your recipe...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogV-qa-buZ">
-                                <rect key="frame" x="264.66666666666663" y="131.33333333333334" width="322.66666666666663" height="20.333333333333343"/>
+                                <rect key="frame" x="236.66666666666666" y="131.33333333333334" width="378.66666666666674" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.39345516120000001" green="0.39434186669999999" blue="0.40787287249999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="O7n-8z-y89">
-                                <rect key="frame" x="706" y="32" width="87" height="27"/>
+                                <rect key="frame" x="706" y="32" width="87" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kp8-ZN-4UN">
-                                        <rect key="frame" x="0.0" y="0.0" width="87" height="27"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="55"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Settings"/>
                                         <connections>
