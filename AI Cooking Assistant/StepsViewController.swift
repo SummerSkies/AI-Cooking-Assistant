@@ -97,7 +97,18 @@ class StepsViewController: UIViewController {
             ingredientListStack.isHidden = true
             stepNumberStack.isHidden = false
             if let firstCharacter = shared.response[indexBeingDisplayed].first {
-                stepNumberLabel.text = "Step #\(firstCharacter)"
+                // Check if the second character is also a number
+                if shared.response[indexBeingDisplayed].count > 1,
+                   let secondCharacter = shared.response[indexBeingDisplayed].dropFirst().first,
+                   CharacterSet.decimalDigits.contains(secondCharacter.unicodeScalars.first!) {
+                    
+                    // Append the second character to the first one
+                    let combinedString = "Step #\(firstCharacter)\(secondCharacter)"
+                    stepNumberLabel.text = combinedString
+                } else {
+                    // Only the first character is a number
+                    stepNumberLabel.text = "Step #\(firstCharacter)"
+                }
             }
             instructionsLabel.text = shared.response[indexBeingDisplayed]
             
