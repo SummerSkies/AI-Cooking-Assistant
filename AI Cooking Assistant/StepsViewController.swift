@@ -20,6 +20,9 @@ class StepsViewController: UIViewController {
     @IBOutlet weak var stepNumberLabel: UILabel!
     @IBOutlet weak var instructionsLabel: UILabel!
     
+    @IBOutlet var nextButton: UIButton!
+    
+    
     @IBOutlet weak var voiceControlStack: UIStackView!
     
     @IBOutlet weak var animatedImage: UIImageView!
@@ -66,7 +69,6 @@ class StepsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        processSpeech()
         if userDefaults.bool(forKey: "IsVoiceControlEnabled") {
             voiceRecognizer.startListening()
         }
@@ -86,18 +88,39 @@ class StepsViewController: UIViewController {
             stepNumberStack.isHidden = true
             ingredientsTitleLabel.text = "Ingredients"
             ingredientsLabel.text = shared.response[indexBeingDisplayed]
+            processSpeech()
+            animationController?.setRandomImage()
             
             //nextOrStartButtonTapped([]) //For testing ease; uncomment to press Start button immediately after load. nextOrStartButtonTapped's sender must be changed to Any.
         } else {
             voiceControlStack.isHidden = false
             ingredientListStack.isHidden = true
             stepNumberStack.isHidden = false
-            stepNumberLabel.text = "Step #\(indexBeingDisplayed)"
+            if let firstCharacter = shared.response[indexBeingDisplayed].first {
+                // Check if the second character is also a number
+                if shared.response[indexBeingDisplayed].count > 1,
+                   let secondCharacter = shared.response[indexBeingDisplayed].dropFirst().first,
+                   CharacterSet.decimalDigits.contains(secondCharacter.unicodeScalars.first!) {
+                    
+                    // Append the second character to the first one
+                    let combinedString = "Step #\(firstCharacter)\(secondCharacter)"
+                    stepNumberLabel.text = combinedString
+                } else {
+                    // Only the first character is a number
+                    stepNumberLabel.text = "Step #\(firstCharacter)"
+                }
+            }
             instructionsLabel.text = shared.response[indexBeingDisplayed]
             
             instructionsLabel.sizeToFit()
             processSpeech()
             
+        }
+        
+        if indexBeingDisplayed == shared.response.count - 1 {
+            nextButton.isHidden = true
+        } else {
+            nextButton.isHidden = false
         }
     }
     
@@ -126,13 +149,26 @@ class StepsViewController: UIViewController {
     
     func processSpeech() {
         endSpeech()
-        beginSpeech()
+        if indexBeingDisplayed > 0 {
+            beginSpeech()
+        }
     }
     
     func beginSpeech() {
         guard speechActivated && indexBeingDisplayed > 0 else {return}
-        speechSynthesizer!.beginSpeech("Step \(indexBeingDisplayed). \(shared.response[indexBeingDisplayed])")
         animationController?.setLastImage()
+        
+        let firstCharacter = shared.response[indexBeingDisplayed].first
+        if let firstChar = firstCharacter, CharacterSet.decimalDigits.contains(firstChar.unicodeScalars.first!) {
+            // The first character is a digit
+            stepNumberLabel.isHidden = indexBeingDisplayed == 0 ? true : false
+            speechSynthesizer?.beginSpeech("Step \(shared.response[indexBeingDisplayed])")
+        } else {
+            // The first character is not a digit
+            stepNumberLabel.isHidden = true
+            speechSynthesizer?.beginSpeech("\(shared.response[indexBeingDisplayed])")
+        }
+        
     }
     
     func endSpeech() {
@@ -146,6 +182,7 @@ class StepsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         endSpeech()
         voiceRecognizer.stopListening()
+        indexBeingDisplayed = 0
     }
     
 }
