@@ -11,6 +11,10 @@ class CustomizeViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var numberOfPeopleTextField: CustomTextView!
     @IBOutlet weak var badIngredientsTextField: CustomTextView!
+    @IBOutlet weak var keepChangesSwitch: UISwitch!
+    
+    let userDefaults = UserDefaults.standard
+    var keepChanges: Bool = Bool()
     
     var formView: FormViewController?
     
@@ -24,11 +28,31 @@ class CustomizeViewController: UIViewController, UITextViewDelegate {
         badIngredientsTextField.delegate = self
         badIngredientsTextField.text = ""
         badIngredientsTextField.textColor = badIngredientsTextField.customGray
+        
+        keepChanges = userDefaults.bool(forKey: "KeepChanges")
+        keepChangesSwitch.isOn = keepChanges
+        
+        if keepChanges {
+            numberOfPeopleTextField.text = userDefaults.string(forKey: "NumberOfPeople")
+            badIngredientsTextField.text = userDefaults.string(forKey: "BadIngredients")
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         formView?.numberOfPeople = numberOfPeopleTextField.text!
         formView?.badIngredients = badIngredientsTextField.text!
+        
+        keepChanges = keepChangesSwitch.isOn
+        userDefaults.setValue(keepChanges, forKey: "KeepChanges")
+        
+        if keepChanges {
+            userDefaults.setValue(numberOfPeopleTextField.text, forKey: "NumberOfPeople")
+            userDefaults.setValue(badIngredientsTextField.text, forKey: "BadIngredients")
+        } else {
+            userDefaults.setValue("", forKey: "NumberOfPeople")
+            userDefaults.setValue("", forKey: "BadIngredients")
+        }
+        
     }
 
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
