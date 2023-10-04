@@ -45,10 +45,10 @@ class CustomizeViewController: UIViewController, UITextViewDelegate {
                 badIngredientsTextField.textColor = badIngredientsTextField.customGray
             }
         } else {
-            numberOfPeopleTextField.text = ""
-            numberOfPeopleTextField.textColor = numberOfPeopleTextField.customGray
-            badIngredientsTextField.text = ""
-            badIngredientsTextField.textColor = badIngredientsTextField.customGray
+            numberOfPeopleTextField.text = String(describing: formView!.numberOfPeople)
+            numberOfPeopleTextField.textColor = UIColor.black
+            badIngredientsTextField.text = String(describing: formView!.badIngredients)
+            badIngredientsTextField.textColor = UIColor.black
         }
     }
     
