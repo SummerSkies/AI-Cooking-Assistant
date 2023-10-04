@@ -21,20 +21,34 @@ class CustomizeViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         numberOfPeopleTextField.keyboardType = .numberPad
-        
+
         numberOfPeopleTextField.delegate = self
-        numberOfPeopleTextField.text = ""
-        numberOfPeopleTextField.textColor = numberOfPeopleTextField.customGray
         badIngredientsTextField.delegate = self
-        badIngredientsTextField.text = ""
-        badIngredientsTextField.textColor = badIngredientsTextField.customGray
         
         keepChanges = userDefaults.bool(forKey: "KeepChanges")
         keepChangesSwitch.isOn = keepChanges
         
         if keepChanges {
-            numberOfPeopleTextField.text = userDefaults.string(forKey: "NumberOfPeople")
-            badIngredientsTextField.text = userDefaults.string(forKey: "BadIngredients")
+            if let numberOfPeople = userDefaults.string(forKey: "NumberOfPeople"), !numberOfPeople.isEmpty {
+                numberOfPeopleTextField.text = numberOfPeople
+                numberOfPeopleTextField.textColor = UIColor.black
+            } else {
+                numberOfPeopleTextField.text = ""
+                numberOfPeopleTextField.textColor = numberOfPeopleTextField.customGray
+            }
+            
+            if let badIngredients = userDefaults.string(forKey: "BadIngredients"), !badIngredients.isEmpty {
+                badIngredientsTextField.text = badIngredients
+                badIngredientsTextField.textColor = UIColor.black
+            } else {
+                badIngredientsTextField.text = ""
+                badIngredientsTextField.textColor = badIngredientsTextField.customGray
+            }
+        } else {
+            numberOfPeopleTextField.text = ""
+            numberOfPeopleTextField.textColor = numberOfPeopleTextField.customGray
+            badIngredientsTextField.text = ""
+            badIngredientsTextField.textColor = badIngredientsTextField.customGray
         }
     }
     
@@ -73,21 +87,18 @@ class CustomizeViewController: UIViewController, UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let currentText: String = textView.text
         let updatedText = (currentText as NSString).replacingCharacters(in: range, with: text)
+        
         if updatedText.isEmpty {
             textView.text = ""
-            textView.textColor = numberOfPeopleTextField.customGray
+            textView.textColor = textView == numberOfPeopleTextField ? numberOfPeopleTextField.customGray : badIngredientsTextField.customGray
             textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
         } else {
-            if textView.textColor == numberOfPeopleTextField.customGray && !text.isEmpty {
-            textView.textColor = UIColor.black
-            textView.text = text
-            }
-            if textView.textColor == badIngredientsTextField.customGray && !text.isEmpty {
+            if textView.textColor == (textView == numberOfPeopleTextField ? numberOfPeopleTextField.customGray : badIngredientsTextField.customGray) && !text.isEmpty {
                 textView.textColor = UIColor.black
-                textView.text = text
             }
             return true
         }
+        
         return false
     }
 
