@@ -32,14 +32,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to cook?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uA-TK-YXO">
-                                        <rect key="frame" x="39.666666666666686" y="50" width="291" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to cook?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uA-TK-YXO">
+                                        <rect key="frame" x="0.0" y="50" width="370" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aRu-85-5MK" customClass="CustomTextView" customModule="AI_Cooking_Assistant" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="88" width="330" height="228"/>
+                                        <rect key="frame" x="0.0" y="88" width="370" height="228"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -103,6 +103,12 @@
                                                 <exclude reference="vsY-HM-t1z"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=compact-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="xzo-7W-zeS"/>
+                                                <include reference="vsY-HM-t1z"/>
+                                            </mask>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="xzo-7W-zeS"/>
@@ -118,17 +124,45 @@
                                 <constraints>
                                     <constraint firstItem="c55-tk-CUi" firstAttribute="trailing" secondItem="oaA-Hg-jWS" secondAttribute="trailing" id="b07-Fg-0Wx"/>
                                     <constraint firstItem="c55-tk-CUi" firstAttribute="leading" secondItem="oaA-Hg-jWS" secondAttribute="leading" id="d9j-MF-cvX"/>
+                                    <constraint firstAttribute="trailing" secondItem="1uA-TK-YXO" secondAttribute="trailing" id="etF-xo-WTn"/>
+                                    <constraint firstItem="aRu-85-5MK" firstAttribute="leading" secondItem="pP2-4w-hBX" secondAttribute="leading" id="l0B-wk-95y"/>
+                                    <constraint firstItem="1uA-TK-YXO" firstAttribute="leading" secondItem="pP2-4w-hBX" secondAttribute="leading" id="lyN-RM-W96"/>
+                                    <constraint firstAttribute="trailing" secondItem="aRu-85-5MK" secondAttribute="trailing" id="snN-gP-Gw4"/>
                                 </constraints>
                                 <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="c55-tk-CUi"/>
+                                        <exclude reference="oaA-Hg-jWS"/>
+                                    </mask>
                                     <mask key="constraints">
                                         <exclude reference="b07-Fg-0Wx"/>
                                         <exclude reference="d9j-MF-cvX"/>
+                                        <exclude reference="etF-xo-WTn"/>
+                                        <exclude reference="lyN-RM-W96"/>
+                                        <exclude reference="snN-gP-Gw4"/>
+                                        <exclude reference="l0B-wk-95y"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="etF-xo-WTn"/>
+                                        <include reference="lyN-RM-W96"/>
+                                        <include reference="snN-gP-Gw4"/>
+                                        <include reference="l0B-wk-95y"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" alignment="center" axis="vertical" distribution="fill" spacingType="standard">
+                                    <mask key="subviews">
+                                        <include reference="c55-tk-CUi"/>
+                                        <include reference="oaA-Hg-jWS"/>
+                                    </mask>
                                     <mask key="constraints">
                                         <include reference="b07-Fg-0Wx"/>
                                         <include reference="d9j-MF-cvX"/>
+                                        <include reference="etF-xo-WTn"/>
+                                        <include reference="lyN-RM-W96"/>
+                                        <include reference="snN-gP-Gw4"/>
+                                        <include reference="l0B-wk-95y"/>
                                     </mask>
                                 </variation>
                             </stackView>
@@ -146,6 +180,9 @@
                             <constraint firstItem="pP2-4w-hBX" firstAttribute="leading" secondItem="ySe-W8-ChZ" secondAttribute="leading" constant="30" id="yuQ-Zi-60a"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="P20-Rk-7d8"/>
+                            </mask>
                             <mask key="constraints">
                                 <exclude reference="meq-yF-Pej"/>
                                 <exclude reference="BRt-xv-bQd"/>
@@ -154,6 +191,9 @@
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="P20-Rk-7d8"/>
+                            </mask>
                             <mask key="constraints">
                                 <include reference="meq-yF-Pej"/>
                                 <include reference="BRt-xv-bQd"/>
