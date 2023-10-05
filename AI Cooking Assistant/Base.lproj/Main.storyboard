@@ -157,10 +157,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="App-lr-xGs">
-                                <rect key="frame" x="30" y="133" width="338" height="735"/>
+                                <rect key="frame" x="30" y="133" width="370" height="735"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" text="This Is Our Title" textAlignment="center" lineBreakMode="wordWrap" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Nd5-lm-W4b">
-                                        <rect key="frame" x="0.0" y="0.0" width="338" height="138"/>
+                                        <rect key="frame" x="8.6666666666666572" y="0.0" width="352.66666666666674" height="81.666666666666671"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="F4t-Zd-AIc"/>
                                         </constraints>
@@ -178,15 +178,15 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ylo-rp-xf0">
-                                        <rect key="frame" x="0.0" y="202" width="338" height="169"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ylo-rp-xf0">
+                                        <rect key="frame" x="0.0" y="166" width="370" height="185"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaU-zf-r4q">
-                                                <rect key="frame" x="0.0" y="0.0" width="169" height="169"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="185" height="185"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="gaU-zf-r4q" secondAttribute="height" multiplier="1:1" id="L6w-SH-ghG"/>
-                                                    <constraint firstAttribute="height" constant="169" id="ZJ9-XZ-D55"/>
+                                                    <constraint firstAttribute="height" constant="185" id="ZJ9-XZ-D55"/>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -203,16 +203,16 @@
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
                                                         <include reference="L6w-SH-ghG"/>
-                                                        <include reference="ZJ9-XZ-D55"/>
+                                                        <exclude reference="ZJ9-XZ-D55"/>
                                                     </mask>
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Smr-Wr-xau">
-                                                <rect key="frame" x="169" y="0.0" width="169" height="169"/>
+                                                <rect key="frame" x="185" y="0.0" width="185" height="185"/>
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Smr-Wr-xau" secondAttribute="height" multiplier="1:1" id="1VA-fJ-0rs"/>
-                                                    <constraint firstAttribute="height" constant="169" id="M87-1A-PNS"/>
+                                                    <constraint firstAttribute="height" constant="185" id="M87-1A-PNS"/>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -229,16 +229,27 @@
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
                                                         <include reference="1VA-fJ-0rs"/>
-                                                        <include reference="M87-1A-PNS"/>
                                                     </mask>
                                                 </variation>
                                             </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="185" id="pM8-D3-jl9"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="pM8-D3-jl9"/>
+                                            </mask>
+                                        </variation>
                                         <variation key="heightClass=compact-widthClass=regular" alignment="center" axis="horizontal" distribution="fill" spacing="30"/>
-                                        <variation key="heightClass=regular-widthClass=compact" alignment="fill" axis="horizontal" distribution="fillEqually"/>
+                                        <variation key="heightClass=regular-widthClass=compact" alignment="fill" axis="horizontal" distribution="fillEqually">
+                                            <mask key="constraints">
+                                                <include reference="pM8-D3-jl9"/>
+                                            </mask>
+                                        </variation>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="8ch-Zc-FMO">
-                                        <rect key="frame" x="84" y="435" width="170" height="300"/>
+                                        <rect key="frame" x="100" y="435" width="170" height="300"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mt9-Mt-xsD">
                                                 <rect key="frame" x="0.0" y="0.0" width="170" height="70"/>
@@ -353,32 +364,17 @@
                                         <variation key="heightClass=regular-widthClass=compact" alignment="fill" axis="vertical" distribution="fillProportionally" spacing="45"/>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="Ylo-rp-xf0" firstAttribute="leading" secondItem="App-lr-xGs" secondAttribute="leading" id="Vfz-1Y-295"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ylo-rp-xf0" secondAttribute="trailing" id="yNF-I4-4OX"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="yNF-I4-4OX"/>
-                                        <exclude reference="Vfz-1Y-295"/>
-                                    </mask>
-                                </variation>
                                 <variation key="heightClass=compact-widthClass=regular" alignment="center" axis="vertical" distribution="fill" spacingType="standard"/>
-                                <variation key="heightClass=regular-widthClass=compact" alignment="center" axis="vertical" distribution="fill" spacing="64">
-                                    <mask key="constraints">
-                                        <include reference="yNF-I4-4OX"/>
-                                        <include reference="Vfz-1Y-295"/>
-                                    </mask>
-                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" alignment="center" axis="vertical" distribution="equalSpacing" spacing="64"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="App-lr-xGs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="oxZ-PW-plq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="App-lr-xGs" secondAttribute="trailing" constant="30" id="px9-Tk-c5k"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="App-lr-xGs" secondAttribute="bottom" constant="30" id="q6d-u8-uiE"/>
-                            <constraint firstItem="App-lr-xGs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="umR-fZ-9Ii"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="App-lr-xGs" secondAttribute="bottom" constant="30" id="Eas-iK-USX"/>
+                            <constraint firstItem="App-lr-xGs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="SR0-oP-Mvm"/>
+                            <constraint firstItem="App-lr-xGs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="eeY-sA-rBF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="App-lr-xGs" secondAttribute="trailing" constant="30" id="hy5-3G-aIh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UsL-73-cf3"/>
