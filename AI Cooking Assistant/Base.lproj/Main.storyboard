@@ -17,12 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cherry's Speech Here" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P20-Rk-7d8">
-                                <rect key="frame" x="131.66666666666666" y="491.33333333333331" width="166.99999999999997" height="71.666666666666686"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pP2-4w-hBX">
                                 <rect key="frame" x="30" y="133" width="370" height="735"/>
                                 <subviews>
@@ -40,12 +34,11 @@
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aRu-85-5MK" customClass="CustomTextView" customModule="AI_Cooking_Assistant" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="88" width="370" height="228"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c55-tk-CUi">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Red" translatesAutoresizingMaskIntoConstraints="NO" id="c55-tk-CUi">
                                         <rect key="frame" x="92.666666666666686" y="324" width="185" height="140"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="140" id="LvW-gZ-SFS"/>
@@ -55,6 +48,7 @@
                                                 <exclude reference="LvW-gZ-SFS"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="YES"/>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="LvW-gZ-SFS"/>
@@ -74,12 +68,7 @@
                                                 <exclude reference="ZEJ-59-lui"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=compact-widthClass=regular">
-                                            <mask key="constraints">
-                                                <include reference="NUg-ul-13C"/>
-                                                <include reference="ZEJ-59-lui"/>
-                                            </mask>
-                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="YES"/>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="NUg-ul-13C"/>
@@ -130,17 +119,13 @@
                                     <constraint firstAttribute="trailing" secondItem="aRu-85-5MK" secondAttribute="trailing" id="snN-gP-Gw4"/>
                                 </constraints>
                                 <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="c55-tk-CUi"/>
-                                        <exclude reference="oaA-Hg-jWS"/>
-                                    </mask>
                                     <mask key="constraints">
-                                        <exclude reference="b07-Fg-0Wx"/>
-                                        <exclude reference="d9j-MF-cvX"/>
                                         <exclude reference="etF-xo-WTn"/>
                                         <exclude reference="lyN-RM-W96"/>
                                         <exclude reference="snN-gP-Gw4"/>
                                         <exclude reference="l0B-wk-95y"/>
+                                        <exclude reference="b07-Fg-0Wx"/>
+                                        <exclude reference="d9j-MF-cvX"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular">
@@ -152,48 +137,55 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" alignment="center" axis="vertical" distribution="fill" spacingType="standard">
-                                    <mask key="subviews">
-                                        <include reference="c55-tk-CUi"/>
-                                        <include reference="oaA-Hg-jWS"/>
-                                    </mask>
                                     <mask key="constraints">
-                                        <include reference="b07-Fg-0Wx"/>
-                                        <include reference="d9j-MF-cvX"/>
                                         <include reference="etF-xo-WTn"/>
                                         <include reference="lyN-RM-W96"/>
                                         <include reference="snN-gP-Gw4"/>
                                         <include reference="l0B-wk-95y"/>
+                                        <include reference="b07-Fg-0Wx"/>
+                                        <include reference="d9j-MF-cvX"/>
                                     </mask>
                                 </variation>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cherry's Speech Here" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P20-Rk-7d8">
+                                <rect key="frame" x="131.66666666666666" y="491.33333333333331" width="166.99999999999997" height="71.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=regular" hidden="YES"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ySe-W8-ChZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ySe-W8-ChZ" firstAttribute="bottom" secondItem="pP2-4w-hBX" secondAttribute="bottom" constant="30" id="3lk-9i-jof"/>
                             <constraint firstItem="P20-Rk-7d8" firstAttribute="width" relation="lessThanOrEqual" secondItem="c55-tk-CUi" secondAttribute="width" id="BRt-xv-bQd"/>
+                            <constraint firstItem="P20-Rk-7d8" firstAttribute="centerY" secondItem="IHq-uk-fwF" secondAttribute="centerY" id="EjA-hN-OhH"/>
                             <constraint firstItem="pP2-4w-hBX" firstAttribute="top" secondItem="ySe-W8-ChZ" secondAttribute="top" constant="30" id="J6U-Ud-4Rl"/>
                             <constraint firstItem="P20-Rk-7d8" firstAttribute="height" relation="lessThanOrEqual" secondItem="c55-tk-CUi" secondAttribute="height" id="QEF-SQ-Lkn"/>
+                            <constraint firstItem="P20-Rk-7d8" firstAttribute="centerX" secondItem="IHq-uk-fwF" secondAttribute="centerX" id="cZX-eL-pLH"/>
                             <constraint firstItem="ySe-W8-ChZ" firstAttribute="trailing" secondItem="pP2-4w-hBX" secondAttribute="trailing" constant="30" id="jzB-dv-FZm"/>
                             <constraint firstItem="P20-Rk-7d8" firstAttribute="centerX" secondItem="c55-tk-CUi" secondAttribute="centerX" id="meq-yF-Pej"/>
                             <constraint firstItem="P20-Rk-7d8" firstAttribute="centerY" secondItem="c55-tk-CUi" secondAttribute="centerY" id="qnc-Zg-J5Q"/>
                             <constraint firstItem="pP2-4w-hBX" firstAttribute="leading" secondItem="ySe-W8-ChZ" secondAttribute="leading" constant="30" id="yuQ-Zi-60a"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="P20-Rk-7d8"/>
-                            </mask>
                             <mask key="constraints">
                                 <exclude reference="meq-yF-Pej"/>
                                 <exclude reference="BRt-xv-bQd"/>
                                 <exclude reference="qnc-Zg-J5Q"/>
                                 <exclude reference="QEF-SQ-Lkn"/>
+                                <exclude reference="cZX-eL-pLH"/>
+                                <exclude reference="EjA-hN-OhH"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="cZX-eL-pLH"/>
+                                <include reference="EjA-hN-OhH"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="P20-Rk-7d8"/>
-                            </mask>
                             <mask key="constraints">
                                 <include reference="meq-yF-Pej"/>
                                 <include reference="BRt-xv-bQd"/>
@@ -951,6 +943,7 @@
         <segue reference="L0m-UI-SXs"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Red" width="1024" height="1024"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
