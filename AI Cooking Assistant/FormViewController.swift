@@ -79,10 +79,15 @@ class FormViewController: UIViewController, UITextViewDelegate {
         cookButton.titleLabel?.textAlignment = .center
         let defaultFontSize: CGFloat = 25.0
         cookButton.titleLabel?.font = UIFont.systemFont(ofSize: defaultFontSize)
-        if let prompt = promptTextField.text, prompt.rangeOfCharacter(from: alphabet) != nil {
-            cookButton.isEnabled = true
-        } else {
+        
+        if promptTextField.textColor == promptTextField.customGray {
             cookButton.isEnabled = false
+        } else {
+            if let prompt = promptTextField.text, prompt.rangeOfCharacter(from: alphabet) != nil {
+                cookButton.isEnabled = true
+            } else {
+                cookButton.isEnabled = false
+            }
         }
     }
     
@@ -140,7 +145,9 @@ class FormViewController: UIViewController, UITextViewDelegate {
             NotificationCenter.default.post(name: NotificationManager.didReceiveNetworkResponse, object: nil)
 
             // Save to Core Data
-            RecipeStorageManager.shared.createCoreDataRecipe(for: recipe)
+            if recipe.steps.count > 0 {
+                RecipeStorageManager.shared.createCoreDataRecipe(for: recipe)
+            }
         }
 
     }
@@ -162,12 +169,16 @@ class FormViewController: UIViewController, UITextViewDelegate {
             let destination = segue.destination as! CustomizeViewController
             destination.formView = self
         }
+        
+        if segue.identifier == "FormToSteps" {
+            let destination = segue.destination as! StepsViewController
+            destination.formView = self
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         onView = false
     }
-    
     
     func textViewDidChangeSelection(_ textView: UITextView) {
         if self.view.window != nil {

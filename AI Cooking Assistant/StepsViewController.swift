@@ -45,6 +45,8 @@ class StepsViewController: UIViewController {
         userDefaults.bool(forKey: "IsVoiceControlEnabled")
     }
     
+    var formView: FormViewController?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +81,18 @@ class StepsViewController: UIViewController {
     }
     
     @objc func updateUI() {
+        guard shared.response.count > 0 else {
+            let alert = UIAlertController(title: "Error", message: "There was a problem retrieving the data", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Okay", style: .cancel) {_ in 
+                self.navigationController?.popViewController(animated: true)
+            }
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true)
+            return
+        }
+        
+        
+        
         if indexBeingDisplayed == 0 {
             activityIndicator.stopAnimating()
             activityLabel.isHidden = true
@@ -132,6 +146,10 @@ class StepsViewController: UIViewController {
         if indexBeingDisplayed != shared.response.count - 1 {
             indexBeingDisplayed += 1
             updateUI()
+        }
+        
+        if !speechActivated {
+            animationController?.setRandomImage()
         }
     }
     
