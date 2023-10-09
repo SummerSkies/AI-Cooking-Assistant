@@ -32,8 +32,6 @@ class FormViewController: UIViewController, UITextViewDelegate {
         promptTextField.textColor = promptTextField.customGray
     }
     
-    
-    
     override func viewDidAppear(_ animated: Bool) {
         promptedStrings.append(promptTextField.text!)
         promptedStrings.append(numberOfPeople.isEmpty ? "":" for \(numberOfPeople)")

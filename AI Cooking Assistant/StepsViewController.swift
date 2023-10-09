@@ -163,6 +163,10 @@ class StepsViewController: UIViewController {
             updateUI()
             
         }
+        
+        if !speechActivated {
+            animationController?.setRandomImage()
+        }
     }
     
     func processSpeech() {
