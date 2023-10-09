@@ -899,13 +899,13 @@
                                                                 </variation>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3n-w5-pge">
-                                                                <rect key="frame" x="37.000000000000014" y="21.666666666666657" width="194.33333333333337" height="27.666666666666671"/>
+                                                                <rect key="frame" x="37" y="21.666666666666657" width="154.33333333333334" height="27.666666666666671"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8Hw-pg-oEN">
-                                                                <rect key="frame" x="229.33333333333331" y="20.333333333333343" width="216.66666666666669" height="31"/>
+                                                                <rect key="frame" x="189.33333333333331" y="20.333333333333343" width="256.66666666666663" height="31"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" priority="750" constant="175" id="yM1-h3-pP1"/>
                                                                 </constraints>
@@ -1048,14 +1048,14 @@
                                         <rect key="frame" x="454" y="0.0" width="300" height="335"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Red" translatesAutoresizingMaskIntoConstraints="NO" id="OEN-nO-g91">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="152"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="137"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKN-q0-yts">
-                                                <rect key="frame" x="125" y="160" width="175" height="175"/>
+                                                <rect key="frame" x="110" y="145" width="190" height="190"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="175" id="PkL-bw-0jF"/>
-                                                    <constraint firstAttribute="height" constant="175" id="dTy-TQ-ZeG"/>
+                                                    <constraint firstAttribute="width" constant="190" id="PkL-bw-0jF"/>
+                                                    <constraint firstAttribute="height" constant="190" id="dTy-TQ-ZeG"/>
                                                     <constraint firstAttribute="width" priority="750" constant="250" id="dW8-nw-lC8"/>
                                                     <constraint firstAttribute="height" priority="750" constant="250" id="waT-c8-TYL"/>
                                                 </constraints>
@@ -1082,7 +1082,7 @@
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="OEN-nO-g91" firstAttribute="height" secondItem="XKN-q0-yts" secondAttribute="height" multiplier="0.75" priority="750" id="5qt-fz-6nK"/>
+                                            <constraint firstItem="OEN-nO-g91" firstAttribute="height" relation="lessThanOrEqual" secondItem="XKN-q0-yts" secondAttribute="height" multiplier="0.75" id="5qt-fz-6nK"/>
                                             <constraint firstAttribute="width" constant="300" id="fdh-QI-xxS"/>
                                             <constraint firstItem="OEN-nO-g91" firstAttribute="height" secondItem="XKN-q0-yts" secondAttribute="height" multiplier="0.75" id="fxM-QW-h4e"/>
                                         </constraints>
@@ -1093,7 +1093,7 @@
                                                 <exclude reference="fxM-QW-h4e"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=compact-widthClass=regular" alignment="bottom">
+                                        <variation key="heightClass=compact-widthClass=regular" alignment="bottom" distribution="equalSpacing">
                                             <mask key="constraints">
                                                 <exclude reference="fdh-QI-xxS"/>
                                                 <include reference="5qt-fz-6nK"/>
@@ -1110,7 +1110,7 @@
                                 <variation key="heightClass=regular-widthClass=compact" alignment="fill" axis="vertical" distribution="fill"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQZ-j6-AnR">
-                                <rect key="frame" x="568" y="54" width="250" height="140"/>
+                                <rect key="frame" x="568" y="54" width="250" height="117"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1129,9 +1129,6 @@
                             <constraint firstItem="EdD-2T-3wa" firstAttribute="top" secondItem="kBJ-rK-Sz9" secondAttribute="top" id="v4N-kp-L8K"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="gQZ-j6-AnR"/>
-                            </mask>
                             <mask key="constraints">
                                 <exclude reference="mAY-5m-Mg2"/>
                                 <exclude reference="uz1-Vc-BtG"/>
