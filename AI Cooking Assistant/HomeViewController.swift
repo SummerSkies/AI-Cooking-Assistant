@@ -17,7 +17,6 @@ class HomeViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if !userDefaults.bool(forKey: "HasOpenedAppBefore") {
             userDefaults.set(true, forKey: "IsSpeechEnabled")
             userDefaults.set(0.5, forKey: "SpeechSpeed")

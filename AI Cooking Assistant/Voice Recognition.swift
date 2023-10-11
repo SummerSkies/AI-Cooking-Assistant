@@ -30,8 +30,6 @@ class VoiceRecognizer {
 
             }
         }
-        
-        
     }
     
     func startListening() {

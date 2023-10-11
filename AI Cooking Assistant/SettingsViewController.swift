@@ -53,11 +53,13 @@ class SettingsViewController: UIViewController {
     @IBAction func voiceControlSwitchChanged(_ sender: Any) {
         let audioSession = AVAudioSession.sharedInstance()
         
-        if audioSession.recordPermission == .granted {
+        print("Granted: \(audioSession.recordPermission == .granted) \nDenied: \(audioSession.recordPermission == .denied) \nUndetermined: \(audioSession.recordPermission == .undetermined)")
+        if SFSpeechRecognizer.authorizationStatus() == .authorized {
             userDefaults.set(voiceControlSwitch.isOn, forKey: "IsVoiceControlEnabled")
         } else {
             SFSpeechRecognizer.requestAuthorization { authStatus in
                 DispatchQueue.main.async {
+                    print("Authorization status: \(authStatus.rawValue)")
                     if authStatus == .authorized {
                         print("Speech recognition authorization granted.")
                     } else if authStatus == .denied {
@@ -96,11 +98,11 @@ class SettingsViewController: UIViewController {
     func checkMicrophonePermissionAndUpdateSwitch() {
         let audioSession = AVAudioSession.sharedInstance()
         
-        switch audioSession.recordPermission {
-        case .denied, .undetermined:
+        switch SFSpeechRecognizer.authorizationStatus() {
+        case .denied, .notDetermined, .restricted:
             voiceControlSwitch.isOn = false
             userDefaults.setValue(false, forKey: "IsVoiceControlEnabled")
-        case .granted:
+        case .authorized:
             return
         @unknown default:
             fatalError("AVAudioSession recordPermission has unknown value.")
