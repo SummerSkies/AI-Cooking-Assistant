@@ -12,10 +12,17 @@ class HomeViewController: UIViewController{
     @IBOutlet var imageView1: UIImageView!
     @IBOutlet var imageView2: UIImageView!
     
+    var userDefaults = UserDefaults.standard
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if !userDefaults.bool(forKey: "HasOpenedAppBefore") {
+            userDefaults.set(true, forKey: "IsSpeechEnabled")
+            userDefaults.set(0.5, forKey: "SpeechSpeed")
+            userDefaults.set(true, forKey: "HasOpenedAppBefore")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

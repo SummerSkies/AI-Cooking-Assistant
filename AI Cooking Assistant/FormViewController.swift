@@ -30,6 +30,7 @@ class FormViewController: UIViewController, UITextViewDelegate {
         promptTextField.delegate = self
         promptTextField.text = "I want to cook..."
         promptTextField.textColor = promptTextField.customGray
+        promptTextField.autocapitalizationType = .none
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -198,6 +199,9 @@ class FormViewController: UIViewController, UITextViewDelegate {
         } else {
             return true
         }
+        
+
+        
         return false
     }
 }

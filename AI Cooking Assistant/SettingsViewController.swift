@@ -7,6 +7,8 @@
 
 import UIKit
 import Foundation
+import AVFAudio
+import Speech
 
 class SettingsViewController: UIViewController {
     
@@ -16,8 +18,12 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var textToSpeechSwitch: UISwitch!
     @IBOutlet weak var voiceSpeedSlider: UISlider!
     
+    var stepsViewController : StepsViewController?
+    var currentIndex : Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkMicrophonePermissionAndUpdateSwitch()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,9 +51,39 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func voiceControlSwitchChanged(_ sender: Any) {
-        userDefaults.set(voiceControlSwitch.isOn, forKey: "IsVoiceControlEnabled")
+        let audioSession = AVAudioSession.sharedInstance()
+        
+        if audioSession.recordPermission == .granted {
+            userDefaults.set(voiceControlSwitch.isOn, forKey: "IsVoiceControlEnabled")
+        } else {
+            SFSpeechRecognizer.requestAuthorization { authStatus in
+                DispatchQueue.main.async {
+                    if authStatus == .authorized {
+                        print("Speech recognition authorization granted.")
+                    } else if authStatus == .denied {
+                        let alert = UIAlertController(
+                            title: "Speech Recognition Not Enabled",
+                            message: "Please enable speech recognition in the app settings to use this feature.",
+                            preferredStyle: .alert
+                        )
+                        
+                        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                            self.checkMicrophonePermissionAndUpdateSwitch()
+                        })
+                        
+                        alert.addAction(UIAlertAction(title: "Open Settings", style: .default) { _ in
+                            if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                                UIApplication.shared.open(settingsURL)
+                            }
+                        })
+                        
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
+            }
+        }
     }
-    
+
     
     @IBAction func textToSpeechSwitchChanged(sender: UISwitch) {
         userDefaults.set(textToSpeechSwitch.isOn, forKey: "IsSpeechEnabled")
@@ -57,6 +93,25 @@ class SettingsViewController: UIViewController {
         userDefaults.set(voiceSpeedSlider.value, forKey: "SpeechSpeed")
     }
     
+    func checkMicrophonePermissionAndUpdateSwitch() {
+        let audioSession = AVAudioSession.sharedInstance()
+        
+        switch audioSession.recordPermission {
+        case .denied, .undetermined:
+            voiceControlSwitch.isOn = false
+            userDefaults.setValue(false, forKey: "IsVoiceControlEnabled")
+        case .granted:
+            return
+        @unknown default:
+            fatalError("AVAudioSession recordPermission has unknown value.")
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if let stepsViewController = stepsViewController, let currentIndex = currentIndex {
+            stepsViewController.indexBeingDisplayed = currentIndex
+        }
+    }
     
     /*
     // MARK: - Navigation

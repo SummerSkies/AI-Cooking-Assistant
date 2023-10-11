@@ -68,6 +68,7 @@ class StepsViewController: UIViewController {
         
         speechSynthesizer = SpeechSynthesizer(stepsController: self)
         animationController = AnimationController(imageView: animatedImage, images: imageArray)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -205,6 +206,14 @@ class StepsViewController: UIViewController {
         endSpeech()
         voiceRecognizer.stopListening()
         indexBeingDisplayed = 0
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "StepsToSettings" {
+            let destination = segue.destination as! SettingsViewController
+            destination.currentIndex = indexBeingDisplayed
+            destination.stepsViewController = self
+        }
     }
     
 }
