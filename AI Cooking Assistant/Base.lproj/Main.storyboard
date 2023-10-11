@@ -1137,131 +1137,274 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="ZrJ-K4-WGv"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="ZrJ-K4-WGv"/>
+                                            </mask>
+                                        </variation>
                                     </label>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea0-gv-G7m">
-                                        <rect key="frame" x="0.0" y="70" width="370" height="361.33333333333331"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dVC-of-bUo">
+                                        <rect key="frame" x="0.0" y="70" width="370" height="695"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JKv-DZ-vOG" userLabel="Scroll Content Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="370" height="415"/>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea0-gv-G7m">
+                                                <rect key="frame" x="0.0" y="0.0" width="370" height="361.33333333333331"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SmP-nX-zvZ">
-                                                        <rect key="frame" x="20" y="0.0" width="330" height="170"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JKv-DZ-vOG" userLabel="Scroll Content Stack View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="370" height="415"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many people are you cooking for?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZE-cs-2ND">
-                                                                <rect key="frame" x="0.0" y="0.0" width="330" height="80"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SmP-nX-zvZ">
+                                                                <rect key="frame" x="20" y="0.0" width="330" height="170"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many people are you cooking for?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZE-cs-2ND">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="330" height="80"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="80" id="s6q-9t-fkE"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <variation key="default">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="s6q-9t-fkE"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                                            <mask key="constraints">
+                                                                                <include reference="s6q-9t-fkE"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                    </label>
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="76y-LH-p0Q" customClass="CustomTextView" customModule="AI_Cooking_Assistant" customModuleProvider="target">
+                                                                        <rect key="frame" x="15" y="90" width="300" height="80"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                    </textView>
+                                                                </subviews>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="80" id="s6q-9t-fkE"/>
+                                                                    <constraint firstItem="76y-LH-p0Q" firstAttribute="leading" secondItem="SmP-nX-zvZ" secondAttribute="leading" constant="15" id="5Ob-Vw-b2v"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="76y-LH-p0Q" secondAttribute="trailing" constant="15" id="JbL-oL-PiQ"/>
+                                                                    <constraint firstItem="wZE-cs-2ND" firstAttribute="height" secondItem="76y-LH-p0Q" secondAttribute="height" id="KIM-ZM-70x"/>
+                                                                    <constraint firstItem="wZE-cs-2ND" firstAttribute="leading" secondItem="SmP-nX-zvZ" secondAttribute="leading" id="uGR-TE-4j7"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="76y-LH-p0Q" customClass="CustomTextView" customModule="AI_Cooking_Assistant" customModuleProvider="target">
-                                                                <rect key="frame" x="15" y="90" width="300" height="80"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                <color key="textColor" systemColor="labelColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                            </textView>
+                                                                <variation key="default">
+                                                                    <mask key="constraints">
+                                                                        <exclude reference="uGR-TE-4j7"/>
+                                                                        <exclude reference="KIM-ZM-70x"/>
+                                                                        <exclude reference="JbL-oL-PiQ"/>
+                                                                        <exclude reference="5Ob-Vw-b2v"/>
+                                                                    </mask>
+                                                                </variation>
+                                                                <variation key="heightClass=regular-widthClass=compact">
+                                                                    <mask key="constraints">
+                                                                        <include reference="uGR-TE-4j7"/>
+                                                                        <include reference="KIM-ZM-70x"/>
+                                                                        <include reference="JbL-oL-PiQ"/>
+                                                                        <include reference="5Ob-Vw-b2v"/>
+                                                                    </mask>
+                                                                </variation>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jLA-9p-qaf">
+                                                                <rect key="frame" x="20" y="190" width="330" height="170"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are there any ingredients you don't want to use?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9db-JO-Alb">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="330" height="80"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DCH-t2-Sbv" customClass="CustomTextView" customModule="AI_Cooking_Assistant" customModuleProvider="target">
+                                                                        <rect key="frame" x="15" y="90" width="300" height="80"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                    </textView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="DCH-t2-Sbv" firstAttribute="leading" secondItem="jLA-9p-qaf" secondAttribute="leading" constant="15" id="5e4-x6-Uff"/>
+                                                                    <constraint firstItem="9db-JO-Alb" firstAttribute="height" secondItem="DCH-t2-Sbv" secondAttribute="height" id="Jo7-fg-F5j"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="DCH-t2-Sbv" secondAttribute="trailing" constant="15" id="qnR-oq-PtJ"/>
+                                                                    <constraint firstItem="9db-JO-Alb" firstAttribute="leading" secondItem="jLA-9p-qaf" secondAttribute="leading" id="rod-GS-GqT"/>
+                                                                </constraints>
+                                                                <variation key="default">
+                                                                    <mask key="constraints">
+                                                                        <exclude reference="rod-GS-GqT"/>
+                                                                        <exclude reference="Jo7-fg-F5j"/>
+                                                                        <exclude reference="qnR-oq-PtJ"/>
+                                                                        <exclude reference="5e4-x6-Uff"/>
+                                                                    </mask>
+                                                                </variation>
+                                                                <variation key="heightClass=regular-widthClass=compact">
+                                                                    <mask key="constraints">
+                                                                        <include reference="rod-GS-GqT"/>
+                                                                        <include reference="Jo7-fg-F5j"/>
+                                                                        <include reference="qnR-oq-PtJ"/>
+                                                                        <include reference="5e4-x6-Uff"/>
+                                                                    </mask>
+                                                                </variation>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJN-TK-r3r">
+                                                                <rect key="frame" x="20" y="380" width="330" height="35"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3J4-N4-gpP">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="3J4-N4-gpP" secondAttribute="height" multiplier="1:1" id="NKg-UR-N8n"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain">
+                                                                            <imageReference key="image" image="checkmark.square" catalog="system" symbolScale="large"/>
+                                                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                                                        </buttonConfiguration>
+                                                                        <variation key="default">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="NKg-UR-N8n"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                                            <mask key="constraints">
+                                                                                <include reference="NKg-UR-N8n"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember my answers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydb-GN-ec4">
+                                                                        <rect key="frame" x="35" y="0.0" width="295" height="35"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="35" id="Eqp-5J-Bmf"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <variation key="default">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="Eqp-5J-Bmf"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                                            <mask key="constraints">
+                                                                                <include reference="Eqp-5J-Bmf"/>
+                                                                            </mask>
+                                                                        </variation>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="76y-LH-p0Q" firstAttribute="leading" secondItem="SmP-nX-zvZ" secondAttribute="leading" constant="15" id="5Ob-Vw-b2v"/>
-                                                            <constraint firstAttribute="trailing" secondItem="76y-LH-p0Q" secondAttribute="trailing" constant="15" id="JbL-oL-PiQ"/>
-                                                            <constraint firstItem="wZE-cs-2ND" firstAttribute="height" secondItem="76y-LH-p0Q" secondAttribute="height" id="KIM-ZM-70x"/>
-                                                            <constraint firstItem="wZE-cs-2ND" firstAttribute="leading" secondItem="SmP-nX-zvZ" secondAttribute="leading" id="uGR-TE-4j7"/>
+                                                            <constraint firstAttribute="trailing" secondItem="SmP-nX-zvZ" secondAttribute="trailing" constant="20" id="3oc-oG-Hmx"/>
+                                                            <constraint firstItem="SmP-nX-zvZ" firstAttribute="leading" secondItem="JKv-DZ-vOG" secondAttribute="leading" constant="20" id="5fw-tv-5GK"/>
+                                                            <constraint firstItem="9db-JO-Alb" firstAttribute="height" secondItem="wZE-cs-2ND" secondAttribute="height" id="XAg-8Y-MFY"/>
+                                                            <constraint firstAttribute="trailing" secondItem="aJN-TK-r3r" secondAttribute="trailing" constant="20" id="ZFe-NI-QjL"/>
+                                                            <constraint firstItem="aJN-TK-r3r" firstAttribute="leading" secondItem="JKv-DZ-vOG" secondAttribute="leading" constant="20" id="Zlo-gE-0Dx"/>
+                                                            <constraint firstAttribute="trailing" secondItem="jLA-9p-qaf" secondAttribute="trailing" constant="20" id="blG-Fg-da9"/>
+                                                            <constraint firstItem="jLA-9p-qaf" firstAttribute="leading" secondItem="JKv-DZ-vOG" secondAttribute="leading" constant="20" id="hA9-a5-vuY"/>
                                                         </constraints>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jLA-9p-qaf">
-                                                        <rect key="frame" x="20" y="190" width="330" height="170"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are there any ingredients you don't want to use?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9db-JO-Alb">
-                                                                <rect key="frame" x="0.0" y="0.0" width="330" height="80"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DCH-t2-Sbv" customClass="CustomTextView" customModule="AI_Cooking_Assistant" customModuleProvider="target">
-                                                                <rect key="frame" x="15" y="90" width="300" height="80"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                <color key="textColor" systemColor="labelColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                            </textView>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="DCH-t2-Sbv" firstAttribute="leading" secondItem="jLA-9p-qaf" secondAttribute="leading" constant="15" id="5e4-x6-Uff"/>
-                                                            <constraint firstItem="9db-JO-Alb" firstAttribute="height" secondItem="DCH-t2-Sbv" secondAttribute="height" id="Jo7-fg-F5j"/>
-                                                            <constraint firstAttribute="trailing" secondItem="DCH-t2-Sbv" secondAttribute="trailing" constant="15" id="qnR-oq-PtJ"/>
-                                                            <constraint firstItem="9db-JO-Alb" firstAttribute="leading" secondItem="jLA-9p-qaf" secondAttribute="leading" id="rod-GS-GqT"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJN-TK-r3r">
-                                                        <rect key="frame" x="20" y="380" width="330" height="35"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3J4-N4-gpP">
-                                                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="3J4-N4-gpP" secondAttribute="height" multiplier="1:1" id="NKg-UR-N8n"/>
-                                                                </constraints>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain">
-                                                                    <imageReference key="image" image="checkmark.square" catalog="system" symbolScale="large"/>
-                                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
-                                                                </buttonConfiguration>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember my answers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydb-GN-ec4">
-                                                                <rect key="frame" x="35" y="0.0" width="295" height="35"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="35" id="Eqp-5J-Bmf"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="3oc-oG-Hmx"/>
+                                                                <exclude reference="5fw-tv-5GK"/>
+                                                                <exclude reference="XAg-8Y-MFY"/>
+                                                                <exclude reference="blG-Fg-da9"/>
+                                                                <exclude reference="hA9-a5-vuY"/>
+                                                                <exclude reference="ZFe-NI-QjL"/>
+                                                                <exclude reference="Zlo-gE-0Dx"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                            <mask key="constraints">
+                                                                <include reference="3oc-oG-Hmx"/>
+                                                                <include reference="5fw-tv-5GK"/>
+                                                                <include reference="XAg-8Y-MFY"/>
+                                                                <include reference="blG-Fg-da9"/>
+                                                                <include reference="hA9-a5-vuY"/>
+                                                                <include reference="ZFe-NI-QjL"/>
+                                                                <include reference="Zlo-gE-0Dx"/>
+                                                            </mask>
+                                                        </variation>
                                                     </stackView>
                                                 </subviews>
+                                                <color key="backgroundColor" red="1" green="0.1764705882" blue="0.4337797619" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="SmP-nX-zvZ" secondAttribute="trailing" constant="20" id="3oc-oG-Hmx"/>
-                                                    <constraint firstItem="SmP-nX-zvZ" firstAttribute="leading" secondItem="JKv-DZ-vOG" secondAttribute="leading" constant="20" id="5fw-tv-5GK"/>
-                                                    <constraint firstItem="9db-JO-Alb" firstAttribute="height" secondItem="wZE-cs-2ND" secondAttribute="height" id="XAg-8Y-MFY"/>
-                                                    <constraint firstAttribute="trailing" secondItem="aJN-TK-r3r" secondAttribute="trailing" constant="20" id="ZFe-NI-QjL"/>
-                                                    <constraint firstItem="aJN-TK-r3r" firstAttribute="leading" secondItem="JKv-DZ-vOG" secondAttribute="leading" constant="20" id="Zlo-gE-0Dx"/>
-                                                    <constraint firstAttribute="trailing" secondItem="jLA-9p-qaf" secondAttribute="trailing" constant="20" id="blG-Fg-da9"/>
-                                                    <constraint firstItem="jLA-9p-qaf" firstAttribute="leading" secondItem="JKv-DZ-vOG" secondAttribute="leading" constant="20" id="hA9-a5-vuY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="JKv-DZ-vOG" secondAttribute="trailing" id="Qlv-N6-MyA"/>
+                                                    <constraint firstItem="JKv-DZ-vOG" firstAttribute="leading" secondItem="ea0-gv-G7m" secondAttribute="leading" id="cgi-v2-Lwz"/>
+                                                    <constraint firstAttribute="bottom" secondItem="JKv-DZ-vOG" secondAttribute="bottom" id="fT4-4M-Nuj"/>
+                                                    <constraint firstItem="JKv-DZ-vOG" firstAttribute="top" secondItem="ea0-gv-G7m" secondAttribute="top" id="lm7-95-dkU"/>
+                                                    <constraint firstItem="JKv-DZ-vOG" firstAttribute="width" secondItem="ea0-gv-G7m" secondAttribute="width" id="snG-98-URN"/>
                                                 </constraints>
+                                                <viewLayoutGuide key="contentLayoutGuide" id="7Vx-KR-041"/>
+                                                <viewLayoutGuide key="frameLayoutGuide" id="8ZH-vT-GqJ"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Qlv-N6-MyA"/>
+                                                        <exclude reference="cgi-v2-Lwz"/>
+                                                        <exclude reference="snG-98-URN"/>
+                                                        <exclude reference="fT4-4M-Nuj"/>
+                                                        <exclude reference="lm7-95-dkU"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="Qlv-N6-MyA"/>
+                                                        <include reference="cgi-v2-Lwz"/>
+                                                        <include reference="snG-98-URN"/>
+                                                        <include reference="fT4-4M-Nuj"/>
+                                                        <include reference="lm7-95-dkU"/>
+                                                    </mask>
+                                                </variation>
+                                            </scrollView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JFR-rN-99e" userLabel="Chef Stack View">
+                                                <rect key="frame" x="0.0" y="371.33333333333337" width="370" height="323.66666666666663"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Red" translatesAutoresizingMaskIntoConstraints="NO" id="koH-CO-UzW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="370" height="138.66666666666666"/>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gi3-Vo-7eG">
+                                                        <rect key="frame" x="92.666666666666686" y="138.66666666666663" width="185" height="185"/>
+                                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="gi3-Vo-7eG" secondAttribute="height" multiplier="1:1" id="JAe-U0-ZN2"/>
+                                                            <constraint firstAttribute="width" constant="185" id="kGX-Rh-b2e"/>
+                                                        </constraints>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="kGX-Rh-b2e"/>
+                                                                <exclude reference="JAe-U0-ZN2"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                            <mask key="constraints">
+                                                                <include reference="kGX-Rh-b2e"/>
+                                                                <include reference="JAe-U0-ZN2"/>
+                                                            </mask>
+                                                        </variation>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="koH-CO-UzW" firstAttribute="height" secondItem="gi3-Vo-7eG" secondAttribute="height" multiplier="0.75" id="4f2-xh-MRj"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="4f2-xh-MRj"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="4f2-xh-MRj"/>
+                                                    </mask>
+                                                </variation>
                                             </stackView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="JKv-DZ-vOG" secondAttribute="trailing" id="Qlv-N6-MyA"/>
-                                            <constraint firstItem="JKv-DZ-vOG" firstAttribute="leading" secondItem="ea0-gv-G7m" secondAttribute="leading" id="cgi-v2-Lwz"/>
-                                            <constraint firstAttribute="bottom" secondItem="JKv-DZ-vOG" secondAttribute="bottom" id="fT4-4M-Nuj"/>
-                                            <constraint firstItem="JKv-DZ-vOG" firstAttribute="top" secondItem="ea0-gv-G7m" secondAttribute="top" id="lm7-95-dkU"/>
-                                            <constraint firstItem="JKv-DZ-vOG" firstAttribute="width" secondItem="ea0-gv-G7m" secondAttribute="width" id="snG-98-URN"/>
-                                        </constraints>
-                                        <viewLayoutGuide key="contentLayoutGuide" id="7Vx-KR-041"/>
-                                        <viewLayoutGuide key="frameLayoutGuide" id="8ZH-vT-GqJ"/>
-                                    </scrollView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JFR-rN-99e" userLabel="Chef Stack View">
-                                        <rect key="frame" x="0.0" y="441.33333333333337" width="370" height="323.66666666666663"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Red" translatesAutoresizingMaskIntoConstraints="NO" id="koH-CO-UzW">
-                                                <rect key="frame" x="0.0" y="0.0" width="370" height="138.66666666666666"/>
-                                            </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gi3-Vo-7eG">
-                                                <rect key="frame" x="92.666666666666686" y="138.66666666666663" width="185" height="185"/>
-                                                <color key="backgroundColor" systemColor="systemPinkColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="gi3-Vo-7eG" secondAttribute="height" multiplier="1:1" id="JAe-U0-ZN2"/>
-                                                    <constraint firstAttribute="width" constant="185" id="kGX-Rh-b2e"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="koH-CO-UzW" firstAttribute="height" secondItem="gi3-Vo-7eG" secondAttribute="height" multiplier="0.75" id="4f2-xh-MRj"/>
-                                        </constraints>
+                                        <variation key="heightClass=regular-widthClass=compact" axis="vertical"/>
                                     </stackView>
                                 </subviews>
+                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
+                                <variation key="heightClass=regular-widthClass=compact" alignment="fill" axis="vertical" distribution="fillProportionally" spacing="10"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjL-i2-JBH">
                                 <rect key="frame" x="55" y="554.33333333333337" width="320" height="118.66666666666663"/>
@@ -1274,13 +1417,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="FGn-xT-eY2" firstAttribute="trailing" secondItem="WJX-w5-rGi" secondAttribute="trailing" constant="30" id="7Wc-nT-fu3"/>
-                            <constraint firstItem="JjL-i2-JBH" firstAttribute="width" secondItem="koH-CO-UzW" secondAttribute="width" constant="-50" id="AcK-6N-02L"/>
+                            <constraint firstItem="JjL-i2-JBH" firstAttribute="centerY" secondItem="koH-CO-UzW" secondAttribute="centerY" id="HkT-lc-dlb"/>
                             <constraint firstItem="WJX-w5-rGi" firstAttribute="top" secondItem="FGn-xT-eY2" secondAttribute="top" id="T9a-7z-PqS"/>
-                            <constraint firstItem="JjL-i2-JBH" firstAttribute="centerX" secondItem="koH-CO-UzW" secondAttribute="centerX" id="b63-OZ-6DM"/>
+                            <constraint firstItem="JjL-i2-JBH" firstAttribute="height" secondItem="koH-CO-UzW" secondAttribute="height" constant="-20" id="YAf-dI-oRg"/>
                             <constraint firstItem="FGn-xT-eY2" firstAttribute="bottom" secondItem="WJX-w5-rGi" secondAttribute="bottom" constant="30" id="cGI-GA-d5Q"/>
                             <constraint firstItem="WJX-w5-rGi" firstAttribute="leading" secondItem="FGn-xT-eY2" secondAttribute="leading" constant="30" id="e5C-bb-n6v"/>
-                            <constraint firstItem="JjL-i2-JBH" firstAttribute="height" secondItem="koH-CO-UzW" secondAttribute="height" constant="-20" id="mYU-Je-3DN"/>
-                            <constraint firstItem="JjL-i2-JBH" firstAttribute="centerY" secondItem="koH-CO-UzW" secondAttribute="centerY" id="zNf-8F-PZa"/>
+                            <constraint firstItem="JjL-i2-JBH" firstAttribute="width" secondItem="koH-CO-UzW" secondAttribute="width" constant="-50" id="p3h-fF-UJ6"/>
+                            <constraint firstItem="JjL-i2-JBH" firstAttribute="centerX" secondItem="koH-CO-UzW" secondAttribute="centerX" id="xD6-dd-ylO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qlE-fQ-2MI"/>
