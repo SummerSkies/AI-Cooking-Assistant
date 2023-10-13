@@ -581,18 +581,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CkN-Ar-23N">
                                 <rect key="frame" x="30" y="103" width="370" height="765"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name -- Ingredient List" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="kZX-ee-Q74">
-                                        <rect key="frame" x="0.0" y="0.0" width="370" height="83.666666666666671"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Recipe Name -- Ingredient List" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="kZX-ee-Q74">
+                                        <rect key="frame" x="0.0" y="0.0" width="370" height="110.33333333333333"/>
                                         <accessibility key="accessibilityConfiguration" identifier="Ingredients Title Label"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Njg-ZF-BbY" userLabel="Inner Content Stack View">
-                                        <rect key="frame" x="0.0" y="91.666666666666686" width="370" height="673.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="118.33333333333331" width="370" height="646.66666666666674"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kai-Vu-kLS">
-                                                <rect key="frame" x="0.0" y="0.0" width="370" height="341.66666666666669"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="370" height="315"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J1h-Ok-fCH" userLabel="Scroll Content Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="370" height="106.66666666666667"/>
@@ -605,7 +605,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOd-Mp-Wtm">
-                                                                <rect key="frame" x="100" y="36.666666666666686" width="170" height="70"/>
+                                                                <rect key="frame" x="100" y="36.666666666666657" width="170" height="70"/>
                                                                 <accessibility key="accessibilityConfiguration" identifier="Start Button"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="70" id="7qD-XJ-USp"/>
@@ -653,7 +653,7 @@
                                                 <viewLayoutGuide key="frameLayoutGuide" id="gfA-Mi-qJx"/>
                                             </scrollView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="J2l-QW-7S7" userLabel="Chef Stack View">
-                                                <rect key="frame" x="0.0" y="349.66666666666674" width="370" height="323.66666666666674"/>
+                                                <rect key="frame" x="0.0" y="323" width="370" height="323.66666666666674"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DnQ-rl-kXR">
                                                         <rect key="frame" x="0.0" y="0.0" width="370" height="138.66666666666666"/>
@@ -665,19 +665,28 @@
                                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="Chef View"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="RJe-js-G26" secondAttribute="height" multiplier="1:1" id="Jy8-0r-y6s"/>
+                                                            <constraint firstAttribute="width" secondItem="RJe-js-G26" secondAttribute="height" multiplier="1:1" id="CgU-gS-iqV"/>
+                                                            <constraint firstAttribute="width" secondItem="RJe-js-G26" secondAttribute="height" multiplier="1:1" priority="750" id="Jy8-0r-y6s"/>
                                                             <constraint firstAttribute="height" constant="185" id="K2z-fn-ZGZ"/>
                                                             <constraint firstAttribute="width" constant="185" id="d8N-De-WCk"/>
                                                         </constraints>
                                                         <variation key="default">
                                                             <mask key="constraints">
                                                                 <exclude reference="d8N-De-WCk"/>
+                                                                <exclude reference="Jy8-0r-y6s"/>
+                                                                <exclude reference="CgU-gS-iqV"/>
                                                                 <exclude reference="K2z-fn-ZGZ"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="heightClass=compact-widthClass=regular">
+                                                            <mask key="constraints">
+                                                                <include reference="Jy8-0r-y6s"/>
                                                             </mask>
                                                         </variation>
                                                         <variation key="heightClass=regular-widthClass=compact">
                                                             <mask key="constraints">
                                                                 <include reference="d8N-De-WCk"/>
+                                                                <include reference="CgU-gS-iqV"/>
                                                                 <include reference="K2z-fn-ZGZ"/>
                                                             </mask>
                                                         </variation>
@@ -687,9 +696,21 @@
                                                     <constraint firstItem="DnQ-rl-kXR" firstAttribute="leading" secondItem="J2l-QW-7S7" secondAttribute="leading" id="9dk-z8-gF4"/>
                                                     <constraint firstItem="DnQ-rl-kXR" firstAttribute="height" secondItem="RJe-js-G26" secondAttribute="height" multiplier="0.75" id="FAc-Jc-bU9"/>
                                                     <constraint firstAttribute="trailing" secondItem="DnQ-rl-kXR" secondAttribute="trailing" id="JzQ-lN-NvZ"/>
+                                                    <constraint firstItem="DnQ-rl-kXR" firstAttribute="width" secondItem="RJe-js-G26" secondAttribute="width" constant="100" id="yym-Yh-ZT7"/>
                                                 </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="yym-Yh-ZT7"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="yym-Yh-ZT7"/>
+                                                    </mask>
+                                                </variation>
                                             </stackView>
                                         </subviews>
+                                        <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
                                         <variation key="heightClass=regular-widthClass=compact" axis="vertical"/>
                                     </stackView>
                                 </subviews>
@@ -738,6 +759,14 @@
                                 <exclude reference="4aL-gq-8ZE"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="fM4-mn-UHi"/>
+                                <exclude reference="sIj-tS-J4r"/>
+                                <exclude reference="tKx-bS-605"/>
+                                <exclude reference="hCD-gT-RNs"/>
+                                <exclude reference="zQu-je-c3i"/>
+                                <exclude reference="Huw-et-H7m"/>
+                                <exclude reference="Yh6-rE-gtb"/>
+                                <exclude reference="MJJ-lK-oTf"/>
                                 <exclude reference="d4u-90-mqk"/>
                                 <exclude reference="ldU-EC-atW"/>
                                 <exclude reference="ZKC-rz-VyA"/>
@@ -750,19 +779,19 @@
                                 <exclude reference="IGw-MV-Zfm"/>
                                 <exclude reference="tyf-fJ-O6a"/>
                                 <exclude reference="yMk-Ah-vlu"/>
-                                <exclude reference="fM4-mn-UHi"/>
-                                <exclude reference="sIj-tS-J4r"/>
-                                <exclude reference="tKx-bS-605"/>
-                                <exclude reference="zQu-je-c3i"/>
-                                <exclude reference="Huw-et-H7m"/>
-                                <exclude reference="hCD-gT-RNs"/>
-                                <exclude reference="Yh6-rE-gtb"/>
-                                <exclude reference="MJJ-lK-oTf"/>
                                 <exclude reference="ByD-sc-P40"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
+                                <exclude reference="fM4-mn-UHi"/>
+                                <exclude reference="sIj-tS-J4r"/>
+                                <exclude reference="tKx-bS-605"/>
+                                <exclude reference="hCD-gT-RNs"/>
+                                <include reference="zQu-je-c3i"/>
+                                <include reference="Huw-et-H7m"/>
+                                <include reference="Yh6-rE-gtb"/>
+                                <include reference="MJJ-lK-oTf"/>
                                 <exclude reference="d4u-90-mqk"/>
                                 <exclude reference="ldU-EC-atW"/>
                                 <exclude reference="ZKC-rz-VyA"/>
@@ -775,19 +804,19 @@
                                 <exclude reference="IGw-MV-Zfm"/>
                                 <exclude reference="tyf-fJ-O6a"/>
                                 <exclude reference="yMk-Ah-vlu"/>
-                                <exclude reference="fM4-mn-UHi"/>
-                                <exclude reference="sIj-tS-J4r"/>
-                                <exclude reference="tKx-bS-605"/>
-                                <include reference="zQu-je-c3i"/>
-                                <include reference="Huw-et-H7m"/>
-                                <exclude reference="hCD-gT-RNs"/>
-                                <include reference="Yh6-rE-gtb"/>
-                                <include reference="MJJ-lK-oTf"/>
                                 <exclude reference="ByD-sc-P40"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
+                                <exclude reference="fM4-mn-UHi"/>
+                                <exclude reference="sIj-tS-J4r"/>
+                                <exclude reference="tKx-bS-605"/>
+                                <exclude reference="hCD-gT-RNs"/>
+                                <include reference="zQu-je-c3i"/>
+                                <include reference="Huw-et-H7m"/>
+                                <include reference="Yh6-rE-gtb"/>
+                                <include reference="MJJ-lK-oTf"/>
                                 <exclude reference="d4u-90-mqk"/>
                                 <exclude reference="ldU-EC-atW"/>
                                 <exclude reference="ZKC-rz-VyA"/>
@@ -800,14 +829,6 @@
                                 <exclude reference="IGw-MV-Zfm"/>
                                 <exclude reference="tyf-fJ-O6a"/>
                                 <exclude reference="yMk-Ah-vlu"/>
-                                <exclude reference="fM4-mn-UHi"/>
-                                <exclude reference="sIj-tS-J4r"/>
-                                <exclude reference="tKx-bS-605"/>
-                                <include reference="zQu-je-c3i"/>
-                                <include reference="Huw-et-H7m"/>
-                                <exclude reference="hCD-gT-RNs"/>
-                                <include reference="Yh6-rE-gtb"/>
-                                <include reference="MJJ-lK-oTf"/>
                                 <exclude reference="ByD-sc-P40"/>
                             </mask>
                         </variation>
