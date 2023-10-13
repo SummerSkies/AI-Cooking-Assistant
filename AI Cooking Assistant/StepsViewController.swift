@@ -9,7 +9,6 @@ import UIKit
 
 class StepsViewController: UIViewController {
 
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var activityLabel: UILabel!
     
     @IBOutlet weak var ingredientListStack: UIStackView!
@@ -48,7 +47,8 @@ class StepsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
+        /*
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateUI), name: NotificationManager.didReceiveNetworkResponse, object: nil)
         instructionsLabel.lineBreakMode = .byWordWrapping // or .byCharWrapping
         instructionsLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -56,8 +56,9 @@ class StepsViewController: UIViewController {
         ingredientListStack.isHidden = true
         stepNumberStack.isHidden = true
         
-        activityIndicator.startAnimating()
-        activityIndicator.hidesWhenStopped = true
+        //Replace these with character animations
+//        activityIndicator.startAnimating()
+//        activityIndicator.hidesWhenStopped = true
         
         voiceControlStack.isHidden = true
         
@@ -66,8 +67,10 @@ class StepsViewController: UIViewController {
         
         speechSynthesizer = SpeechSynthesizer(stepsController: self)
         animationController = AnimationController(imageView: animatedImage, images: imageArray)
+         */
     }
     
+    /*
     override func viewWillAppear(_ animated: Bool) {
         if userDefaults.bool(forKey: "IsVoiceControlEnabled") {
             voiceRecognizer.startListening()
@@ -77,10 +80,12 @@ class StepsViewController: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self, name: NotificationManager.didReceiveNetworkResponse, object: nil)
     }
+     */
     
     @objc func updateUI() {
         if indexBeingDisplayed == 0 {
-            activityIndicator.stopAnimating()
+            //Replcae this with animation control
+            //activityIndicator.stopAnimating()
             activityLabel.isHidden = true
             
             voiceControlStack.isHidden = true
