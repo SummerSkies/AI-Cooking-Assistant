@@ -592,7 +592,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Settings"/>
                                         <connections>
-                                            <segue destination="Vyf-y7-MKb" kind="show" identifier="StepsToSettings" id="eZE-gQ-Z1l"/>
+                                            <segue destination="Vyf-y7-MKb" kind="show" id="eZE-gQ-Z1l"/>
                                         </connections>
                                     </button>
                                 </subviews>

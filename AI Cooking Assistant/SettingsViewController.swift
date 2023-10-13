@@ -96,8 +96,6 @@ class SettingsViewController: UIViewController {
     }
     
     func checkMicrophonePermissionAndUpdateSwitch() {
-        let audioSession = AVAudioSession.sharedInstance()
-        
         switch SFSpeechRecognizer.authorizationStatus() {
         case .denied, .notDetermined, .restricted:
             voiceControlSwitch.isOn = false

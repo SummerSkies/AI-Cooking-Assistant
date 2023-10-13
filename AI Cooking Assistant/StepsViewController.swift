@@ -36,7 +36,7 @@ class StepsViewController: UIViewController {
     let userDefaults = UserDefaults.standard
     
     var animationController: AnimationController?
-    let imageArray: [UIImage] = [UIImage(named: "Red"), UIImage(named: "Blue"), UIImage(named: "Green"), UIImage(named: "Cactus"), UIImage(named: "Purple")].compactMap { $0 }
+    var imageArray: [UIImage] = [UIImage(named: "Red"), UIImage(named: "Blue"), UIImage(named: "Green"), UIImage(named: "Cactus"), UIImage(named: "Purple")].compactMap { $0 }
     
     var speechActivated: Bool {
         userDefaults.bool(forKey: "IsSpeechEnabled")
@@ -67,7 +67,16 @@ class StepsViewController: UIViewController {
         //voiceRecognizer.startListening()
         
         speechSynthesizer = SpeechSynthesizer(stepsController: self)
-        animationController = AnimationController(imageView: animatedImage, images: imageArray)
+        
+        if let peachyFolderURL = Bundle.main.url(forResource: "Peachy-Talk1x", withExtension: "gif"),
+           let talkingGifData = try? Data(contentsOf: peachyFolderURL),
+           let gifImage = UIImage.gif(data: talkingGifData) {
+            imageArray.append(gifImage)
+        } else {
+            fatalError("Failed to load gif")
+        }
+
+        animationController = AnimationController(imageView: animatedImage)
         
     }
     

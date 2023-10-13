@@ -2,7 +2,8 @@
   "data" : [
     {
       "filename" : "Peachy-Talk1x.gif",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "universal-type-identifier" : ""
     }
   ],
   "info" : {
