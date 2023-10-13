@@ -53,7 +53,7 @@ class StepsViewController: UIViewController {
         instructionsLabel.lineBreakMode = .byWordWrapping // or .byCharWrapping
         instructionsLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        ingredientListStack.isHidden = true
+        ingredientListStack.isHidden = true //You will need to hide the speech bubble label for this stack as well.
         stepNumberStack.isHidden = true
         
         //Replace these with character animations
