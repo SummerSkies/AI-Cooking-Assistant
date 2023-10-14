@@ -10,16 +10,18 @@ import UIKit
 import QuartzCore
 class CustomTextView: UITextView {
   let customGray = UIColor.lightGray.withAlphaComponent(0.6)
-  required init?(coder: NSCoder) {
-    super.init(coder: coder)
-    self.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.4).cgColor
-      //CGColor?
-    self.layer.borderWidth = 0.6
-      //CGFloat
-    self.layer.cornerRadius = 5.0
-      //CGFloat
-    self.layer.masksToBounds = true
-      //Bool
-    self.contentInset = UIEdgeInsets(top: 0, left: 3, bottom: 0, right: 3)
-  }
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.4).cgColor
+        //CGColor?
+        self.layer.borderWidth = 0.6
+        //CGFloat
+        self.layer.cornerRadius = 5.0
+        //CGFloat
+        self.layer.masksToBounds = true
+        //Bool
+        self.contentInset = UIEdgeInsets(top: 0, left: 3, bottom: 0, right: 3)
+        //Error fix
+        self.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+    }
 }

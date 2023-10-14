@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xa0-3N-OhH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1bh-JF-eVD">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
@@ -478,42 +478,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="BJ8-O1-uUX" userLabel="Loading Stack">
-                                <rect key="frame" x="1197" y="74" width="538" height="332"/>
+                                <rect key="frame" x="30" y="133" width="370" height="739"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold tight! We're generating your recipe...." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="ogV-qa-buZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="538" height="36"/>
+                                        <rect key="frame" x="1" y="0.0" width="368.33333333333331" height="443"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="textColor" red="0.39345516120000001" green="0.39434186669999999" blue="0.40787287249999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EPb-xi-cg3">
-                                        <rect key="frame" x="136" y="66" width="266" height="266"/>
+                                        <rect key="frame" x="52" y="473" width="266" height="266"/>
                                         <color key="backgroundColor" red="0.43137254899999999" green="0.69129307829999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="EPb-xi-cg3" secondAttribute="height" multiplier="1:1" id="x76-8F-bP8"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="O7n-8z-y89">
-                                <rect key="frame" x="1343" y="103" width="87" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kp8-ZN-4UN">
-                                        <rect key="frame" x="0.0" y="0.0" width="87" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="zF8-8m-lvj"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="Settings"/>
-                                        <connections>
-                                            <segue destination="Vyf-y7-MKb" kind="show" id="eZE-gQ-Z1l"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="Kp8-ZN-4UN" firstAttribute="top" secondItem="O7n-8z-y89" secondAttribute="top" id="3th-cc-KTU"/>
-                                    <constraint firstAttribute="trailing" secondItem="Kp8-ZN-4UN" secondAttribute="trailing" id="JuZ-Eh-3Qe"/>
-                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4aL-gq-8ZE">
                                 <rect key="frame" x="30" y="103" width="370" height="765"/>
@@ -672,20 +652,20 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CkN-Ar-23N">
-                                <rect key="frame" x="1030" y="103" width="370" height="765"/>
+                                <rect key="frame" x="30" y="103" width="370" height="765"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Recipe Name -- Ingredient List" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="kZX-ee-Q74">
-                                        <rect key="frame" x="0.0" y="0.0" width="370" height="110.33333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="370" height="83.666666666666671"/>
                                         <accessibility key="accessibilityConfiguration" identifier="Ingredients Title Label"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Njg-ZF-BbY" userLabel="Inner Content Stack View">
-                                        <rect key="frame" x="0.0" y="118.33333333333331" width="370" height="646.66666666666674"/>
+                                        <rect key="frame" x="0.0" y="91.666666666666686" width="370" height="673.33333333333326"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kai-Vu-kLS">
-                                                <rect key="frame" x="0.0" y="0.0" width="370" height="315"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="370" height="341.66666666666669"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J1h-Ok-fCH" userLabel="Scroll Content Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="370" height="106.66666666666667"/>
@@ -698,7 +678,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOd-Mp-Wtm">
-                                                                <rect key="frame" x="100" y="36.666666666666657" width="170" height="70"/>
+                                                                <rect key="frame" x="100" y="36.666666666666686" width="170" height="70"/>
                                                                 <accessibility key="accessibilityConfiguration" identifier="Start Button"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="70" id="7qD-XJ-USp"/>
@@ -746,7 +726,7 @@
                                                 <viewLayoutGuide key="frameLayoutGuide" id="gfA-Mi-qJx"/>
                                             </scrollView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="J2l-QW-7S7" userLabel="Chef Stack View">
-                                                <rect key="frame" x="0.0" y="323" width="370" height="323.66666666666674"/>
+                                                <rect key="frame" x="0.0" y="349.66666666666674" width="370" height="323.66666666666674"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DnQ-rl-kXR">
                                                         <rect key="frame" x="0.0" y="0.0" width="370" height="138.66666666666666"/>
@@ -809,7 +789,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure you have everything before you start!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Zci-yL-poD">
-                                <rect key="frame" x="1055" y="554.33333333333326" width="320" height="118.66666666666666"/>
+                                <rect key="frame" x="55" y="554.33333333333337" width="320" height="118.66666666666663"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Speech Bubble Label"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -821,7 +801,6 @@
                         <constraints>
                             <constraint firstItem="BJ8-O1-uUX" firstAttribute="centerY" secondItem="Q6L-Ri-GbQ" secondAttribute="centerY" id="6MR-CE-Nkj"/>
                             <constraint firstItem="Zci-yL-poD" firstAttribute="centerX" secondItem="DnQ-rl-kXR" secondAttribute="centerX" id="7ir-Pc-KuB"/>
-                            <constraint firstItem="O7n-8z-y89" firstAttribute="top" secondItem="Zf4-D2-eSP" secondAttribute="top" id="ByD-sc-P40"/>
                             <constraint firstItem="Zf4-D2-eSP" firstAttribute="bottom" secondItem="CkN-Ar-23N" secondAttribute="bottom" constant="30" id="Huw-et-H7m"/>
                             <constraint firstItem="BJ8-O1-uUX" firstAttribute="top" relation="lessThanOrEqual" secondItem="Zf4-D2-eSP" secondAttribute="top" constant="150" id="IGw-MV-Zfm"/>
                             <constraint firstItem="CkN-Ar-23N" firstAttribute="top" secondItem="Zf4-D2-eSP" secondAttribute="top" id="MJJ-lK-oTf"/>
@@ -839,22 +818,14 @@
                             <constraint firstItem="4aL-gq-8ZE" firstAttribute="leading" secondItem="Zf4-D2-eSP" secondAttribute="leading" constant="30" id="ldU-EC-atW"/>
                             <constraint firstItem="BJ8-O1-uUX" firstAttribute="centerX" secondItem="Q6L-Ri-GbQ" secondAttribute="centerX" id="mY1-5k-rao"/>
                             <constraint firstItem="Zf4-D2-eSP" firstAttribute="trailing" secondItem="BJ8-O1-uUX" secondAttribute="trailing" constant="30" id="sIj-tS-J4r"/>
-                            <constraint firstItem="Zf4-D2-eSP" firstAttribute="trailing" secondItem="O7n-8z-y89" secondAttribute="trailing" id="tKx-bS-605"/>
                             <constraint firstItem="BJ8-O1-uUX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Zf4-D2-eSP" secondAttribute="top" constant="100" id="tyf-fJ-O6a"/>
                             <constraint firstItem="BJ8-O1-uUX" firstAttribute="top" secondItem="Zf4-D2-eSP" secondAttribute="top" constant="30" id="yMk-Ah-vlu"/>
                             <constraint firstItem="Zf4-D2-eSP" firstAttribute="trailing" secondItem="CkN-Ar-23N" secondAttribute="trailing" constant="30" id="zQu-je-c3i"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="BJ8-O1-uUX"/>
-                                <exclude reference="O7n-8z-y89"/>
-                                <exclude reference="CkN-Ar-23N"/>
-                                <exclude reference="Zci-yL-poD"/>
-                            </mask>
                             <mask key="constraints">
                                 <exclude reference="fM4-mn-UHi"/>
                                 <exclude reference="sIj-tS-J4r"/>
-                                <exclude reference="tKx-bS-605"/>
                                 <exclude reference="hCD-gT-RNs"/>
                                 <exclude reference="zQu-je-c3i"/>
                                 <exclude reference="Huw-et-H7m"/>
@@ -871,14 +842,12 @@
                                 <exclude reference="IGw-MV-Zfm"/>
                                 <exclude reference="tyf-fJ-O6a"/>
                                 <exclude reference="yMk-Ah-vlu"/>
-                                <exclude reference="ByD-sc-P40"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
                                 <include reference="fM4-mn-UHi"/>
-                                <exclude reference="sIj-tS-J4r"/>
-                                <exclude reference="tKx-bS-605"/>
+                                <include reference="sIj-tS-J4r"/>
                                 <include reference="hCD-gT-RNs"/>
                                 <include reference="zQu-je-c3i"/>
                                 <include reference="Huw-et-H7m"/>
@@ -886,23 +855,21 @@
                                 <include reference="MJJ-lK-oTf"/>
                                 <include reference="ldU-EC-atW"/>
                                 <include reference="ZKC-rz-VyA"/>
-                                <exclude reference="mY1-5k-rao"/>
-                                <exclude reference="6MR-CE-Nkj"/>
-                                <exclude reference="i6k-Er-OIy"/>
-                                <exclude reference="YLr-Qi-3pv"/>
-                                <exclude reference="Pmy-2b-1LL"/>
-                                <exclude reference="S37-PY-WP3"/>
-                                <exclude reference="IGw-MV-Zfm"/>
-                                <exclude reference="tyf-fJ-O6a"/>
-                                <exclude reference="yMk-Ah-vlu"/>
-                                <exclude reference="ByD-sc-P40"/>
+                                <include reference="mY1-5k-rao"/>
+                                <include reference="6MR-CE-Nkj"/>
+                                <include reference="i6k-Er-OIy"/>
+                                <include reference="YLr-Qi-3pv"/>
+                                <include reference="Pmy-2b-1LL"/>
+                                <include reference="S37-PY-WP3"/>
+                                <include reference="IGw-MV-Zfm"/>
+                                <include reference="tyf-fJ-O6a"/>
+                                <include reference="yMk-Ah-vlu"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
                                 <include reference="fM4-mn-UHi"/>
-                                <exclude reference="sIj-tS-J4r"/>
-                                <exclude reference="tKx-bS-605"/>
+                                <include reference="sIj-tS-J4r"/>
                                 <include reference="hCD-gT-RNs"/>
                                 <include reference="zQu-je-c3i"/>
                                 <include reference="Huw-et-H7m"/>
@@ -910,31 +877,33 @@
                                 <include reference="MJJ-lK-oTf"/>
                                 <include reference="ldU-EC-atW"/>
                                 <include reference="ZKC-rz-VyA"/>
-                                <exclude reference="mY1-5k-rao"/>
-                                <exclude reference="6MR-CE-Nkj"/>
-                                <exclude reference="i6k-Er-OIy"/>
-                                <exclude reference="YLr-Qi-3pv"/>
-                                <exclude reference="Pmy-2b-1LL"/>
-                                <exclude reference="S37-PY-WP3"/>
-                                <exclude reference="IGw-MV-Zfm"/>
-                                <exclude reference="tyf-fJ-O6a"/>
-                                <exclude reference="yMk-Ah-vlu"/>
-                                <exclude reference="ByD-sc-P40"/>
+                                <include reference="mY1-5k-rao"/>
+                                <include reference="6MR-CE-Nkj"/>
+                                <include reference="i6k-Er-OIy"/>
+                                <include reference="YLr-Qi-3pv"/>
+                                <include reference="Pmy-2b-1LL"/>
+                                <include reference="S37-PY-WP3"/>
+                                <include reference="IGw-MV-Zfm"/>
+                                <include reference="tyf-fJ-O6a"/>
+                                <include reference="yMk-Ah-vlu"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="e3C-rg-yaL"/>
+                    <navigationItem key="navigationItem" id="e3C-rg-yaL">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="S4A-Zh-c1q"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="activityLabel" destination="ogV-qa-buZ" id="RA2-2k-b1X"/>
                         <outlet property="animatedImage" destination="EPb-xi-cg3" id="vAW-86-Mpz"/>
                         <outlet property="ingredientListStack" destination="CkN-Ar-23N" id="jrS-8O-NWg"/>
                         <outlet property="ingredientsLabel" destination="ajS-m9-S78" id="iC2-kZ-HPc"/>
+                        <outlet property="ingredientsSpeechTextLabel" destination="Zci-yL-poD" id="2Qu-4U-nyQ"/>
                         <outlet property="ingredientsTitleLabel" destination="kZX-ee-Q74" id="WsN-LI-ebj"/>
                         <outlet property="instructionsLabel" destination="dci-4x-lU4" id="vxi-7t-0Jk"/>
+                        <outlet property="loadingStack" destination="BJ8-O1-uUX" id="1df-QI-voh"/>
                         <outlet property="nextButton" destination="rsX-qP-Aov" id="uAa-Rt-1ED"/>
                         <outlet property="stepNumberLabel" destination="Rf0-7c-VuT" id="rTe-0V-nlF"/>
                         <outlet property="stepNumberStack" destination="4aL-gq-8ZE" id="erc-7G-Ofd"/>
-                        <outlet property="voiceControlStack" destination="O7n-8z-y89" id="BVg-ZA-7WJ"/>
+                        <outlet property="voiceSettingsButton" destination="S4A-Zh-c1q" id="n2M-sz-iC1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UkF-5s-L3c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1580,7 +1549,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eZE-gQ-Z1l"/>
         <segue reference="L0m-UI-SXs"/>
     </inferredMetricsTieBreakers>
     <resources>

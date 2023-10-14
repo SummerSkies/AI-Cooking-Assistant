@@ -8,12 +8,13 @@
 import UIKit
 
 class StepsViewController: UIViewController {
-
-    @IBOutlet weak var activityLabel: UILabel!
+    
+    @IBOutlet weak var loadingStack: UIStackView!
     
     @IBOutlet weak var ingredientListStack: UIStackView!
     @IBOutlet weak var ingredientsTitleLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
+    @IBOutlet weak var ingredientsSpeechTextLabel: UILabel!
     
     @IBOutlet weak var stepNumberStack: UIStackView!
     @IBOutlet weak var stepNumberLabel: UILabel!
@@ -21,8 +22,7 @@ class StepsViewController: UIViewController {
     
     @IBOutlet var nextButton: UIButton!
     
-    
-    @IBOutlet weak var voiceControlStack: UIStackView!
+    @IBOutlet weak var voiceSettingsButton: UIBarButtonItem!
     
     @IBOutlet weak var animatedImage: UIImageView!
     
@@ -47,30 +47,29 @@ class StepsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        /*
+        
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateUI), name: NotificationManager.didReceiveNetworkResponse, object: nil)
         instructionsLabel.lineBreakMode = .byWordWrapping // or .byCharWrapping
         instructionsLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        ingredientListStack.isHidden = true //You will need to hide the speech bubble label for this stack as well.
+        ingredientListStack.isHidden = true
+        ingredientsSpeechTextLabel.isHidden = true
         stepNumberStack.isHidden = true
+
+        //activityIndicator.startAnimating()
+        //activityIndicator.hidesWhenStopped = true
         
-        //Replace these with character animations
-//        activityIndicator.startAnimating()
-//        activityIndicator.hidesWhenStopped = true
-        
-        voiceControlStack.isHidden = true
+        voiceSettingsButton.isHidden = true
         
         voiceRecognizer.stepsController = self
         //voiceRecognizer.startListening()
         
         speechSynthesizer = SpeechSynthesizer(stepsController: self)
         animationController = AnimationController(imageView: animatedImage, images: imageArray)
-         */
+        
     }
     
-    /*
+    
     override func viewWillAppear(_ animated: Bool) {
         if userDefaults.bool(forKey: "IsVoiceControlEnabled") {
             voiceRecognizer.startListening()
@@ -80,26 +79,26 @@ class StepsViewController: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self, name: NotificationManager.didReceiveNetworkResponse, object: nil)
     }
-     */
     
     @objc func updateUI() {
         if indexBeingDisplayed == 0 {
-            //Replcae this with animation control
-            //activityIndicator.stopAnimating()
-            activityLabel.isHidden = true
-            
-            voiceControlStack.isHidden = true
-            ingredientListStack.isHidden = false
+            loadingStack.isHidden = true
+            voiceSettingsButton.isHidden = true
             stepNumberStack.isHidden = true
+            
+            ingredientListStack.isHidden = false
+            ingredientsSpeechTextLabel.isHidden = false
+            
             ingredientsTitleLabel.text = "Ingredients"
             ingredientsLabel.text = shared.response[indexBeingDisplayed]
+            
             processSpeech()
             animationController?.setRandomImage()
-            
-            //nextOrStartButtonTapped([]) //For testing ease; uncomment to press Start button immediately after load. nextOrStartButtonTapped's sender must be changed to Any.
         } else {
-            voiceControlStack.isHidden = false
             ingredientListStack.isHidden = true
+            ingredientsSpeechTextLabel.isHidden = true
+            
+            voiceSettingsButton.isHidden = false
             stepNumberStack.isHidden = false
             if let firstCharacter = shared.response[indexBeingDisplayed].first {
                 // Check if the second character is also a number
