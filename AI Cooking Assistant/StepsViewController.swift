@@ -8,13 +8,13 @@
 import UIKit
 
 class StepsViewController: UIViewController {
-
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var activityLabel: UILabel!
+    
+    @IBOutlet weak var loadingStack: UIStackView!
     
     @IBOutlet weak var ingredientListStack: UIStackView!
     @IBOutlet weak var ingredientsTitleLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
+    @IBOutlet weak var ingredientsSpeechTextLabel: UILabel!
     
     @IBOutlet weak var stepNumberStack: UIStackView!
     @IBOutlet weak var stepNumberLabel: UILabel!
@@ -22,8 +22,7 @@ class StepsViewController: UIViewController {
     
     @IBOutlet var nextButton: UIButton!
     
-    
-    @IBOutlet weak var voiceControlStack: UIStackView!
+    @IBOutlet weak var voiceSettingsButton: UIBarButtonItem!
     
     @IBOutlet weak var animatedImage: UIImageView!
     
@@ -54,19 +53,22 @@ class StepsViewController: UIViewController {
         instructionsLabel.translatesAutoresizingMaskIntoConstraints = false
         
         ingredientListStack.isHidden = true
+        ingredientsSpeechTextLabel.isHidden = true
         stepNumberStack.isHidden = true
+
+        //activityIndicator.startAnimating()
+        //activityIndicator.hidesWhenStopped = true
         
-        activityIndicator.startAnimating()
-        activityIndicator.hidesWhenStopped = true
-        
-        voiceControlStack.isHidden = true
+        voiceSettingsButton.isHidden = true
         
         voiceRecognizer.stepsController = self
         //voiceRecognizer.startListening()
         
         speechSynthesizer = SpeechSynthesizer(stepsController: self)
         animationController = AnimationController(imageView: animatedImage, images: imageArray)
+        
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         if userDefaults.bool(forKey: "IsVoiceControlEnabled") {
@@ -80,21 +82,23 @@ class StepsViewController: UIViewController {
     
     @objc func updateUI() {
         if indexBeingDisplayed == 0 {
-            activityIndicator.stopAnimating()
-            activityLabel.isHidden = true
-            
-            voiceControlStack.isHidden = true
-            ingredientListStack.isHidden = false
+            loadingStack.isHidden = true
+            voiceSettingsButton.isHidden = true
             stepNumberStack.isHidden = true
+            
+            ingredientListStack.isHidden = false
+            ingredientsSpeechTextLabel.isHidden = false
+            
             ingredientsTitleLabel.text = "Ingredients"
             ingredientsLabel.text = shared.response[indexBeingDisplayed]
+            
             processSpeech()
             animationController?.setRandomImage()
-            
-            //nextOrStartButtonTapped([]) //For testing ease; uncomment to press Start button immediately after load. nextOrStartButtonTapped's sender must be changed to Any.
         } else {
-            voiceControlStack.isHidden = false
             ingredientListStack.isHidden = true
+            ingredientsSpeechTextLabel.isHidden = true
+            
+            voiceSettingsButton.isHidden = false
             stepNumberStack.isHidden = false
             if let firstCharacter = shared.response[indexBeingDisplayed].first {
                 // Check if the second character is also a number

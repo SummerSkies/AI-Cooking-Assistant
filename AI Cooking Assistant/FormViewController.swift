@@ -7,6 +7,12 @@
 
 import UIKit
 
+extension String {
+    var isReallyEmpty: Bool {
+        self.trimmingCharacters(in: .whitespaces).isEmpty
+    }
+}
+
 class FormViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var promptTextField: CustomTextView!
@@ -32,8 +38,6 @@ class FormViewController: UIViewController, UITextViewDelegate {
         promptTextField.textColor = promptTextField.customGray
     }
     
-    
-    
     override func viewDidAppear(_ animated: Bool) {
         promptedStrings.append(promptTextField.text!)
         promptedStrings.append(numberOfPeople.isEmpty ? "":" for \(numberOfPeople)")
@@ -52,17 +56,11 @@ class FormViewController: UIViewController, UITextViewDelegate {
             }
         }
     }
-    
-    //For testing ease; taps Cook immediately after load
-//    override func viewDidAppear(_ animated: Bool) {
-//        cookButton.sendActions(for: .touchUpInside)
-//    }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         promptTextField.resignFirstResponder()
         return true
     }
-    
     
     func updateUI() {
         
@@ -73,16 +71,15 @@ class FormViewController: UIViewController, UITextViewDelegate {
             return
         }
         
-        let alphabet = NSCharacterSet.letters
         cookButton.titleLabel?.text = "Cook!"
         cookButton.titleLabel?.adjustsFontSizeToFitWidth = false
         cookButton.titleLabel?.textAlignment = .center
         let defaultFontSize: CGFloat = 25.0
         cookButton.titleLabel?.font = UIFont.systemFont(ofSize: defaultFontSize)
-        if let prompt = promptTextField.text, prompt.rangeOfCharacter(from: alphabet) != nil {
-            cookButton.isEnabled = true
-        } else {
+        if promptTextField.text.isReallyEmpty || promptTextField.textColor == promptTextField.customGray {
             cookButton.isEnabled = false
+        } else {
+            cookButton.isEnabled = true
         }
     }
     
@@ -90,7 +87,7 @@ class FormViewController: UIViewController, UITextViewDelegate {
     let testObject2 = "1. In a large skillet, heat 1 tablespoon of olive oil over medium heat. \n2. Add the sliced onions and cook until they are caramelized, stirring occasionally. This should take about 10 minutes. \n3. In the same skillet, add the sliced mushrooms and minced garlic. Cook for another 5 minutes until the mushrooms are softened. \n4. Remove the onion and mushroom mixture from the skillet and set aside. \n5. Preheat your grill or stovetop grill pan to medium-high heat. \n6. Divide the ground beef into 4 equal portions and shape them into burger patties. \n7. Season the patties with salt and pepper on both sides. \n8. Brush the grill grates with olive oil to prevent sticking. \n9. Place the burger patties on the grill and cook for about 4-5 minutes per side for medium doneness. \n10. During the last minute of cooking, place a slice of Swiss cheese on each patty to allow it to melt. \n11. Remove the burger patties from the grill and let them rest for a few minutes. \n12. Toast the burger buns on the grill or in a toaster until lightly golden. \n13. Assemble the burgers by placing a patty on the bottom bun. \n14. Top with the onion and mushroom mixture. \n15. Add any optional toppings such as lettuce, tomato, caramelized onions, ketchup, or mustard. \n16. Place the top bun on the burger and serve immediately. \n17. Enjoy your delicious gourmet mushroom Swiss burgers!"
     
     @IBAction func cookButtonTapped(_ sender: Any) {
-        realNetworkCall()
+        fakeNetworkCall()
     }
     
     func realNetworkCall() {
@@ -176,6 +173,7 @@ class FormViewController: UIViewController, UITextViewDelegate {
             }
         }
     }
+    
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let currentText: String = textView.text
         let updatedText = (currentText as NSString).replacingCharacters(in: range, with: text)
