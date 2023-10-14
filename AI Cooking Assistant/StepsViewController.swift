@@ -9,12 +9,14 @@ import UIKit
 
 class StepsViewController: UIViewController {
 
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var activityLabel: UILabel!
+    @IBOutlet weak var loadingStack: UIStackView!
     
     @IBOutlet weak var ingredientListStack: UIStackView!
     @IBOutlet weak var ingredientsTitleLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
+    @IBOutlet weak var ingredientsSpeechBubbleLabel: UILabel!
+    @IBOutlet weak var ingredientsSpeechBubbleImageView: UIImageView!
+    @IBOutlet weak var ingredientsChefView: UIView!
     
     @IBOutlet weak var stepNumberStack: UIStackView!
     @IBOutlet weak var stepNumberLabel: UILabel!
@@ -22,10 +24,9 @@ class StepsViewController: UIViewController {
     
     @IBOutlet var nextButton: UIButton!
     
+    @IBOutlet weak var voiceSettingsButton: UIBarButtonItem!
     
-    @IBOutlet weak var voiceControlStack: UIStackView!
-    
-    @IBOutlet weak var animatedImage: UIImageView!
+    @IBOutlet weak var loadingChefView: UIView!
     
     var indexBeingDisplayed: Int = 0
     let shared = ResponseObject.shared
@@ -56,12 +57,12 @@ class StepsViewController: UIViewController {
         instructionsLabel.translatesAutoresizingMaskIntoConstraints = false
         
         ingredientListStack.isHidden = true
+        ingredientsSpeechBubbleLabel.isHidden = true
         stepNumberStack.isHidden = true
         
-        activityIndicator.startAnimating()
-        activityIndicator.hidesWhenStopped = true
+        loadingStack.isHidden = false
         
-        voiceControlStack.isHidden = true
+        voiceSettingsButton.isHidden = true
         
         voiceRecognizer.stepsController = self
         //voiceRecognizer.startListening()
@@ -104,21 +105,20 @@ class StepsViewController: UIViewController {
         
         
         if indexBeingDisplayed == 0 {
-            activityIndicator.stopAnimating()
-            activityLabel.isHidden = true
+            loadingStack.isHidden = true
             
-            voiceControlStack.isHidden = true
+            voiceSettingsButton.isHidden = true
             ingredientListStack.isHidden = false
+            ingredientsSpeechBubbleLabel.isHidden = false
             stepNumberStack.isHidden = true
             ingredientsTitleLabel.text = "Ingredients"
             ingredientsLabel.text = shared.response[indexBeingDisplayed]
             processSpeech()
             animationController?.setRandomImage()
-            
-            //nextOrStartButtonTapped([]) //For testing ease; uncomment to press Start button immediately after load. nextOrStartButtonTapped's sender must be changed to Any.
         } else {
-            voiceControlStack.isHidden = false
+            voiceSettingsButton.isHidden = false
             ingredientListStack.isHidden = true
+            ingredientsSpeechBubbleLabel.isHidden = true
             stepNumberStack.isHidden = false
             if let firstCharacter = shared.response[indexBeingDisplayed].first {
                 // Check if the second character is also a number
