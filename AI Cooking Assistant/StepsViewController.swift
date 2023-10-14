@@ -8,13 +8,13 @@
 import UIKit
 
 class StepsViewController: UIViewController {
-    
-    @IBOutlet weak var loadingStack: UIStackView!
+
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var activityLabel: UILabel!
     
     @IBOutlet weak var ingredientListStack: UIStackView!
     @IBOutlet weak var ingredientsTitleLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
-    @IBOutlet weak var ingredientsSpeechTextLabel: UILabel!
     
     @IBOutlet weak var stepNumberStack: UIStackView!
     @IBOutlet weak var stepNumberLabel: UILabel!
@@ -22,7 +22,8 @@ class StepsViewController: UIViewController {
     
     @IBOutlet var nextButton: UIButton!
     
-    @IBOutlet weak var voiceSettingsButton: UIBarButtonItem!
+    
+    @IBOutlet weak var voiceControlStack: UIStackView!
     
     @IBOutlet weak var animatedImage: UIImageView!
     
@@ -35,7 +36,7 @@ class StepsViewController: UIViewController {
     let userDefaults = UserDefaults.standard
     
     var animationController: AnimationController?
-    let imageArray: [UIImage] = [UIImage(named: "Red"), UIImage(named: "Blue"), UIImage(named: "Green"), UIImage(named: "Cactus"), UIImage(named: "Purple")].compactMap { $0 }
+    var imageArray: [UIImage] = [UIImage(named: "Red"), UIImage(named: "Blue"), UIImage(named: "Green"), UIImage(named: "Cactus"), UIImage(named: "Purple")].compactMap { $0 }
     
     var speechActivated: Bool {
         userDefaults.bool(forKey: "IsSpeechEnabled")
@@ -43,6 +44,8 @@ class StepsViewController: UIViewController {
     var voiceActivated: Bool {
         userDefaults.bool(forKey: "IsVoiceControlEnabled")
     }
+    
+    var formView: FormViewController?
     
     
     override func viewDidLoad() {
@@ -53,22 +56,29 @@ class StepsViewController: UIViewController {
         instructionsLabel.translatesAutoresizingMaskIntoConstraints = false
         
         ingredientListStack.isHidden = true
-        ingredientsSpeechTextLabel.isHidden = true
         stepNumberStack.isHidden = true
-
-        //activityIndicator.startAnimating()
-        //activityIndicator.hidesWhenStopped = true
         
-        voiceSettingsButton.isHidden = true
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+        
+        voiceControlStack.isHidden = true
         
         voiceRecognizer.stepsController = self
         //voiceRecognizer.startListening()
         
         speechSynthesizer = SpeechSynthesizer(stepsController: self)
-        animationController = AnimationController(imageView: animatedImage, images: imageArray)
+        
+        if let peachyFolderURL = Bundle.main.url(forResource: "Peachy-Talk1x", withExtension: "gif"),
+           let talkingGifData = try? Data(contentsOf: peachyFolderURL),
+           let gifImage = UIImage.gif(data: talkingGifData) {
+            imageArray.append(gifImage)
+        } else {
+            fatalError("Failed to load gif")
+        }
+
+        animationController = AnimationController(imageView: animatedImage)
         
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         if userDefaults.bool(forKey: "IsVoiceControlEnabled") {
@@ -81,24 +91,34 @@ class StepsViewController: UIViewController {
     }
     
     @objc func updateUI() {
+        guard shared.response.count > 0 else {
+            let alert = UIAlertController(title: "Error", message: "There was a problem retrieving the data", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Okay", style: .cancel) {_ in 
+                self.navigationController?.popViewController(animated: true)
+            }
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true)
+            return
+        }
+        
+        
+        
         if indexBeingDisplayed == 0 {
-            loadingStack.isHidden = true
-            voiceSettingsButton.isHidden = true
-            stepNumberStack.isHidden = true
+            activityIndicator.stopAnimating()
+            activityLabel.isHidden = true
             
+            voiceControlStack.isHidden = true
             ingredientListStack.isHidden = false
-            ingredientsSpeechTextLabel.isHidden = false
-            
+            stepNumberStack.isHidden = true
             ingredientsTitleLabel.text = "Ingredients"
             ingredientsLabel.text = shared.response[indexBeingDisplayed]
-            
             processSpeech()
             animationController?.setRandomImage()
-        } else {
-            ingredientListStack.isHidden = true
-            ingredientsSpeechTextLabel.isHidden = true
             
-            voiceSettingsButton.isHidden = false
+            //nextOrStartButtonTapped([]) //For testing ease; uncomment to press Start button immediately after load. nextOrStartButtonTapped's sender must be changed to Any.
+        } else {
+            voiceControlStack.isHidden = false
+            ingredientListStack.isHidden = true
             stepNumberStack.isHidden = false
             if let firstCharacter = shared.response[indexBeingDisplayed].first {
                 // Check if the second character is also a number
@@ -137,6 +157,10 @@ class StepsViewController: UIViewController {
             indexBeingDisplayed += 1
             updateUI()
         }
+        
+        if !speechActivated {
+            animationController?.setRandomImage()
+        }
     }
     
     @IBAction func previousButtonTapped(_ sender: UIButton) {
@@ -148,6 +172,10 @@ class StepsViewController: UIViewController {
             indexBeingDisplayed -= 1
             updateUI()
             
+        }
+        
+        if !speechActivated {
+            animationController?.setRandomImage()
         }
     }
     
@@ -187,6 +215,14 @@ class StepsViewController: UIViewController {
         endSpeech()
         voiceRecognizer.stopListening()
         indexBeingDisplayed = 0
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "StepsToSettings" {
+            let destination = segue.destination as! SettingsViewController
+            destination.currentIndex = indexBeingDisplayed
+            destination.stepsViewController = self
+        }
     }
     
 }

@@ -34,6 +34,11 @@
 		D2D9CFEF2AB2039900B9C93C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D9CFEE2AB2039900B9C93C /* Constants.swift */; };
 		D2D9CFF32AB2059500B9C93C /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D9CFF22AB2059500B9C93C /* SpeechSynthesizer.swift */; };
 		D2D9CFF52AB2059C00B9C93C /* Voice Recognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D9CFF42AB2059C00B9C93C /* Voice Recognition.swift */; };
+		D2E5BB332AD98CF000C8D904 /* Peachy-Talk1x.gif in Resources */ = {isa = PBXBuildFile; fileRef = D2E5BB322AD852D400C8D904 /* Peachy-Talk1x.gif */; };
+		D2E5BB382AD9971E00C8D904 /* Peachy-Idle.gif in Resources */ = {isa = PBXBuildFile; fileRef = D2E5BB342AD9971E00C8D904 /* Peachy-Idle.gif */; };
+		D2E5BB392AD9971E00C8D904 /* Peachy-LookAround.gif in Resources */ = {isa = PBXBuildFile; fileRef = D2E5BB352AD9971E00C8D904 /* Peachy-LookAround.gif */; };
+		D2E5BB3A2AD9971E00C8D904 /* Peachy-Flutter.gif in Resources */ = {isa = PBXBuildFile; fileRef = D2E5BB362AD9971E00C8D904 /* Peachy-Flutter.gif */; };
+		D2E5BB3B2AD9971E00C8D904 /* Peachy-Stretch.gif in Resources */ = {isa = PBXBuildFile; fileRef = D2E5BB372AD9971E00C8D904 /* Peachy-Stretch.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +70,11 @@
 		D2D9CFEE2AB2039900B9C93C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D2D9CFF22AB2059500B9C93C /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
 		D2D9CFF42AB2059C00B9C93C /* Voice Recognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Voice Recognition.swift"; sourceTree = "<group>"; };
+		D2E5BB322AD852D400C8D904 /* Peachy-Talk1x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Peachy-Talk1x.gif"; sourceTree = "<group>"; };
+		D2E5BB342AD9971E00C8D904 /* Peachy-Idle.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Peachy-Idle.gif"; sourceTree = "<group>"; };
+		D2E5BB352AD9971E00C8D904 /* Peachy-LookAround.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Peachy-LookAround.gif"; sourceTree = "<group>"; };
+		D2E5BB362AD9971E00C8D904 /* Peachy-Flutter.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Peachy-Flutter.gif"; sourceTree = "<group>"; };
+		D2E5BB372AD9971E00C8D904 /* Peachy-Stretch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Peachy-Stretch.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,11 +119,12 @@
 				867569DD2AA8E16200ABDD76 /* HomeViewController.swift */,
 				D2D9CFF22AB2059500B9C93C /* SpeechSynthesizer.swift */,
 				D2D9CFF42AB2059C00B9C93C /* Voice Recognition.swift */,
-				867569DF2AA8E16200ABDD76 /* Main.storyboard */,
 				D22CEB6F2AC711E70043CA14 /* CustomTextView.swift */,
 				D22CEB6D2AC32D890043CA14 /* InternetCheck.swift */,
 				7EA2AF472AB349CB00DB7A6A /* CookbookTableViewController.swift */,
+				867569DF2AA8E16200ABDD76 /* Main.storyboard */,
 				867569E22AA8E16400ABDD76 /* Assets.xcassets */,
+				D2E5BB302AD852C500C8D904 /* Gifs */,
 				867569E42AA8E16400ABDD76 /* LaunchScreen.storyboard */,
 				867569E72AA8E16400ABDD76 /* Info.plist */,
 				7EAC01242AAF688400C50908 /* CoreDataStore.xcdatamodeld */,
@@ -135,6 +146,26 @@
 				7EA2AF492AB34C1500DB7A6A /* UserRecipes.swift */,
 			);
 			path = "AI Wrangler Files";
+			sourceTree = "<group>";
+		};
+		D2E5BB302AD852C500C8D904 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				D2E5BB312AD852CE00C8D904 /* Peachy */,
+			);
+			path = Gifs;
+			sourceTree = "<group>";
+		};
+		D2E5BB312AD852CE00C8D904 /* Peachy */ = {
+			isa = PBXGroup;
+			children = (
+				D2E5BB362AD9971E00C8D904 /* Peachy-Flutter.gif */,
+				D2E5BB342AD9971E00C8D904 /* Peachy-Idle.gif */,
+				D2E5BB352AD9971E00C8D904 /* Peachy-LookAround.gif */,
+				D2E5BB372AD9971E00C8D904 /* Peachy-Stretch.gif */,
+				D2E5BB322AD852D400C8D904 /* Peachy-Talk1x.gif */,
+			);
+			path = Peachy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,8 +232,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2E5BB3A2AD9971E00C8D904 /* Peachy-Flutter.gif in Resources */,
 				867569E62AA8E16400ABDD76 /* LaunchScreen.storyboard in Resources */,
+				D2E5BB3B2AD9971E00C8D904 /* Peachy-Stretch.gif in Resources */,
+				D2E5BB332AD98CF000C8D904 /* Peachy-Talk1x.gif in Resources */,
+				D2E5BB392AD9971E00C8D904 /* Peachy-LookAround.gif in Resources */,
 				867569E32AA8E16400ABDD76 /* Assets.xcassets in Resources */,
+				D2E5BB382AD9971E00C8D904 /* Peachy-Idle.gif in Resources */,
 				867569E12AA8E16200ABDD76 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

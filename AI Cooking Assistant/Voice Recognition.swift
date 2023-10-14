@@ -14,6 +14,8 @@ class VoiceRecognizer {
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     
+    var userDefaults = UserDefaults.standard
+    
     weak var stepsController: StepsViewController?
     
     
@@ -21,7 +23,11 @@ class VoiceRecognizer {
         // Request authorization for speech recognition
         SFSpeechRecognizer.requestAuthorization { authStatus in
             if authStatus == .authorized {
+                self.userDefaults.set(true, forKey: "IsVoiceControlEnabled")
                 print("Speech recognition authorization granted.")
+            } else if authStatus == .denied {
+                self.userDefaults.set(false, forKey: "IsVoiceControlEnabled")
+
             }
         }
     }
