@@ -10,8 +10,15 @@ import UIKit
 class CustomizeViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var numberOfPeopleTextField: CustomTextView!
+    @IBOutlet weak var numberOfPeopleLabel: UILabel!
+    
     @IBOutlet weak var badIngredientsTextField: CustomTextView!
-    @IBOutlet weak var keepChangesSwitch: UISwitch!
+    @IBOutlet weak var badIngredientsLabel: UILabel!
+    
+    @IBOutlet weak var rememberCheckbox: UIButton!
+    
+    @IBOutlet weak var speechBubbleTextView: UIImageView!
+    @IBOutlet weak var chefView: UIView!
     
     let userDefaults = UserDefaults.standard
     var keepChanges: Bool = Bool()
@@ -68,11 +75,6 @@ class CustomizeViewController: UIViewController, UITextViewDelegate {
         }
         
     }
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        // Pass the selected object to the new view controller.
-//    }
     
     func textViewDidChangeSelection(_ textView: UITextView) {
         if self.view.window != nil {

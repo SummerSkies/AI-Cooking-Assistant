@@ -15,8 +15,20 @@ class SettingsViewController: UIViewController {
     let userDefaults = UserDefaults.standard
 
     @IBOutlet weak var voiceControlSwitch: UISwitch!
+    @IBOutlet weak var voiceControlInfoButton: UIButton!
+    
     @IBOutlet weak var textToSpeechSwitch: UISwitch!
+    @IBOutlet weak var textToSpeechInfoButton: UIButton!
+    
     @IBOutlet weak var voiceSpeedSlider: UISlider!
+    @IBOutlet weak var voiceSpeedInfoButton: UIButton!
+    
+    @IBOutlet weak var chefSelectionMenu: UIMenu!
+    @IBOutlet weak var chefSelectionInfoButton: UIButton!
+    
+    @IBOutlet weak var speechBubbleLabel: UILabel!
+    @IBOutlet weak var speechBubbleImageView: UIImageView!
+    @IBOutlet weak var selectedChefView: UIView!
     
     var stepsViewController : StepsViewController?
     var currentIndex : Int?
@@ -112,15 +124,4 @@ class SettingsViewController: UIViewController {
             stepsViewController.indexBeingDisplayed = currentIndex
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

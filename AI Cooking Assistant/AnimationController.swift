@@ -65,6 +65,4 @@ class AnimationController {
         let index = Int.random(in: 0..<(images.count - 1))
         imageView.image = images[index]
     }
-    
-    
 }

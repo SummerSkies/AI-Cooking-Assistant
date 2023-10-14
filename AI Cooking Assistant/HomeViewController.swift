@@ -9,8 +9,8 @@ import UIKit
 import ImageIO
 class HomeViewController: UIViewController{
     
-    @IBOutlet var imageView1: UIImageView!
-    @IBOutlet var imageView2: UIImageView!
+    @IBOutlet weak var peachyChefView: UIView!
+    @IBOutlet weak var cherryChefView: UIView!
     
     var userDefaults = UserDefaults.standard
     
@@ -76,5 +76,4 @@ extension UIImage {
 
         return (unclampedDelayTime?.doubleValue ?? delayTime?.doubleValue ?? 0.0)
     }
-
 }
